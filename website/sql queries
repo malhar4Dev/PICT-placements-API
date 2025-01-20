@@ -1,0 +1,6 @@
+create database if not exists Placement_data ;
+use Placement_data;
+
+-- table sample_data1 contains the current csv file of the placement records.
+
+select * from sample_data1;
