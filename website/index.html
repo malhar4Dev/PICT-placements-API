@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <script>
+    // Fetch data from the server
+    async function fetchUsers() {
+      try {
+        const response = await fetch('/sample_data1'); // Call the `/users` route
+        const sample_data = await response.json();
+
+        // Display data in a table
+        const table = document.getElementById('data-table');
+        sample_data.forEach(company => {
+          const row = `<tr>
+                        <td>${company.unique_id}</td>
+                        <td>${company.Company_name}</td>
+                        <td>${company.year}</td>
+                        <td>${company.cgpa_criteria}</td>
+                        <td>${company.deg_criteria}</td>
+                        <td>${company.branch_criteria}</td>
+                        <td>${company.sal_lpa}</td>
+                      </tr>`;
+          table.innerHTML += row;
+        });
+      } catch (error) {
+        console.error('Error fetching users:', error);
+      }
+    }
+
+    // Fetch data when the page loads
+    window.onload = fetchUsers;
+  </script>
+</head>
+<body>
+  <h1>Users Data</h1>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>year</th>
+        <th>cgpa</th>
+        <th>degree</th>
+        <th>branch</th>
+        <th>salary</th>
+      </tr>
+    </thead>
+    <tbody id="data-table">
+      <!-- Data will be inserted here -->
+    </tbody>
+  </table>
+
+
+  
+</body>
+</html>
