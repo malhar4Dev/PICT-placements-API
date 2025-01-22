@@ -1,0 +1,59 @@
+// window.onload = function () {
+        //     fetchCompany();
+
+        //     // Add event listeners to track user selections
+        //     const companyInput = document.querySelector('input[list="compnames"]');
+        //     const yearInput = document.querySelector('input[list="years"]');
+        //     const skillsInput = document.querySelector('input[list="skillset"]');
+
+        //     companyInput.addEventListener('change', () => {
+        //         console.log("Selected Company:", companyInput.value);
+        //     });
+
+        //     yearInput.addEventListener('change', () => {
+        //         console.log("Selected Year:", yearInput.value);
+        //     });
+
+        //     skillsInput.addEventListener('change', () => {
+        //         console.log("Selected Skill:", skillsInput.value);
+        //     });
+
+        //     // Example: Add a button click listener to collect all values
+        //     const analyseButton = document.querySelector('.button button');
+        //     analyseButton.addEventListener('click', (event) => {
+        //         event.preventDefault(); // Prevent form submission
+        //         const selectedCompany = companyInput.value;
+        //         const selectedYear = yearInput.value;
+        //         const selectedSkill = skillsInput.value;
+
+        //         console.log("Analyse Data:");
+        //         console.log("Company:", selectedCompany);
+        //         console.log("Year:", selectedYear);
+        //         console.log("Skill:", selectedSkill);
+
+        //         // You can send these values to a server or use them as needed
+        //     });
+        // };
+
+
+
+        // // Attach event listener to fetch data when the year is changed
+        // document.querySelector('input[list="years"]').addEventListener('change', fetchCompany);
+
+
+
+        // async function fetchCompany() {
+        //     try {
+        //         const response = await fetch('/cnames');
+        //         const info = await response.json();
+
+        //         const nameoptions = document.getElementById('compnames');
+        //         info.forEach(company => {
+        //             const names = `<option>${company.Company_name}</option>`;
+        //             nameoptions.innerHTML += names;
+        //         });
+
+        //     } catch (error) {
+        //         console.error('Error fetching users:', error);
+        //     }
+        // }

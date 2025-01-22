@@ -34,22 +34,66 @@ app.get('/sample_data1', (req, res) => {
 });
 
 
+// app.get('/cnames', (req, res) => {
+//   const query = 'SELECT Company_name FROM sample_data1';
+//   connection.query(query, (err, results) => {
+//     if (err) {
+//       res.status(500).send('Error fetching data');
+//       return;
+//     }
+//     // Send the results as a JSON response
+//     res.json(results);
+//   });
+// });
+
+
 app.get('/cnames', (req, res) => {
-  const query = 'SELECT Company_name FROM sample_data1';
-  connection.query(query, (err, results) => {
-    if (err) {
-      res.status(500).send('Error fetching data');
-      return;
-    }
-    // Send the results as a JSON response
-    res.json(results);
+  // Get the 'year' parameter from the query
+  const { year } = req.query;
+  // Construct the SQL query
+  let query = 'SELECT DISTINCT Company_name FROM sample_data1';
+  const queryParams = [];
+
+  if (year && year !== 'all years') {
+      query += ' WHERE year = ?';
+      queryParams.push(year);
+  }
+
+  // Execute the query
+  connection.query(query, queryParams, (err, results) => {
+      if (err) {
+          console.error('Error fetching company names:', err);
+          res.status(500).send('Error fetching data');
+          return;
+      }
+      res.json(results);
   });
 });
 
+app.get('/filtered_data', (req, res) => {
+  const { year,Company_name } = req.query;
+
+  let query = 'SELECT * FROM sample_data1';
+  const queryParams = [];
+
+  if (year && year !== 'all years') {
+      query += ' WHERE year = ? && Company_name = ?';
+      queryParams.push(year,Company_name);
+  }
+
+  connection.query(query, queryParams, (err, results) => {
+    if (err) {
+        console.error('Error fetching company names:', err);
+        res.status(500).send('Error fetching data');
+        return;
+    }
+    res.json(results);
+});
+});
 
 // Serve the HTML page
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/website/visualise.html');
+  res.sendFile(__dirname + '/website/newhome.html');
 });
 
 var path = require('path');

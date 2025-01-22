@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    
+    <script>
+        // Function to get query parameters
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                year: params.get('year'),
+                company: params.get('company'),
+                skills: params.get('skills'),
+            };
+        }
+
+        // Function to display data on the page
+        async function displayData() {
+            const { year, company, skills } = getQueryParams();
+
+            // Display the selected inputs
+            document.getElementById('selectedYear').textContent = year || 'Not Selected';
+            document.getElementById('selectedCompany').textContent = company || 'Not Selected';
+            document.getElementById('selectedSkills').textContent = skills || 'Not Selected';
+
+            // Fetch and display data (mocked API example)
+            try {
+                const response = await fetch(`/filtered_data?year=${year}&company=${company}`);
+                const data = await response.json();
+
+                const resultsDiv = document.getElementById('results');
+                resultsDiv.innerHTML = ''; // Clear previous content
+
+                if (data.length > 0) {
+                    data.forEach(item => {
+                        const p = document.createElement('p');
+                        p.textContent = JSON.stringify(item);
+                        resultsDiv.appendChild(p);
+                    });
+                } else {
+                    resultsDiv.textContent = 'No data found.';
+                }
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                document.getElementById('results').textContent = 'Error fetching data.';
+            }
+        }
+
+        // Run the displayData function when the page loads
+        document.addEventListener('DOMContentLoaded', displayData);
+    </script>
+</head>
+
+<body>
+    <h1>Analysis Results</h1>
+    <div>
+        <p><strong>Year:</strong> <span id="selectedYear"></span></p>
+        <p><strong>Company:</strong> <span id="selectedCompany"></span></p>
+        <p><strong>Skills:</strong> <span id="selectedSkills"></span></p>
+    </div>
+    <div id="results">
+        <!-- Fetched data will appear here -->
+    </div>
+</body>
+
+</html>

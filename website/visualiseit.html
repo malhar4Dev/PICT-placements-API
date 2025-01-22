@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="visualiseit.css">
+
+    <script>
+        // Fetch data from the server
+        async function fetchSpecific() {
+          try {
+            const response = await fetch('/filtered_data'); // Call the `/users` route
+            const filtered_data = await response.json();
+    
+            // Display data in a table
+            const card = document.getElementById('data-table');
+            filtered_data.forEach(value => {
+              card.innerHTML = ''
+            });
+          } catch (error) {
+            console.error('Error fetching users:', error);
+          }
+        }
+    
+        // Fetch data when the page loads
+        window.onload = fetchSpecific;
+      </script>
+</head>
+<body>
+    <header class="bg-white shadow-sm py-3">
+        <div class="container d-flex justify-content-between align-items-center" id="navbar">
+            <!-- Logo and Title -->
+            <div class="d-flex align-items-center" id="logo">
+                <img src="Screenshot.png" alt="Logo" class="me-2 logo-img">
+                <span class="fs-5 fw-bold">PLACEMENT WEBSITE</span>
+            </div>
+            <!-- Navigation and Search Bar -->
+            <nav class="d-flex align-items-center">
+                <div class="search-container me-3">
+                    <input id="search-input" type="search" class="form-control me-2" placeholder="Search...">
+                    <button id="search-button" type="button" class="btn btn-primary">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <a href="home.html" class="nav-link">HOME</a>
+                <a href="visualise.html" class="nav-link">VISUALISE</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="#login" class="nav-link">ABOUT US</a>
+                <form action="/amazon.html">
+                    <button type="submit" class="btn btn-primary rounded-pill px-4">Get Started</button>
+                </form>
+            </nav>
+        </div>
+    </header>
+    <section>
+        <div class="infodisplay">
+            <div class="textinfo">
+                
+            </div>
+            <div class="graph"></div>
+        </div>
+    </section>
+</body>
+</html>
