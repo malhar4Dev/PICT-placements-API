@@ -1,0 +1,387 @@
+﻿ID,Company_name,year,cgpa_criteria,branch_criteria,ce,entc,it,Male,Female,Total,sal_lpa
+1,3EA,2020 -21,6.82,All (UG and PG),0,1,0,1,0,1,6
+2,64squares,2020 -21,6.82,All (UG),0,1,0,0,1,1,7.5
+3,64Squares,2021 -22,6.82,All (UG),0,1,0,1,0,1,7.5
+4,Accenture,2020 -21,7.38,All (UG),0,2,0,1,1,2,6.5
+5,Accenture,2020 -21,7.38,All (UG),6,11,6,10,13,23,4.5
+6,Accenture,2021 -22,NC,All (UG and PG),2,1,0,3,0,3,6.5
+7,Accenture,2021 -22,NC,All (UG and PG),0,6,1,2,5,7,4.5
+8,ACI Worldwide,2019-20,8,CE & I T (UG),14,0,3,13,4,17,8
+9,Acquia,2020 -21,6.82,CE & IT (UG),3,0,6,5,4,9,8.38
+10,Acquia,2021 -22,6.82,CE & IT (UG),2,0,3,1,4,5,8
+11,Acquia,2019-20,6.82,CE & IT (UG),3,0,0,2,1,3,8
+12,Acuitilabs,2021 -22,6.82,All(UG),1,0,0,1,0,1,8
+13,Adobe,2021 -22,PPO,All (UG),1,0,0,0,1,1,40.92
+14,ADP,2020 -21,6.82,All (UG - Female),1,0,0,0,1,1,5
+15,Agiliad,2020 -21,7.38,All (UG),3,7,2,5,7,12,4
+16,AlefEdge,2020 -21,6.82,All (UG),5,1,1,6,1,7,7.04
+17,AlefEdge,2019-20,6.82,All(UG),0,0,1,1,0,1,6
+18,Aligned Automation,2020 -21,6.82,All (UG),0,2,0,2,0,2,3.75
+19,Altimetrik,2019-20,7,All(UG),2,4,0,3,3,6,5
+20,Altizon Inc.,2020 -21,7,All (UG),2,0,1,2,1,3,8.25
+21,Amazon,2021 -22,6.5,All (UG),6,1,4,9,2,11,44.14
+22,Amazon,2021 -22,PPO,All (UG),1,0,0,1,0,1,112
+23,Amazon,2021 -22,6.5,All (UG),0,0,1,0,1,1,30.18
+24,Amdocs,2021 -22,6.82,All (UG),2,24,3,15,14,29,6
+25,Amdocs,2020 -21,6.82,All (UG and PG),6,19,5,20,10,30,5
+26,Amdocs,2019-20,6.82,All UG,2,9,2,10,3,13,5
+27,Amura,2019-20,7.38,All(UG),0,0,0,0,0,0,5
+28,Amura,2020 -21,6.82,All (UG),0,1,1,1,1,2,4.5
+29,Amura,2019-20,8.5,All(UG),0,0,1,1,0,1,10.5
+30,Anchanto,2020 -21,6,CE & IT (UG),0,0,0,0,0,0,7.5
+31,Apisero,2020 -21,6.5,All (UG and PG),3,7,2,9,3,12,5.1
+32,Arista Networks,2021 -22,PPO,All (UG),0,0,0,0,0,0,21.5
+33,Arista Networks,2020 -21,8,All (UG),1,0,1,2,0,2,15.5
+34,Arista Networks,2021 -22,8,All (UG),3,0,1,4,0,4,21.5
+35,Aspect Ratio,2019-20,7,All(UG),0,1,1,2,0,2,8.5
+36,Aspect Ratio,2021 -22,NC,All (UG),1,1,0,2,0,2,10
+37,Atos,2021 -22,6.82,All (UG),0,2,0,0,2,2,3.1
+38,Atos,2020 -21,6.82,All (UG),1,3,2,3,3,6,3.1
+39,Avalara Technologies,2020 -21,NC,CE & IT (UG - Female),0,0,0,0,0,0,22
+40,Avaya,2020 -21,7.95,All (UG),4,0,1,4,1,5,12.07
+41,Avaya,2021 -22,7.5,All (UG),6,0,6,10,2,12,12.07
+42,Avaya,2019-20,8,All (UG and PG),0,1,2,2,1,3,12
+43,Bajaj Finance,2021 -22,NC,All (UG),40,20,23,68,15,83,12
+44,Barclays,2020 -21,PPO,CE & IT (UG),1,0,0,1,0,1,8
+45,Barclays,2020 -21,6.82,CE & IT (UG),14,0,19,18,15,33,8
+46,Barclays,2021 -22,6.82,CE & IT (UG),17,0,15,23,9,32,12.73
+47,Barclays,2019-20,6.82,CE & IT (UG),11,0,4,9,6,15,8
+48,Berkadia,2021 -22,6.82,CE & IT (UG),3,0,0,2,1,3,9
+49,BirlaSoft,2019-20,6.82,All(UG),0,2,0,2,0,2,3.25
+50,bizAmica Software,2020 -21,7.5,CE & IT (UG),0,0,2,2,0,2,6
+51,Bizreach,2019-20,NC,All (UG),1,0,0,0,1,1,32
+52,Blue Flame Labs,2019-20,NC,All(UG),1,0,2,3,0,3,3
+53,BMC Software,2021 -22,6.82,All (UG),3,0,2,5,0,5,12.5
+54,BUDDI.AI,2020 -21,NC,All (UG),0,0,2,2,0,2,7
+55,CakeSoft Technologies,2020 -21,8,All (UG),5,0,4,8,1,9,12
+56,Capgemini,2021 -22,NC,All (UG),0,1,0,1,0,1,4
+57,Capgemini,2019-20,6.82,All (UG and PG),2,1,1,3,1,4,6.8
+58,Capgemini,2019-20,6.82,All (UG and PG),3,12,1,12,5,17,3.8
+59,Capgemini,2020 -21,6.82,All (UG),0,6,0,5,1,6,3.8
+60,Celebal Technologies,2021 -22,6.82,All (UG and PG),1,0,0,1,0,1,8
+61,Celebal Technologies,2021 -22,6.82,All (UG and PG),0,2,0,2,0,2,5
+62,Centiro,2020 -21,7,CE & IT (UG),0,0,0,0,0,0,3.8
+63,Ciena,2020 -21,7.95,CE & IT (UG),0,0,0,0,0,0,10.5
+64,Ciena,2021 -22,7,ALL(UG),0,1,0,1,0,1,11.38
+65,CION Digital,2021 -22,8,CE & IT (UG),2,0,0,1,1,2,20.15
+66,Cloudwerx,2019-20,7.5,CE & IT (UG),0,0,0,0,0,0,5
+67,Cloudwerx,2020 -21,7.5,All (UG),0,2,0,1,1,2,5
+68,CLSA,2019-20,6.82,All (UG),0,0,0,0,0,0,8.5
+69,CLSA,2021 -22,6.82,CE & IT (UG),0,0,1,1,0,1,8
+70,CLSA,2020 -21,6.82,CE & IT (UG),0,0,1,0,1,1,8
+71,Codenation,2019-20,NC,All (UG),0,0,0,0,0,0,0
+72,Codevita Live,2020 -21,6.82,All (UG and PG),0,1,0,0,1,1,14.4
+73,Cognizant,2020 -21,6.82,All (UG and PG),0,0,1,1,0,1,6.75
+74,Cognizant,2021 -22,6.82,All (UG and PG),0,3,0,4,1,5,4
+75,Cognizant,2020 -21,6.82,All (UG and PG),6,14,6,19,7,26,4.01
+76,Cognizant,2019-20,6.82,All(UG),0,3,0,0,3,3,4
+77,Compass,2019-20,NC,All(UG),1,0,0,0,1,1,15
+78,Crane process flow,2019-20,6.5,E&TC (UG),0,1,,0,1,1,4.6
+79,Credit Suisse,2019-20,6.82,CE & IT (UG),0,0,0,0,0,0,10.81
+80,Credit Suisse,2021 -22,PPO,CE & IT (UG),2,0,3,3,2,5,13.59
+81,CrowdStrike,2020 -21,7.95,CE & IT (UG and PG),1,0,0,1,0,1,12.65
+82,Crowdworks,2019-20,7,All (UG and PG),0,0,0,0,0,0,34
+83,Cumulus,2021 -22,,All(UG),2,2,0,2,2,4,8.53
+84,Deeptek,2019-20,NC,CE & IT (UG),1,0,0,0,1,1,6.5
+85,Delhivery,2020 -21,6.5,All (UG) and CE (PG),0,0,0,0,0,0,8
+86,Deloitte,2021 -22,6.5,All (UG),3,2,2,4,3,7,7.6
+87,Demand Matrix,2019-20,6.82,All(UG),0,0,0,0,0,0,4.5
+88,Deqode,2020 -21,NC,CE & IT (UG),0,0,2,2,0,2,6.5
+89,Deqode,2019-20,NC,CE & I T (UG),2,0,1,2,1,3,6.95
+90,Deutsche Bank,2021 -22,PPO,All (UG),2,0,1,2,1,3,19.63
+91,Deutsche Bank,2019-20,7.95,All (UG),7,0,5,9,3,12,14.3
+92,Deutsche Bank,2020 -21,7.95,All (UG),10,0,3,9,4,13,19.63
+93,Deutsche Bank,2021 -22,7.95,All (UG),6,0,1,6,1,7,19.63
+94,Druva,2020 -21,6.82,CE & IT (UG),0,0,0,0,0,0,12
+95,Druva,2019-20,NC,CE & IT (UG),4,0,3,7,0,7,12
+96,Druva,2021 -22,7,CE & IT (UG),5,0,5,8,2,10,15
+97,e-Zest,2020 -21,6.59,All (UG),0,0,1,0,1,1,3.2
+98,e-Zest,2019-20,6.82,All(UG),0,1,1,0,2,2,4
+99,eInfochip,2019-20,6.82,All(UG),0,3,0,0,3,3,3.6
+100,Elastic Run,2021 -22,8,CE & IT (UG & PG),1,0,1,1,1,2,8
+101,ElasticRun,2020 -21,6.82,CE & IT (UG),1,0,1,2,0,2,6
+102,ElasticRun,2020 -21,6.82,CE & IT (UG),0,0,1,1,0,1,8
+103,ElasticRun,2019-20,6.82,All(UG),4,0,2,5,1,6,6.5
+104,Emerson,2021 -22,6.82,All (UG),0,3,3,4,2,6,7.19
+105,Endurance International,2020 -21,6.82,All (UG),0,0,1,0,1,1,3.72
+106,Endurance International,2019-20,6.82,All(UG),0,2,0,1,1,2,4.5
+107,Energy Exempler,2019-20,7.5,CE & IT (UG),4,0,0,2,2,4,8
+108,Enthralltech,2019-20,7,All (UG),1,2,1,4,0,4,4
+109,EnthrallTech,2020 -21,6.82,All (UG),3,0,0,3,0,3,7
+110,EPIKInDiFi,2020 -21,8,All (UG),0,0,0,0,0,0,12.75
+111,eQ Technologic,2019-20,6.25,All (UG),0,9,0,3,6,9,7.5
+112,eQ Technologic,2019-20,6.25,All (UG),5,3,2,7,3,10,8.5
+113,eQ Technologic,2020 -21,6.82,All (UG),0,4,0,4,0,4,7.5
+114,eQ Technologic,2020 -21,6.82,All (UG),5,0,7,10,2,12,8.5
+115,EQ Technologic,2021 -22,6.82,All (UG),6,1,4,9,2,11,11.89
+116,EQ Technologic,2021 -22,6.82,E&TC (UG),0,5,,4,1,5,10.22
+117,Ernst & Young,2020 -21,7.95,All (UG),0,0,0,0,0,0,4.37
+118,Espressif,2019-20,8,All (UG),1,0,0,1,0,1,10
+119,Espressif Systems,2021 -22,8,All (UG and PG),5,1,0,6,0,6,18.9
+120,Espressif Systems,2020 -21,NC,All (UG and PG),1,0,2,1,2,3,12
+121,Eternus Solutions,2019-20,6.82,All(UG),1,1,0,1,1,2,4.25
+122,Eumentis Cloud,2020 -21,6.82,All (UG),0,1,1,1,1,2,4.07
+123,evosys global,2019-20,6.25,All(UG),0,2,0,1,1,2,5.5
+124,Extramarks Education,2020 -21,NC,All (UG and PG),0,0,0,0,0,0,11.5
+125,Fabric Inc,2020 -21,7.5,All (UG),0,0,0,0,0,0,8.5
+126,Fiat India Automobile,2019-20,7,CE & IT (UG),1,0,1,1,1,2,6.5
+127,Financial sofware systems,2019-20,7.95,CE & IT (UG),0,0,0,0,0,0,7
+128,Finastra,2019-20,6.82,All(UG),7,5,6,15,3,18,7.26
+129,FinIQ,2021 -22,NC,CE & IT (UG),2,0,2,2,2,4,16.3
+130,FinIQ,2020 -21,NC,All (UG),4,0,3,3,4,7,10
+131,FinIQ,2020 -21,NC,All (UG),1,0,0,1,0,1,20
+132,FinIQ,2019-20,6.82,All(UG),1,0,1,1,1,2,11.5
+133,FinIQ,2019-20,6.82,All (UG),3,1,1,3,2,5,9.5
+134,Finvu,2021 -22,,All(UG),0,2,0,2,0,2,7.5
+135,Fiserv,2019-20,6.25,All(UG),8,14,0,13,9,22,5.2
+136,Fiserv,2021 -22,6.82,All (UG),2,0,3,2,3,5,8.85
+137,Flextrade,2019-20,NC,CE & IT (UG),2,0,1,3,0,3,8
+138,FlexTrade,2020 -21,NC,CE & IT (UG and PG),2,0,0,2,0,2,8.5
+139,FlexTrade,2021 -22,NC,All (UG),0,0,1,1,0,1,11
+140,Flo Group,2020 -21,6.82,All (UG and PG),0,4,0,2,2,4,3.5
+141,Flo Group,2019-20,7,All(UG),0,1,0,0,1,1,3.5
+142,GNS Engg.,2019-20,NC,CE & IT (UG),1,0,0,1,0,1,4
+143,Goldman Sachs,2020 -21,PPO,All (UG and PG),3,0,0,1,2,3,23
+144,Goldman Sachs,2019-20,7.5,All(UG),3,0,2,3,2,5,23
+145,Growisto,2020 -21,NC,All (UG),0,0,0,0,0,0,6.5
+146,Groww,2019-20,NC,All (UG),2,0,0,2,0,2,20
+147,HashedIn,2021 -22,6,All (UG),0,4,0,4,0,4,8
+148,HCL Technologies,2020 -21,8.52,All (UG),0,0,0,0,0,0,3.5
+149,HDFC Bank,2019-20,6.82,CE & I T (UG),4,0,3,4,3,7,9.5
+150,HDFC Bank,2021 -22,5.68,All (UG),7,13,4,16,8,24,9.5
+151,Helpshift,2021 -22,6,All (UG and PG),0,2,0,1,1,2,8.5
+152,Helpshift Technologies,2020 -21,NC,All (UG),4,1,0,3,2,5,8
+153,Hexaview Technologies,2020 -21,NC,CE & IT (UG),0,0,0,0,0,0,9
+154,Hexaware Technologies,2020 -21,6.82,All (UG),2,1,0,2,1,3,5
+155,Hitachi Vantara,2020 -21,7.95,CE & IT (UG and PG),0,0,0,0,0,0,6.5
+156,Honeywell,2019-20,6.82,CE & IT (UG),5,0,0,3,2,5,5.5
+157,Honeywell,2021 -22,6.82,All (UG),1,1,1,1,2,3,5.5
+158,HSBC,2021 -22,6,All (UG),0,14,0,7,7,14,9
+159,HSBC,2020 -21,6.82,All (UG),15,9,9,26,7,33,7
+160,HSBC,2019-20,6.82,All(UG),15,8,14,23,14,37,7
+161,i3Systems,2021 -22,NC,All (UG),0,1,1,1,1,2,4.5
+162,IBM,2019-20,6.82,All(UG),0,3,0,0,3,3,4.1
+163,Icertis,2020 -21,7.38,CE & IT (UG),5,0,1,2,4,6,8
+164,Icertis,2019-20,6.82,CE & IT (UG),6,0,1,5,2,7,8
+165,IDeaS,2021 -22,8,CE & IT (UG),5,0,0,4,1,5,10.17
+166,IDeaS A Sas,2019-20,7,All(UG),1,0,2,3,0,3,9
+167,IDeaS A SAS,2020 -21,8,CE & IT (UG),2,0,0,2,0,2,9
+168,IDFC FIRST Bank,2020 -21,6.82,CE (UG),1,0,,1,0,1,15
+169,IGT Solutions,2020 -21,7.38,CE & IT (UG),0,0,0,0,0,0,4
+170,Imagination Tech.,2019-20,8,All(UG),0,0,0,0,0,0,8.5
+171,Infogen Lab,2019-20,6.82,CE & IT (UG),1,0,1,2,0,2,5
+172,Infogen Labs,2020 -21,6.82,CE & IT (UG),5,0,0,3,2,5,5
+173,Infogen Labs,2021 -22,6,CE & IT (UG),6,0,5,7,4,11,8
+174,Infosys,2020 -21,6.82,All (UG and PG),2,2,0,1,3,4,3.5
+175,InnoGenium,2019-20,6.82,All(UG),1,5,0,1,5,6,8.5
+176,Innovaccer,2021 -22,NC,All (UG and PG),0,0,1,1,0,1,8
+177,IntegriChain Inc.,2020 -21,6.82,All (UG),0,0,0,0,0,0,3
+178,Interactive Brokers,2021 -22,7.4,All (UG and PG),1,0,0,1,0,1,9.35
+179,Interactive Brokers,2019-20,7.95,All(UG),1,0,0,1,0,1,8.18
+180,ION,2021 -22,6.82,All (UG),6,2,2,7,3,10,14.1
+181,ION,2019-20,6.82,All(UG),1,1,0,1,1,2,12
+182,ION Group,2020 -21,6.82,All (UG) and CE & IT (PG),2,1,2,3,2,5,12
+183,iQ Digital,2020 -21,6.82,All (UG),0,0,1,0,1,1,4
+184,ITC Infotech,2021 -22,6.82,All(UG),1,2,0,2,1,3,4.5
+185,Ittiam,2021 -22,7.5,All (UG and PG),0,2,1,2,1,3,10.4
+186,Ittiam,2019-20,7.95,All (UG and PG),0,0,1,1,0,1,10.9
+187,Jaro Education,2020 -21,NC,All (UG),0,0,0,0,0,0,6.6
+188,Jaro Education,2019-20,NC,All (UG and PG),0,0,0,0,0,0,12.02
+189,Jio,2020 -21,6.82,All (UG),1,0,0,1,0,1,5
+190,JISA Softech,2020 -21,NC,All (UG),0,1,0,1,0,1,4
+191,Jombay,2020 -21,NC,CE & IT (UG),1,0,0,1,0,1,10
+192,K12 Techno Services,2020 -21,NC,All (UG and PG),0,5,1,5,2,7,6
+193,Kylas,2020 -21,6.82,All (UG and PG),0,0,0,0,0,0,4
+194,Kylas,2020 -21,6.82,All (UG and PG),2,0,2,3,1,4,13.11
+195,L & T Infotech,2020 -21,6.82,All (UG),0,0,1,1,0,1,10
+196,L & T Infotech,2020 -21,6.82,All (UG),0,2,1,3,0,3,8
+197,L & T Infotech,2020 -21,6.82,All (UG),1,4,0,5,0,5,6.5
+198,L & T Infotech,2019-20,6.82,All(UG),10,32,7,23,26,49,5
+199,L & T Infotech,2020 -21,6.82,All (UG),6,14,2,14,8,22,5
+200,L & T Infotech,2019-20,6.82,All(UG),5,2,5,7,5,12,6.5
+201,Lentra AI,2021 -22,6.82,All (UG),1,2,0,3,0,3,7.5
+202,Lentra AI,2019-20,NC,CE & IT (UG),2,0,2,3,1,4,4.8
+203,Lifeline Systech,2019-20,7.38,All(UG),0,1,2,2,1,3,4.5
+204,Live Health,2019-20,6.82,All(UG),2,0,0,1,1,2,5.83
+205,Logicmonitor,2019-20,6.82,All(UG),1,0,0,1,0,1,7.7
+206,LogiQuad,2021 -22,7.38,All(UG),1,1,0,2,0,2,7.5
+207,Lowe's India,2021 -22,PPO,All (UG),0,1,0,0,1,1,19.34
+208,LTI,2021 -22,6.82,All (UG),0,2,0,2,0,2,5
+209,LTI,2021 -22,6.82,All (UG),0,2,0,0,2,2,6.5
+210,LTI,2021 -22,6.82,All (UG),0,1,0,1,0,1,8
+211,Mastercard,2020 -21,7.5,All (UG),7,1,6,4,10,14,9.69
+212,Mastercard,2021 -22,7.5,All (UG),2,3,6,6,5,11,9.69
+213,McKinley & Rice,2020 -21,NC,All (UG and PG),0,0,0,0,0,0,5
+214,Media.net,2021 -22,7.5,ALL(UG),1,0,0,1,0,1,15.77
+215,Media.net,2019-20,NC,All(UG),0,0,0,0,0,0,29.96
+216,Mediaocean,2019-20,6.82,CE & IT (UG),3,0,2,2,3,5,6
+217,Medly Pharmacy,2020 -21,6.82,CE & IT (UG and PG),2,0,1,3,0,3,7
+218,MetaMorphoSys,2021 -22,6.82,All (UG),0,0,1,1,0,1,6.5
+219,Microsoft,2019-20,PPO,CE & IT (UG),1,0,0,0,1,1,43.33
+220,Microsoft,2021 -22,PPO,All (UG),1,0,1,0,2,2,44.7
+221,Mindstix,2021 -22,NC,All (UG and PG),0,1,0,1,0,1,5.3
+222,Mindstix Software Labs,2020 -21,NC,All (UG and PG),1,0,0,1,0,1,5.5
+223,Mindstix Software Labs,2020 -21,NC,All (UG and PG),1,0,1,1,1,2,6.3
+224,Mindtree,2021 -22,6.82,All(UG),0,1,0,1,0,1,4.5
+225,miniorange,2021 -22,NC,All (UG and PG),1,0,0,0,1,1,11
+226,miniOrange,2021 -22,NC,All (UG and PG),0,1,1,1,1,2,12
+227,miniOrange,2021 -22,NC,All (UG and PG),0,3,1,4,0,4,10
+228,miniOrange,2021 -22,NC,All (UG and PG),1,6,1,6,2,8,9
+229,miniOrange,2021 -22,NC,All (UG and PG),2,7,1,8,2,10,8
+230,miniOrange,2020 -21,6.82,All (UG and PG),9,5,6,18,2,20,6
+231,miniOrange,2019-20,NC,All(UG),1,2,1,4,0,4,7
+232,Mobikasa,2019-20,6.82,All(UG),0,0,0,0,0,0,7
+233,Moxie,2020 -21,7,CE & IT (UG),0,0,0,0,0,0,9.6
+234,Musigma,2019-20,6.82,CE & IT (UG),4,0,2,3,3,6,7
+235,Neal Analytics,2021 -22,6.82,CE & IT (UG),2,0,2,2,2,4,7
+236,NICE Systems,2021 -22,6.5,All (UG),4,9,7,13,7,20,7.5
+237,NICE Systems,2019-20,6.82,CE & IT (UG),4,0,4,4,4,8,7
+238,NICE Systems,2020 -21,6.82,CE & IT (UG),7,0,5,8,4,12,7.25
+239,NTT Data,2020 -21,6.82,CE & IT (UG),1,0,0,0,1,1,3.5
+240,Numerator,2019-20,6.82,All (UG),1,0,1,2,0,2,6
+241,OFSS,2021 -22,7,All (UG and PG),3,10,1,11,3,14,6.56
+242,oneXtel,2020 -21,7,CE & IT (UG),1,0,1,1,1,2,5.5
+243,Paragyte,2019-20,6.82,All(UG),0,0,0,0,0,0,4
+244,Paytm Money,2021 -22,7.95,CE & IT (UG & PG),9,0,2,10,1,11,16
+245,Persistent,2021 -22,6.82,CE & IT (UG),0,0,0,0,0,0,12.41
+246,Persistent,2021 -22,6.82,All (UG),11,3,16,17,13,30,7.5
+247,Persistent,2021 -22,6.82,E&TC (UG),0,4,,2,2,4,4.71
+248,Persistent,2019-20,6.82,CE & IT (UG),1,0,0,1,0,1,8.41
+249,Persistent,2021 -22,6.82,All (UG),3,0,3,5,1,6,9
+250,Persistent,2020 -21,6.82,CE & IT (UG),2,0,2,4,0,4,6.41
+251,Persistent,2020 -21,PPO,CE & IT (UG),1,0,0,1,0,1,6.41
+252,Persistent,2020 -21,6.82,CE & IT (UG),1,0,3,3,1,4,4.51
+253,Persistent,2020 -21,6.82,E&TC (UG),0,10,,6,4,10,4.51
+254,Persistent,2019-20,6.82,CE & IT (UG),2,0,1,1,2,3,4.41
+255,PharmEasy,2021 -22,6.82,CE & IT (UG),2,0,0,2,0,2,20
+256,PharmEasy,2020 -21,6.82,CE & IT (UG),0,0,0,0,0,0,11
+257,PhonePe,2020 -21,7.5,All (UG and PG),1,0,0,0,1,1,30.5
+258,PhonePe,2019-20,7.95,All (UG),1,0,2,3,0,3,38
+259,PhonePe,2021 -22,7.5,All (UG and PG),3,0,0,3,0,3,30.5
+260,PlanetSpark,2020 -21,NC,All (UG),0,2,1,2,1,3,6.5
+261,Platform 9,2021 -22,6.82,All (UG),2,0,1,2,1,3,14
+262,Platform9 Systems,2020 -21,7,All (UG),2,0,3,5,0,5,10
+263,Product Dossier,2020 -21,6.82,CE & IT (UG),2,0,4,3,3,6,3.5
+264,Productdossier,2021 -22,,All(UG),0,1,0,1,0,1,3
+265,PTC Software,2020 -21,NC,All (UG and PG),1,1,1,1,2,3,6
+266,Publicis Sapient,2021 -22,6.5,All (UG),0,8,0,4,4,8,6.5
+267,PublicisSapient,2020 -21,7.82,All (UG),0,3,0,2,1,3,6.5
+268,Pubmatic,2021 -22,7.38,CE & IT (UG & PG),1,0,0,1,0,1,11.62
+269,Pubmatic,2019-20,NC,CE & IT (UG),1,0,2,3,0,3,9.42
+270,PubMatic,2020 -21,7.38,CE & IT (UG and PG),1,0,0,1,0,1,9.52
+271,Purplle.com,2020 -21,NC,All (UG),0,0,0,0,0,0,6.5
+272,Quantiphi,2020 -21,7.38,All (UG) & CE (PG),4,0,5,7,2,9,8.5
+273,Quantiphi,2019-20,7.3,All(UG),1,0,0,1,0,1,9.5
+274,Quantiphi,2019-20,7.3,All(UG),2,2,2,3,3,6,8.5
+275,RackWare,2019-20,8.5,All(UG),0,1,1,0,2,2,9
+276,RackWare Technologies,2020 -21,8.5,All (UG),6,0,0,6,0,6,9
+277,Raja Software Lab,2019-20,6.82,All (UG and PG),2,0,1,2,1,3,5
+278,Rakuten,2019-20,6.82,All (UG and PG),2,0,0,0,2,2,37.18
+279,Rakuten,2020 -21,7.5,All (UG and PG),0,0,0,0,0,0,36.14
+280,RBL Bank,2019-20,6.82,CE & I T (UG),3,0,2,2,3,5,9
+281,RBL Bank,2021 -22,NC,All (UG),1,4,3,2,6,8,9
+282,RBL Bank,2021 -22,PPO,CE & IT (UG),1,0,0,0,1,1,9
+283,RBL Bank,2020 -21,6.82,CE & IT (UG),4,0,0,1,3,4,9
+284,Red Panda,2020 -21,6.82,All (UG),1,1,1,3,0,3,5
+285,Redpanda,2019-20,5.68,All(UG),2,0,0,2,0,2,5
+286,RedPanda,2021 -22,6.82,All(UG),0,1,0,0,1,1,6
+287,Reflexis,2019-20,6,CE & IT (UG),3,0,0,2,1,3,6
+288,Relfor Lab,2019-20,NC,All (UG),0,0,0,0,0,0,5
+289,Reliance,2021 -22,6.82,All(UG),0,0,0,0,0,0,4.25
+290,Reposenergy,2019-20,NC,All(UG),0,0,0,0,0,0,3.5
+291,RIA Advisory,2020 -21,7.38,All (UG),3,2,1,4,2,6,5.5
+292,RIA Advisory,2019-20,6.82,All(UG),8,4,1,10,3,13,6
+293,RIA Advisory,2021 -22,7.5,All (UG),0,4,1,2,3,5,5.5
+294,Rocket Software,2021 -22,NC,All(UG),1,1,0,2,0,2,10.5
+295,rtCamp,2020 -21,NC,All (UG and PG),0,0,0,0,0,0,12
+296,Rudder Analytics,2020 -21,6.25,All (UG) and CE (PG),0,0,0,0,0,0,4
+297,Ryussi Technologies,2019-20,6.82,CE & IT (UG),0,0,1,1,0,1,7.5
+298,Ryussi Technologies,2020 -21,6.82,CE & IT (UG),1,0,0,1,0,1,7.5
+299,Ryussi Technologies,2021 -22,7,CE & IT (UG),0,0,2,2,0,2,7.5
+300,Sagitec,2020 -21,6.82,CE & IT (UG),0,0,2,1,1,2,4
+301,Sagitec,2019-20,6.82,CE & IT (UG),2,0,1,1,2,3,5
+302,Salesforce,2020 -21,7.95,CE & IT (UG - Female),2,0,0,0,2,2,8.57
+303,Sandvine,2021 -22,7.5,All (UG),1,0,0,1,0,1,15.25
+304,Sapient,2019-20,6.82,All (UG),2,1,3,6,0,6,8.5
+305,SAS,2020 -21,6.82,CE & IT (UG),0,0,1,1,0,1,7.38
+306,Schlumberger,2020 -21,6.82,All (UG),0,1,1,0,2,2,8.8
+307,Schlumberger,2019-20,6.82,All (UG and PG),0,1,0,1,0,1,8.8
+308,Schlumberger,2021 -22,PPO,All (UG),2,2,1,0,5,5,9.58
+309,Screen Magic,2020 -21,6.82,CE & IT (UG and PG),2,0,2,1,3,4,7.3
+310,SE2,2020 -21,6.82,All (UG),1,0,3,2,2,4,6.5
+311,SE2,2019-20,6.82,All(UG),7,4,2,11,2,13,8
+312,Sedemac Mechatronics,2020 -21,7,E&TC (UG),0,1,,1,0,1,9
+313,Sell.do,2021 -22,6.82,All(UG),0,1,0,1,0,1,3.85
+314,Sell.do,2021 -22,8,CE & IT (UG),0,0,1,0,1,1,7.8
+315,Sell.do,2021 -22,8,CE & IT (UG),3,0,2,4,1,5,13.26
+316,Sell.do,2020 -21,6.82,CE & IT (UG),3,0,0,2,1,3,7.87
+317,Sell.do,2020 -21,6.82,All (UG and PG),0,0,0,0,0,0,4
+318,Shoreline,2019-20,6.82,All(UG),0,0,0,0,0,0,6.5
+319,Siemens,2019-20,7.95,All (UG),9,1,0,5,5,10,9
+320,Siemens,2021 -22,7.5,CE & IT (UG & PG),6,3,7,8,8,16,11
+321,Siemens,2020 -21,7.95,All (UG and PG),5,0,2,7,0,7,9
+322,Sincro (CDK Global),2019-20,6.25,CE & IT (UG/PG),3,0,0,1,2,3,7.75
+323,Sophos,2020 -21,6.82,All (UG),3,2,3,6,2,8,6.3
+324,Sophos Technologies,2021 -22,6.82,All (UG),0,1,0,1,0,1,7.87
+325,STL,2019-20,6.82,All (UG),3,2,0,2,3,5,8
+326,Swasthya AI,2020 -21,6.82,All (UG),0,0,0,0,0,0,6
+327,Symbl.ai,2020 -21,6.82,All (UG),0,1,0,1,0,1,12
+328,T Systems,2021 -22,,All(UG),1,0,1,1,1,2,7.5
+329,Talentio,2020 -21,5.68,All (UG and PG),0,0,0,0,0,0,3
+330,Tavisca Solutions,2021 -22,7.38,CE & IT (UG),4,0,2,5,1,6,14
+331,TCS Digital,2021 -22,7.95,All (UG and PG),1,5,1,4,3,7,7.01
+332,TCS Digital,2020 -21,7.95,All (UG and PG),12,12,5,21,8,29,7
+333,TCS Digital,2019-20,7.95,All (UG/PG),3,2,0,5,0,5,7
+334,TCS Ninja,2020 -21,7.95,All (UG and PG),1,5,1,3,4,7,3.36
+335,TCS Ninja,2021 -22,6.82,All (UG and PG),0,1,0,0,1,1,3.36
+336,TCS Ninja,2019-20,6.82,All (UG and PG),1,1,0,0,2,2,3.5
+337,Tech Prescient,2019-20,6.82,All(UG),1,0,0,0,1,1,6
+338,TechVerito,2020 -21,7.38,CE & IT (UG),0,0,0,0,0,0,6
+339,TIBCO,2020 -21,6.82,CE & IT (UG),1,0,1,1,1,2,7
+340,Toshiba,2021 -22,7.95,IT(UG),0,0,3,2,1,3,9
+341,Tracelink,2021 -22,7.5,All (UG),0,3,2,5,0,5,11.5
+342,Tracelink,2020 -21,7,CE & IT (UG),5,0,0,4,1,5,9
+343,Tracelink,2019-20,7.31,All(UG),2,2,0,4,0,4,8
+344,Trilogy Innovations,2020 -21,NC,All (UG),0,0,0,0,0,0,31
+345,Trilogy Innovations,2021 -22,NC,All (UG and PG),0,0,1,1,0,1,36.5
+346,Tripstack,2021 -22,,All(UG),0,1,0,0,1,1,5.5
+347,Turtlemint,2019-20,7.95,CE & IT (UG),0,0,0,0,0,0,12
+348,Turtlemint,2021 -22,7,All (UG),2,1,0,2,1,3,19
+349,Ubisoft,2021 -22,NC,All (UG),0,3,0,1,2,3,7.5
+350,Ubisoft,2019-20,NC,All (UG),0,0,0,0,0,0,7
+351,UBS,2019-20,7.95,All (UG),6,0,2,6,2,8,8.5
+352,UBS,2021 -22,7,All (UG),6,0,6,10,4,14,10
+353,UBS,2021 -22,PPO,All (UG),3,0,0,3,0,3,10
+354,UBS,2020 -21,7.95,All (UG),3,0,0,2,1,3,10
+355,UBS,2020 -21,PPO,All (UG),2,0,1,3,0,3,10
+356,udChalo,2019-20,7,CE & IT (UG),1,0,2,1,2,3,8.5
+357,udChalo,2020 -21,6.5,All (UG),2,0,2,4,0,4,6.35
+358,Unschool,2020 -21,NC,All (UG and PG),0,0,0,0,0,0,5
+359,Uolo.com,2020 -21,6.82,CE & IT (UG),0,0,0,0,0,0,12
+360,Valuefy,2019-20,6.82,All(UG),0,0,0,0,0,0,6
+361,Valuence Holdings,2020 -21,NC,All (UG and PG),2,0,0,1,1,2,21.22
+362,Varian Medical System,2021 -22,6.82,All (UG),0,1,0,0,1,1,8.5
+363,Veras Retail,2021 -22,6.82,All (UG),0,1,0,1,0,1,7
+364,Veritas,2019-20,6.82,CE & I T (UG),3,0,0,3,0,3,10.75
+365,Veritas,2021 -22,6.82,CE & IT (UG),2,0,0,2,0,2,11.75
+366,Veritas Technologies,2020 -21,6.82,CE & IT (UG),1,0,1,1,1,2,11.34
+367,Vertical Fox,2020 -21,6.82,CE & IT (UG),1,0,1,2,0,2,6
+368,Vodafone,2021 -22,6.82,All (UG),1,1,0,1,1,2,4.25
+369,Vodafone,2019-20,6.82,All UG,0,11,1,7,5,12,4.25
+370,Vodafone,2020 -21,6.82,All (UG),0,8,2,6,4,10,4.25
+371,Wednesday Solutions,2020 -21,NC,CE & IT (UG and PG),1,0,2,3,0,3,6
+372,Winjit Technologies,2020 -21,6.82,CE & IT (UG),0,0,1,0,1,1,4.5
+373,Winjit Technologies,2019-20,6.82,CE & IT (UG),1,0,0,1,0,1,6.22
+374,Wissen Technology,2019-20,7.5,All (UG),1,0,0,1,0,1,12
+375,Xorient,2019-20,6.82,CE & IT (UG),0,0,0,0,0,0,4.5
+376,Xpanxion,2019-20,6.82,All(UG),0,2,0,1,1,2,4.5
+377,Yahoo (Japan),2019-20,7,All (UG and PG),1,0,0,1,0,1,34.82
+378,Yardi,2020 -21,6.59,All (UG),7,11,7,10,15,25,4.5
+379,Yardi,2019-20,6.82,All(UG),3,7,0,6,4,10,5
+380,Zensar,2021 -22,6.82,All (UG),2,10,1,9,4,13,7
+381,Zocdoc,2020 -21,6.82,All (UG),0,1,0,1,0,1,4.8
+382,ZS Associates,2020 -21,PPO,All (UG),1,2,2,2,3,5,8.93
+383,ZS Associates,2019-20,6.82,All (UG),9,5,5,13,6,19,8.9
+384,ZS Associates,2021 -22,6.5,All (UG),4,6,7,7,10,17,12.5
+385,ZS Associates,2021 -22,PPO,All (UG),0,1,0,1,0,1,12.5
+386,ZS Associates,2020 -21,6.5,All (UG),14,6,4,16,8,24,8.93
