@@ -1,0 +1,387 @@
+﻿ID,Table Names,unique_id,Company_name,year,cgpa_criteria,branch_criteria,ce,ce_shift1,ce_shift2,entc,entc_shift1,entc_shift2,it,Male,Female,Total,sal_lpa
+1,Placement-Report_modified_2019-20.csv,3,eInfochip,2019-20,6.82,All(UG),0,0,0,3,3,0,0,0,3,3,3.6
+2,Placement-Report_modified_2019-20.csv,89,Wissen Technology,2019-20,7.5,All (UG),1,1,0,0,0,0,0,1,0,1,12
+3,Placement-Report_modified_2019-20.csv,99,Sincro (CDK Global),2019-20,6.25,CE & IT (UG/PG),3,2,1,0,0,0,0,1,2,3,7.75
+4,Placement-Report_modified_2019-20.csv,100,Veritas,2019-20,6.82,CE & I T (UG),3,3,0,0,0,0,0,3,0,3,10.75
+5,Placement-Report_modified_2019-20.csv,101,Numerator,2019-20,6.82,All (UG),1,1,0,0,0,0,1,2,0,2,6
+6,Placement-Report_modified_2019-20.csv,102,Cloudwerx,2019-20,7.5,CE & IT (UG),0,0,0,0,0,0,0,0,0,0,5
+7,Placement-Report_modified_2019-20.csv,103,Ubisoft,2019-20,NC,All (UG),0,0,0,0,0,0,0,0,0,0,7
+8,Placement-Report_modified_2019-20.csv,104,Schlumberger,2019-20,6.82,All (UG and PG),0,0,0,1,1,0,0,1,0,1,8.8
+9,Placement-Report_modified_2019-20.csv,105,STL,2019-20,6.82,All (UG),3,2,1,2,2,0,0,2,3,5,8
+10,Placement-Report_modified_2019-20.csv,106,Sagitec,2019-20,6.82,CE & IT (UG),2,2,0,0,0,0,1,1,2,3,5
+11,Placement-Report_modified_2019-20.csv,107,Acquia,2019-20,6.82,CE & IT (UG),3,3,0,0,0,0,0,2,1,3,8
+12,Placement-Report_modified_2019-20.csv,108,Deeptek,2019-20,NC,CE & IT (UG),1,1,0,0,0,0,0,0,1,1,6.5
+13,Placement-Report_modified_2019-20.csv,109,Groww,2019-20,NC,All (UG),2,2,0,0,0,0,0,2,0,2,20
+14,Placement-Report_modified_2019-20.csv,110,Druva,2019-20,NC,CE & IT (UG),4,3,1,0,0,0,3,7,0,7,12
+15,Placement-Report_modified_2019-20.csv,111,ZS Associates,2019-20,6.82,All (UG),9,6,3,5,4,1,5,13,6,19,8.9
+16,Placement-Report_modified_2019-20.csv,112,Flextrade,2019-20,NC,CE & IT (UG),2,1,1,0,0,0,1,3,0,3,8
+17,Placement-Report_modified_2019-20.csv,113,Tech Prescient,2019-20,6.82,All(UG),1,1,0,0,0,0,0,0,1,1,6
+18,Placement-Report_modified_2019-20.csv,114,InnoGenium,2019-20,6.82,All(UG),1,1,0,5,5,0,0,1,5,6,8.5
+19,Placement-Report_modified_2019-20.csv,115,TCS Ninja,2019-20,6.82,All (UG and PG),1,1,0,1,1,0,0,0,2,2,3.5
+20,Placement-Report_modified_2019-20.csv,116,Persistent,2019-20,6.82,CE & IT (UG),2,1,1,0,0,0,1,1,2,3,4.41
+21,Placement-Report_modified_2019-20.csv,117,Capgemini,2019-20,6.82,All (UG and PG),3,3,0,12,10,2,1,12,5,17,3.8
+22,Placement-Report_modified_2019-20.csv,118,Xorient,2019-20,6.82,CE & IT (UG),0,0,0,0,0,0,0,0,0,0,4.5
+23,Placement-Report_modified_2019-20.csv,119,Vodafone,2019-20,6.82,All UG,0,0,0,11,8,3,1,7,5,12,4.25
+24,Placement-Report_modified_2019-20.csv,120,BirlaSoft,2019-20,6.82,All(UG),0,0,0,2,2,0,0,2,0,2,3.25
+25,Placement-Report_modified_2019-20.csv,121,Paragyte,2019-20,6.82,All(UG),0,0,0,0,0,0,0,0,0,0,4
+26,Placement-Report_modified_2019-20.csv,23,Avaya,2019-20,8,All (UG and PG),0,0,0,1,1,0,2,2,1,3,12
+27,Placement-Report_modified_2019-20.csv,24,UBS,2019-20,7.95,All (UG),6,4,2,0,0,0,2,6,2,8,8.5
+28,Placement-Report_modified_2019-20.csv,25,TCS Digital,2019-20,7.95,All (UG/PG),3,2,1,2,2,0,0,5,0,5,7
+29,Placement-Report_modified_2019-20.csv,26,PhonePe,2019-20,7.95,All (UG),1,1,0,0,0,0,2,3,0,3,38
+30,Placement-Report_modified_2019-20.csv,27,Codenation,2019-20,NC,All (UG),0,0,0,0,0,0,0,0,0,0,0
+31,Placement-Report_modified_2019-20.csv,98,Compass,2019-20,NC,All(UG),1,0,1,0,0,0,0,0,1,1,15
+32,Placement-Report_modified_2019-20.csv,29,Mediaocean,2019-20,6.82,CE & IT (UG),3,3,0,0,0,0,2,2,3,5,6
+33,Placement-Report_modified_2019-20.csv,30,Espressif,2019-20,8,All (UG),1,1,0,0,0,0,0,1,0,1,10
+34,Placement-Report_modified_2019-20.csv,31,Musigma,2019-20,6.82,CE & IT (UG),4,3,1,0,0,0,2,3,3,6,7
+35,Placement-Report_modified_2019-20.csv,32,Aspect Ratio,2019-20,7,All(UG),0,0,0,1,1,0,1,2,0,2,8.5
+36,Placement-Report_modified_2019-20.csv,33,Deqode,2019-20,NC,CE & I T (UG),2,2,0,0,0,0,1,2,1,3,6.95
+37,Placement-Report_modified_2019-20.csv,34,IDeaS A Sas,2019-20,7,All(UG),1,1,0,0,0,0,2,3,0,3,9
+38,Placement-Report_modified_2019-20.csv,35,Quantiphi,2019-20,7.3,All(UG),1,1,0,0,0,0,0,1,0,1,9.5
+39,Placement-Report_modified_2019-20.csv,36,Quantiphi,2019-20,7.3,All(UG),2,1,1,2,2,0,2,3,3,6,8.5
+40,Placement-Report_modified_2019-20.csv,37,Icertis,2019-20,6.82,CE & IT (UG),6,3,3,0,0,0,1,5,2,7,8
+41,Placement-Report_modified_2019-20.csv,38,NICE Systems,2019-20,6.82,CE & IT (UG),4,3,1,0,0,0,4,4,4,8,7
+42,Placement-Report_modified_2019-20.csv,39,Barclays,2019-20,6.82,CE & IT (UG),11,7,4,0,0,0,4,9,6,15,8
+43,Placement-Report_modified_2019-20.csv,40,RackWare,2019-20,8.5,All(UG),0,0,0,1,1,0,1,0,2,2,9
+44,Placement-Report_modified_2019-20.csv,41,Interactive Brokers,2019-20,7.95,All(UG),1,1,0,0,0,0,0,1,0,1,8.18
+45,Placement-Report_modified_2019-20.csv,42,Siemens,2019-20,7.95,All (UG),9,7,2,1,1,0,0,5,5,10,9
+46,Placement-Report_modified_2019-20.csv,43,Microsoft,2019-20,PPO,CE & IT (UG),1,0,1,0,0,0,0,0,1,1,43.33
+47,Placement-Report_modified_2019-20.csv,44,Rakuten,2019-20,6.82,All (UG and PG),2,2,0,0,0,0,0,0,2,2,37.18
+48,Placement-Report_modified_2019-20.csv,45,Crowdworks,2019-20,7,All (UG and PG),0,0,0,0,0,0,0,0,0,0,34
+49,Placement-Report_modified_2019-20.csv,46,Persistent,2019-20,6.82,CE & IT (UG),1,1,0,0,0,0,0,1,0,1,8.41
+50,Placement-Report_modified_2019-20.csv,47,HSBC,2019-20,6.82,All(UG),15,14,1,8,5,3,14,23,14,37,7
+51,Placement-Report_modified_2019-20.csv,48,ION,2019-20,6.82,All(UG),1,0,1,1,1,0,0,1,1,2,12
+52,Placement-Report_modified_2019-20.csv,49,Media.net,2019-20,NC,All(UG),0,0,0,0,0,0,0,0,0,0,29.96
+53,Placement-Report_modified_2019-20.csv,50,Yardi,2019-20,6.82,All(UG),3,2,1,7,5,2,0,6,4,10,5
+54,Placement-Report_modified_2019-20.csv,51,ElasticRun,2019-20,6.82,All(UG),4,4,0,0,0,0,2,5,1,6,6.5
+55,Placement-Report_modified_2019-20.csv,52,Live Health,2019-20,6.82,All(UG),2,1,1,0,0,0,0,1,1,2,5.83
+56,Placement-Report_modified_2019-20.csv,53,Ittiam,2019-20,7.95,All (UG and PG),0,0,0,0,0,0,1,1,0,1,10.9
+57,Placement-Report_modified_2019-20.csv,54,Yahoo (Japan),2019-20,7,All (UG and PG),1,1,0,0,0,0,0,1,0,1,34.82
+58,Placement-Report_modified_2019-20.csv,55,Finastra,2019-20,6.82,All(UG),7,6,1,5,3,2,6,15,3,18,7.26
+59,Placement-Report_modified_2019-20.csv,56,Raja Software Lab,2019-20,6.82,All (UG and PG),2,1,1,0,0,0,1,2,1,3,5
+60,Placement-Report_modified_2019-20.csv,57,Turtlemint,2019-20,7.95,CE & IT (UG),0,0,0,0,0,0,0,0,0,0,12
+61,Placement-Report_modified_2019-20.csv,58,L & T Infotech,2019-20,6.82,All(UG),5,4,1,2,2,0,5,7,5,12,6.5
+62,Placement-Report_modified_2019-20.csv,59,L & T Infotech,2019-20,6.82,All(UG),10,7,3,32,28,4,7,23,26,49,5
+63,Placement-Report_modified_2019-20.csv,60,AlefEdge,2019-20,6.82,All(UG),0,0,0,0,0,0,1,1,0,1,6
+64,Placement-Report_modified_2019-20.csv,61,Ryussi Technologies,2019-20,6.82,CE & IT (UG),0,0,0,0,0,0,1,1,0,1,7.5
+65,Placement-Report_modified_2019-20.csv,62,Pubmatic,2019-20,NC,CE & IT (UG),1,1,0,0,0,0,2,3,0,3,9.42
+66,Placement-Report_modified_2019-20.csv,63,Financial sofware systems,2019-20,7.95,CE & IT (UG),0,0,0,0,0,0,0,0,0,0,7
+67,Placement-Report_modified_2019-20.csv,64,Honeywell,2019-20,6.82,CE & IT (UG),5,3,2,0,0,0,0,3,2,5,5.5
+68,Placement-Report_modified_2019-20.csv,65,ACI Worldwide,2019-20,8,CE & I T (UG),14,11,3,0,0,0,3,13,4,17,8
+69,Placement-Report_modified_2019-20.csv,66,evosys global,2019-20,6.25,All(UG),0,0,0,2,2,0,0,1,1,2,5.5
+70,Placement-Report_modified_2019-20.csv,67,RIA Advisory,2019-20,6.82,All(UG),8,6,2,4,2,2,1,10,3,13,6
+71,Placement-Report_modified_2019-20.csv,68,Capgemini,2019-20,6.82,All (UG and PG),2,1,1,1,0,1,1,3,1,4,6.8
+72,Placement-Report_modified_2019-20.csv,69,SE2,2019-20,6.82,All(UG),7,5,2,4,2,2,2,11,2,13,8
+73,Placement-Report_modified_2019-20.csv,70,Shoreline,2019-20,6.82,All(UG),0,0,0,0,0,0,0,0,0,0,6.5
+74,Placement-Report_modified_2019-20.csv,71,Amdocs,2019-20,6.82,All UG,2,1,1,9,5,4,2,10,3,13,5
+75,Placement-Report_modified_2019-20.csv,72,Energy Exempler,2019-20,7.5,CE & IT (UG),4,4,0,0,0,0,0,2,2,4,8
+76,Placement-Report_modified_2019-20.csv,73,Altimetrik,2019-20,7,All(UG),2,2,0,4,2,2,0,3,3,6,5
+77,Placement-Report_modified_2019-20.csv,74,Fiat India Automobile,2019-20,7,CE & IT (UG),1,1,0,0,0,0,1,1,1,2,6.5
+78,Placement-Report_modified_2019-20.csv,75,Jaro Education,2019-20,NC,All (UG and PG),0,0,0,0,0,0,0,0,0,0,12.02
+79,Placement-Report_modified_2019-20.csv,76,HDFC Bank,2019-20,6.82,CE & I T (UG),4,4,0,0,0,0,3,4,3,7,9.5
+80,Placement-Report_modified_2019-20.csv,77,RBL Bank,2019-20,6.82,CE & I T (UG),3,3,0,0,0,0,2,2,3,5,9
+81,Placement-Report_modified_2019-20.csv,78,Fiserv,2019-20,6.25,All(UG),8,6,2,14,10,4,0,13,9,22,5.2
+82,Placement-Report_modified_2019-20.csv,79,Winjit Technologies,2019-20,6.82,CE & IT (UG),1,1,0,0,0,0,0,1,0,1,6.22
+83,Placement-Report_modified_2019-20.csv,80,udChalo,2019-20,7,CE & IT (UG),1,1,0,0,0,0,2,1,2,3,8.5
+84,Placement-Report_modified_2019-20.csv,81,Tracelink,2019-20,7.31,All(UG),2,2,0,2,2,0,0,4,0,4,8
+85,Placement-Report_modified_2019-20.csv,82,miniOrange,2019-20,NC,All(UG),1,1,0,2,2,0,1,4,0,4,7
+86,Placement-Report_modified_2019-20.csv,83,Amura,2019-20,8.5,All(UG),0,0,0,0,0,0,1,1,0,1,10.5
+87,Placement-Report_modified_2019-20.csv,84,Amura,2019-20,7.38,All(UG),0,0,0,0,0,0,0,0,0,0,5
+88,Placement-Report_modified_2019-20.csv,85,Imagination Tech.,2019-20,8,All(UG),0,0,0,0,0,0,0,0,0,0,8.5
+89,Placement-Report_modified_2019-20.csv,86,Goldman Sachs,2019-20,7.5,All(UG),3,1,2,0,0,0,2,3,2,5,23
+90,Placement-Report_modified_2019-20.csv,87,eQ Technologic,2019-20,6.25,All (UG),5,5,0,3,2,1,2,7,3,10,8.5
+91,Placement-Report_modified_2019-20.csv,88,eQ Technologic,2019-20,6.25,All (UG),0,0,0,9,7,2,0,3,6,9,7.5
+92,Placement-Report_modified_2019-20.csv,2,Deutsche Bank,2019-20,7.95,All (UG),7,5,2,0,0,0,5,9,3,12,14.3
+93,Placement-Report_modified_2019-20.csv,90,Infogen Lab,2019-20,6.82,CE & IT (UG),1,1,0,0,0,0,1,2,0,2,5
+94,Placement-Report_modified_2019-20.csv,91,Reflexis,2019-20,6,CE & IT (UG),3,3,0,0,0,0,0,2,1,3,6
+95,Placement-Report_modified_2019-20.csv,92,Redpanda,2019-20,5.68,All(UG),2,2,0,0,0,0,0,2,0,2,5
+96,Placement-Report_modified_2019-20.csv,93,Valuefy,2019-20,6.82,All(UG),0,0,0,0,0,0,0,0,0,0,6
+97,Placement-Report_modified_2019-20.csv,94,Logicmonitor,2019-20,6.82,All(UG),1,1,0,0,0,0,0,1,0,1,7.7
+98,Placement-Report_modified_2019-20.csv,95,Mobikasa,2019-20,6.82,All(UG),0,0,0,0,0,0,0,0,0,0,7
+99,Placement-Report_modified_2019-20.csv,96,Credit Suisse,2019-20,6.82,CE & IT (UG),0,0,0,0,0,0,0,0,0,0,10.81
+100,Placement-Report_modified_2019-20.csv,97,Relfor Lab,2019-20,NC,All (UG),0,0,0,0,0,0,0,0,0,0,5
+101,Placement-Report_modified_2019-20.csv,22,CLSA,2019-20,6.82,All (UG),0,0,0,0,0,0,0,0,0,0,8.5
+102,Placement-Report_modified_2019-20.csv,21,Enthralltech,2019-20,7,All (UG),1,1,0,2,1,1,1,4,0,4,4
+103,Placement-Report_modified_2019-20.csv,20,GNS Engg.,2019-20,NC,CE & IT (UG),1,0,1,0,0,0,0,1,0,1,4
+104,Placement-Report_modified_2019-20.csv,19,Blue Flame Labs,2019-20,NC,All(UG),1,1,0,0,0,0,2,3,0,3,3
+105,Placement-Report_modified_2019-20.csv,18,Reposenergy,2019-20,NC,All(UG),0,0,0,0,0,0,0,0,0,0,3.5
+106,Placement-Report_modified_2019-20.csv,17,Lentra AI,2019-20,NC,CE & IT (UG),2,2,0,0,0,0,2,3,1,4,4.8
+107,Placement-Report_modified_2019-20.csv,16,Demand Matrix,2019-20,6.82,All(UG),0,0,0,0,0,0,0,0,0,0,4.5
+108,Placement-Report_modified_2019-20.csv,15,Sapient,2019-20,6.82,All (UG),2,2,0,1,0,1,3,6,0,6,8.5
+109,Placement-Report_modified_2019-20.csv,14,FinIQ,2019-20,6.82,All (UG),3,1,2,1,1,0,1,3,2,5,9.5
+110,Placement-Report_modified_2019-20.csv,13,FinIQ,2019-20,6.82,All(UG),1,1,0,0,0,0,1,1,1,2,11.5
+111,Placement-Report_modified_2019-20.csv,12,Endurance International,2019-20,6.82,All(UG),0,0,0,2,2,0,0,1,1,2,4.5
+112,Placement-Report_modified_2019-20.csv,11,Lifeline Systech,2019-20,7.38,All(UG),0,0,0,1,1,0,2,2,1,3,4.5
+113,Placement-Report_modified_2019-20.csv,4,e-Zest,2019-20,6.82,All(UG),0,0,0,1,1,0,1,0,2,2,4
+114,Placement-Report_modified_2019-20.csv,5,Xpanxion,2019-20,6.82,All(UG),0,0,0,2,2,0,0,1,1,2,4.5
+115,Placement-Report_modified_2019-20.csv,6,IBM,2019-20,6.82,All(UG),0,0,0,3,2,1,0,0,3,3,4.1
+116,Placement-Report_modified_2019-20.csv,7,Cognizant,2019-20,6.82,All(UG),0,0,0,3,3,0,0,0,3,3,4
+117,Placement-Report_modified_2019-20.csv,8,Crane process flow,2019-20,6.5,E&TC (UG),0,0,0,1,0,1,,0,1,1,4.6
+118,Placement-Report_modified_2019-20.csv,9,Eternus Solutions,2019-20,6.82,All(UG),1,1,0,1,1,0,0,1,1,2,4.25
+119,Placement-Report_modified_2019-20.csv,10,Flo Group,2019-20,7,All(UG),0,0,0,1,1,0,0,0,1,1,3.5
+120,Placement-Report_modified_2019-20.csv,28,Bizreach,2019-20,NC,All (UG),1,1,0,0,0,0,0,0,1,1,32
+121,Placement Report_modified_ 2020-21.csv,3,3EA,2020 -21,6.82,All (UG and PG),0,0,0,1,1,0,0,1,0,1,6
+122,Placement Report_modified_ 2020-21.csv,141,Valuence Holdings,2020 -21,NC,All (UG and PG),2,2,0,0,0,0,0,1,1,2,21.22
+123,Placement Report_modified_ 2020-21.csv,125,Siemens,2020 -21,7.95,All (UG and PG),5,5,0,0,0,0,2,7,0,7,9
+124,Placement Report_modified_ 2020-21.csv,127,Swasthya AI,2020 -21,6.82,All (UG),0,0,0,0,0,0,0,0,0,0,6
+125,Placement Report_modified_ 2020-21.csv,6,Accenture,2020 -21,7.38,All (UG),6,5,1,11,7,4,6,10,13,23,4.5
+126,Placement Report_modified_ 2020-21.csv,7,Acquia,2020 -21,6.82,CE & IT (UG),3,1,2,0,0,0,6,5,4,9,8.38
+127,Placement Report_modified_ 2020-21.csv,9,Agiliad,2020 -21,7.38,All (UG),3,2,1,7,5,2,2,5,7,12,4
+128,Placement Report_modified_ 2020-21.csv,8,ADP,2020 -21,6.82,All (UG - Female),1,1,0,0,0,0,0,0,1,1,5
+129,Placement Report_modified_ 2020-21.csv,11,Aligned Automation,2020 -21,6.82,All (UG),0,0,0,2,2,0,0,2,0,2,3.75
+130,Placement Report_modified_ 2020-21.csv,10,AlefEdge,2020 -21,6.82,All (UG),5,4,1,1,1,0,1,6,1,7,7.04
+131,Placement Report_modified_ 2020-21.csv,14,Amura,2020 -21,6.82,All (UG),0,0,0,1,1,0,1,1,1,2,4.5
+132,Placement Report_modified_ 2020-21.csv,13,Amdocs,2020 -21,6.82,All (UG and PG),6,1,5,19,16,3,5,20,10,30,5
+133,Placement Report_modified_ 2020-21.csv,12,Altizon Inc.,2020 -21,7,All (UG),2,1,1,0,0,0,1,2,1,3,8.25
+134,Placement Report_modified_ 2020-21.csv,18,Atos,2020 -21,6.82,All (UG),1,1,0,3,2,1,2,3,3,6,3.1
+135,Placement Report_modified_ 2020-21.csv,17,Arista Networks,2020 -21,8,All (UG),1,1,0,0,0,0,1,2,0,2,15.5
+136,Placement Report_modified_ 2020-21.csv,16,Apisero,2020 -21,6.5,All (UG and PG),3,3,0,7,5,2,2,9,3,12,5.1
+137,Placement Report_modified_ 2020-21.csv,15,Anchanto,2020 -21,6,CE & IT (UG),0,0,0,0,0,0,0,0,0,0,7.5
+138,Placement Report_modified_ 2020-21.csv,23,bizAmica Software,2020 -21,7.5,CE & IT (UG),0,0,0,0,0,0,2,2,0,2,6
+139,Placement Report_modified_ 2020-21.csv,22,Barclays,2020 -21,6.82,CE & IT (UG),14,13,1,0,0,0,19,18,15,33,8
+140,Placement Report_modified_ 2020-21.csv,21,Barclays,2020 -21,PPO,CE & IT (UG),1,0,1,0,0,0,0,1,0,1,8
+141,Placement Report_modified_ 2020-21.csv,20,Avaya,2020 -21,7.95,All (UG),4,4,0,0,0,0,1,4,1,5,12.07
+142,Placement Report_modified_ 2020-21.csv,19,Avalara Technologies,2020 -21,NC,CE & IT (UG - Female),0,0,0,0,0,0,0,0,0,0,22
+143,Placement Report_modified_ 2020-21.csv,29,Cloudwerx,2020 -21,7.5,All (UG),0,0,0,2,2,0,0,1,1,2,5
+144,Placement Report_modified_ 2020-21.csv,28,Ciena,2020 -21,7.95,CE & IT (UG),0,0,0,0,0,0,0,0,0,0,10.5
+145,Placement Report_modified_ 2020-21.csv,27,Centiro,2020 -21,7,CE & IT (UG),0,0,0,0,0,0,0,0,0,0,3.8
+146,Placement Report_modified_ 2020-21.csv,26,Capgemini,2020 -21,6.82,All (UG),0,0,0,6,1,5,0,5,1,6,3.8
+147,Placement Report_modified_ 2020-21.csv,25,CakeSoft Technologies,2020 -21,8,All (UG),5,4,1,0,0,0,4,8,1,9,12
+148,Placement Report_modified_ 2020-21.csv,24,BUDDI.AI,2020 -21,NC,All (UG),0,0,0,0,0,0,2,2,0,2,7
+149,Placement Report_modified_ 2020-21.csv,36,Deqode,2020 -21,NC,CE & IT (UG),0,0,0,0,0,0,2,2,0,2,6.5
+150,Placement Report_modified_ 2020-21.csv,35,Delhivery,2020 -21,6.5,All (UG) and CE (PG),0,0,0,0,0,0,0,0,0,0,8
+151,Placement Report_modified_ 2020-21.csv,34,CrowdStrike,2020 -21,7.95,CE & IT (UG and PG),1,1,0,0,0,0,0,1,0,1,12.65
+152,Placement Report_modified_ 2020-21.csv,33,Cognizant,2020 -21,6.82,All (UG and PG),6,4,2,14,10,4,6,19,7,26,4.01
+153,Placement Report_modified_ 2020-21.csv,32,Cognizant,2020 -21,6.82,All (UG and PG),0,0,0,0,0,0,1,1,0,1,6.75
+154,Placement Report_modified_ 2020-21.csv,31,Codevita Live,2020 -21,6.82,All (UG and PG),0,0,0,1,1,0,0,0,1,1,14.4
+155,Placement Report_modified_ 2020-21.csv,30,CLSA,2020 -21,6.82,CE & IT (UG),0,0,0,0,0,0,1,0,1,1,8
+156,Placement Report_modified_ 2020-21.csv,45,eQ Technologic,2020 -21,6.82,All (UG),5,5,0,0,0,0,7,10,2,12,8.5
+157,Placement Report_modified_ 2020-21.csv,44,EPIKInDiFi,2020 -21,8,All (UG),0,0,0,0,0,0,0,0,0,0,12.75
+158,Placement Report_modified_ 2020-21.csv,43,EnthrallTech,2020 -21,6.82,All (UG),3,3,0,0,0,0,0,3,0,3,7
+159,Placement Report_modified_ 2020-21.csv,42,Endurance International,2020 -21,6.82,All (UG),0,0,0,0,0,0,1,0,1,1,3.72
+160,Placement Report_modified_ 2020-21.csv,41,ElasticRun,2020 -21,6.82,CE & IT (UG),1,1,0,0,0,0,1,2,0,2,6
+161,Placement Report_modified_ 2020-21.csv,40,ElasticRun,2020 -21,6.82,CE & IT (UG),0,0,0,0,0,0,1,1,0,1,8
+162,Placement Report_modified_ 2020-21.csv,39,e-Zest,2020 -21,6.59,All (UG),0,0,0,0,0,0,1,0,1,1,3.2
+163,Placement Report_modified_ 2020-21.csv,38,Druva,2020 -21,6.82,CE & IT (UG),0,0,0,0,0,0,0,0,0,0,12
+164,Placement Report_modified_ 2020-21.csv,37,Deutsche Bank,2020 -21,7.95,All (UG),10,7,3,0,0,0,3,9,4,13,19.63
+165,Placement Report_modified_ 2020-21.csv,57,Growisto,2020 -21,NC,All (UG),0,0,0,0,0,0,0,0,0,0,6.5
+166,Placement Report_modified_ 2020-21.csv,56,Goldman Sachs,2020 -21,PPO,All (UG and PG),3,2,1,0,0,0,0,1,2,3,23
+167,Placement Report_modified_ 2020-21.csv,55,Flo Group,2020 -21,6.82,All (UG and PG),0,0,0,4,1,3,0,2,2,4,3.5
+168,Placement Report_modified_ 2020-21.csv,54,FlexTrade,2020 -21,NC,CE & IT (UG and PG),2,2,0,0,0,0,0,2,0,2,8.5
+169,Placement Report_modified_ 2020-21.csv,53,FinIQ,2020 -21,NC,All (UG),1,1,0,0,0,0,0,1,0,1,20
+170,Placement Report_modified_ 2020-21.csv,52,FinIQ,2020 -21,NC,All (UG),4,4,0,0,0,0,3,3,4,7,10
+171,Placement Report_modified_ 2020-21.csv,51,Fabric Inc,2020 -21,7.5,All (UG),0,0,0,0,0,0,0,0,0,0,8.5
+172,Placement Report_modified_ 2020-21.csv,50,Extramarks Education,2020 -21,NC,All (UG and PG),0,0,0,0,0,0,0,0,0,0,11.5
+173,Placement Report_modified_ 2020-21.csv,49,Eumentis Cloud,2020 -21,6.82,All (UG),0,0,0,1,1,0,1,1,1,2,4.07
+174,Placement Report_modified_ 2020-21.csv,48,Espressif Systems,2020 -21,NC,All (UG and PG),1,1,0,0,0,0,2,1,2,3,12
+175,Placement Report_modified_ 2020-21.csv,47,Ernst & Young,2020 -21,7.95,All (UG),0,0,0,0,0,0,0,0,0,0,4.37
+176,Placement Report_modified_ 2020-21.csv,46,eQ Technologic,2020 -21,6.82,All (UG),0,0,0,4,4,0,0,4,0,4,7.5
+177,Placement Report_modified_ 2020-21.csv,72,iQ Digital,2020 -21,6.82,All (UG),0,0,0,0,0,0,1,0,1,1,4
+178,Placement Report_modified_ 2020-21.csv,71,ION Group,2020 -21,6.82,All (UG) and CE & IT (PG),2,2,0,1,1,0,2,3,2,5,12
+179,Placement Report_modified_ 2020-21.csv,70,IntegriChain Inc.,2020 -21,6.82,All (UG),0,0,0,0,0,0,0,0,0,0,3
+180,Placement Report_modified_ 2020-21.csv,69,Infosys,2020 -21,6.82,All (UG and PG),2,1,1,2,2,0,0,1,3,4,3.5
+181,Placement Report_modified_ 2020-21.csv,68,Infogen Labs,2020 -21,6.82,CE & IT (UG),5,5,0,0,0,0,0,3,2,5,5
+182,Placement Report_modified_ 2020-21.csv,67,IGT Solutions,2020 -21,7.38,CE & IT (UG),0,0,0,0,0,0,0,0,0,0,4
+183,Placement Report_modified_ 2020-21.csv,66,IDFC FIRST Bank,2020 -21,6.82,CE (UG),1,1,0,0,0,0,,1,0,1,15
+184,Placement Report_modified_ 2020-21.csv,65,IDeaS A SAS,2020 -21,8,CE & IT (UG),2,2,0,0,0,0,0,2,0,2,9
+185,Placement Report_modified_ 2020-21.csv,64,Icertis,2020 -21,7.38,CE & IT (UG),5,5,0,0,0,0,1,2,4,6,8
+186,Placement Report_modified_ 2020-21.csv,63,HSBC,2020 -21,6.82,All (UG),15,11,4,9,7,2,9,26,7,33,7
+187,Placement Report_modified_ 2020-21.csv,62,Hitachi Vantara,2020 -21,7.95,CE & IT (UG and PG),0,0,0,0,0,0,0,0,0,0,6.5
+188,Placement Report_modified_ 2020-21.csv,61,Hexaware Technologies,2020 -21,6.82,All (UG),2,0,2,1,1,0,0,2,1,3,5
+189,Placement Report_modified_ 2020-21.csv,60,Hexaview Technologies,2020 -21,NC,CE & IT (UG),0,0,0,0,0,0,0,0,0,0,9
+190,Placement Report_modified_ 2020-21.csv,59,Helpshift Technologies,2020 -21,NC,All (UG),4,3,1,1,1,0,0,3,2,5,8
+191,Placement Report_modified_ 2020-21.csv,58,HCL Technologies,2020 -21,8.52,All (UG),0,0,0,0,0,0,0,0,0,0,3.5
+192,Placement Report_modified_ 2020-21.csv,91,NICE Systems,2020 -21,6.82,CE & IT (UG),7,7,0,0,0,0,5,8,4,12,7.25
+193,Placement Report_modified_ 2020-21.csv,4,64squares,2020 -21,6.82,All (UG),0,0,0,1,1,0,0,0,1,1,7.5
+194,Placement Report_modified_ 2020-21.csv,90,Moxie,2020 -21,7,CE & IT (UG),0,0,0,0,0,0,0,0,0,0,9.6
+195,Placement Report_modified_ 2020-21.csv,142,Veritas Technologies,2020 -21,6.82,CE & IT (UG),1,1,0,0,0,0,1,1,1,2,11.34
+196,Placement Report_modified_ 2020-21.csv,89,miniOrange,2020 -21,6.82,All (UG and PG),9,7,2,5,5,0,6,18,2,20,6
+197,Placement Report_modified_ 2020-21.csv,88,Mindstix Software Labs,2020 -21,NC,All (UG and PG),1,1,0,0,0,0,0,1,0,1,5.5
+198,Placement Report_modified_ 2020-21.csv,87,Mindstix Software Labs,2020 -21,NC,All (UG and PG),1,0,1,0,0,0,1,1,1,2,6.3
+199,Placement Report_modified_ 2020-21.csv,86,Medly Pharmacy,2020 -21,6.82,CE & IT (UG and PG),2,1,1,0,0,0,1,3,0,3,7
+200,Placement Report_modified_ 2020-21.csv,85,McKinley & Rice,2020 -21,NC,All (UG and PG),0,0,0,0,0,0,0,0,0,0,5
+201,Placement Report_modified_ 2020-21.csv,84,Mastercard,2020 -21,7.5,All (UG),7,5,2,1,0,1,6,4,10,14,9.69
+202,Placement Report_modified_ 2020-21.csv,83,L & T Infotech,2020 -21,6.82,All (UG),0,0,0,0,0,0,1,1,0,1,10
+203,Placement Report_modified_ 2020-21.csv,82,L & T Infotech,2020 -21,6.82,All (UG),6,6,0,14,9,5,2,14,8,22,5
+204,Placement Report_modified_ 2020-21.csv,81,L & T Infotech,2020 -21,6.82,All (UG),1,1,0,4,4,0,0,5,0,5,6.5
+205,Placement Report_modified_ 2020-21.csv,80,L & T Infotech,2020 -21,6.82,All (UG),0,0,0,2,2,0,1,3,0,3,8
+206,Placement Report_modified_ 2020-21.csv,146,Winjit Technologies,2020 -21,6.82,CE & IT (UG),0,0,0,0,0,0,1,0,1,1,4.5
+207,Placement Report_modified_ 2020-21.csv,147,Yardi,2020 -21,6.59,All (UG),7,4,3,11,9,2,7,10,15,25,4.5
+208,Placement Report_modified_ 2020-21.csv,148,Zocdoc,2020 -21,6.82,All (UG),0,0,0,1,1,0,0,1,0,1,4.8
+209,Placement Report_modified_ 2020-21.csv,149,ZS Associates,2020 -21,PPO,All (UG),1,0,1,2,2,0,2,2,3,5,8.93
+210,Placement Report_modified_ 2020-21.csv,150,ZS Associates,2020 -21,6.5,All (UG),14,9,5,6,5,1,4,16,8,24,8.93
+211,Placement Report_modified_ 2020-21.csv,79,Kylas,2020 -21,6.82,All (UG and PG),2,1,1,0,0,0,2,3,1,4,13.11
+212,Placement Report_modified_ 2020-21.csv,78,Kylas,2020 -21,6.82,All (UG and PG),0,0,0,0,0,0,0,0,0,0,4
+213,Placement Report_modified_ 2020-21.csv,77,K12 Techno Services,2020 -21,NC,All (UG and PG),0,0,0,5,5,0,1,5,2,7,6
+214,Placement Report_modified_ 2020-21.csv,76,Jombay,2020 -21,NC,CE & IT (UG),1,1,0,0,0,0,0,1,0,1,10
+215,Placement Report_modified_ 2020-21.csv,75,JISA Softech,2020 -21,NC,All (UG),0,0,0,1,1,0,0,1,0,1,4
+216,Placement Report_modified_ 2020-21.csv,74,Jio,2020 -21,6.82,All (UG),1,1,0,0,0,0,0,1,0,1,5
+217,Placement Report_modified_ 2020-21.csv,73,Jaro Education,2020 -21,NC,All (UG),0,0,0,0,0,0,0,0,0,0,6.6
+218,Placement Report_modified_ 2020-21.csv,115,Ryussi Technologies,2020 -21,6.82,CE & IT (UG),1,1,0,0,0,0,0,1,0,1,7.5
+219,Placement Report_modified_ 2020-21.csv,114,Rudder Analytics,2020 -21,6.25,All (UG) and CE (PG),0,0,0,0,0,0,0,0,0,0,4
+220,Placement Report_modified_ 2020-21.csv,113,rtCamp,2020 -21,NC,All (UG and PG),0,0,0,0,0,0,0,0,0,0,12
+221,Placement Report_modified_ 2020-21.csv,112,RIA Advisory,2020 -21,7.38,All (UG),3,2,1,2,2,0,1,4,2,6,5.5
+222,Placement Report_modified_ 2020-21.csv,111,Red Panda,2020 -21,6.82,All (UG),1,1,0,1,1,0,1,3,0,3,5
+223,Placement Report_modified_ 2020-21.csv,110,RBL Bank,2020 -21,6.82,CE & IT (UG),4,2,2,0,0,0,0,1,3,4,9
+224,Placement Report_modified_ 2020-21.csv,109,Rakuten,2020 -21,7.5,All (UG and PG),0,0,0,0,0,0,0,0,0,0,36.14
+225,Placement Report_modified_ 2020-21.csv,108,RackWare Technologies,2020 -21,8.5,All (UG),6,6,0,0,0,0,0,6,0,6,9
+226,Placement Report_modified_ 2020-21.csv,107,Quantiphi,2020 -21,7.38,All (UG) & CE (PG),4,4,0,0,0,0,5,7,2,9,8.5
+227,Placement Report_modified_ 2020-21.csv,106,Purplle.com,2020 -21,NC,All (UG),0,0,0,0,0,0,0,0,0,0,6.5
+228,Placement Report_modified_ 2020-21.csv,105,PubMatic,2020 -21,7.38,CE & IT (UG and PG),1,1,0,0,0,0,0,1,0,1,9.52
+229,Placement Report_modified_ 2020-21.csv,104,PublicisSapient,2020 -21,7.82,All (UG),0,0,0,3,3,0,0,2,1,3,6.5
+230,Placement Report_modified_ 2020-21.csv,103,PTC Software,2020 -21,NC,All (UG and PG),1,1,0,1,0,1,1,1,2,3,6
+231,Placement Report_modified_ 2020-21.csv,102,Product Dossier,2020 -21,6.82,CE & IT (UG),2,1,1,0,0,0,4,3,3,6,3.5
+232,Placement Report_modified_ 2020-21.csv,101,Platform9 Systems,2020 -21,7,All (UG),2,2,0,0,0,0,3,5,0,5,10
+233,Placement Report_modified_ 2020-21.csv,100,PlanetSpark,2020 -21,NC,All (UG),0,0,0,2,1,1,1,2,1,3,6.5
+234,Placement Report_modified_ 2020-21.csv,99,PhonePe,2020 -21,7.5,All (UG and PG),1,1,0,0,0,0,0,0,1,1,30.5
+235,Placement Report_modified_ 2020-21.csv,98,PharmEasy,2020 -21,6.82,CE & IT (UG),0,0,0,0,0,0,0,0,0,0,11
+236,Placement Report_modified_ 2020-21.csv,97,Persistent,2020 -21,6.82,E&TC (UG),0,0,0,10,7,3,,6,4,10,4.51
+237,Placement Report_modified_ 2020-21.csv,96,Persistent,2020 -21,6.82,CE & IT (UG),1,1,0,0,0,0,3,3,1,4,4.51
+238,Placement Report_modified_ 2020-21.csv,95,Persistent,2020 -21,PPO,CE & IT (UG),1,1,0,0,0,0,0,1,0,1,6.41
+239,Placement Report_modified_ 2020-21.csv,94,Persistent,2020 -21,6.82,CE & IT (UG),2,2,0,0,0,0,2,4,0,4,6.41
+240,Placement Report_modified_ 2020-21.csv,93,oneXtel,2020 -21,7,CE & IT (UG),1,0,1,0,0,0,1,1,1,2,5.5
+241,Placement Report_modified_ 2020-21.csv,92,NTT Data,2020 -21,6.82,CE & IT (UG),1,1,0,0,0,0,0,0,1,1,3.5
+242,Placement Report_modified_ 2020-21.csv,145,Wednesday Solutions,2020 -21,NC,CE & IT (UG and PG),1,1,0,0,0,0,2,3,0,3,6
+243,Placement Report_modified_ 2020-21.csv,144,Vodafone,2020 -21,6.82,All (UG),0,0,0,8,6,2,2,6,4,10,4.25
+244,Placement Report_modified_ 2020-21.csv,116,Sagitec,2020 -21,6.82,CE & IT (UG),0,0,0,0,0,0,2,1,1,2,4
+245,Placement Report_modified_ 2020-21.csv,117,Salesforce,2020 -21,7.95,CE & IT (UG - Female),2,1,1,0,0,0,0,0,2,2,8.57
+246,Placement Report_modified_ 2020-21.csv,118,SAS,2020 -21,6.82,CE & IT (UG),0,0,0,0,0,0,1,1,0,1,7.38
+247,Placement Report_modified_ 2020-21.csv,119,Schlumberger,2020 -21,6.82,All (UG),0,0,0,1,0,1,1,0,2,2,8.8
+248,Placement Report_modified_ 2020-21.csv,120,Screen Magic,2020 -21,6.82,CE & IT (UG and PG),2,2,0,0,0,0,2,1,3,4,7.3
+249,Placement Report_modified_ 2020-21.csv,121,SE2,2020 -21,6.82,All (UG),1,0,1,0,0,0,3,2,2,4,6.5
+250,Placement Report_modified_ 2020-21.csv,122,Sedemac Mechatronics,2020 -21,7,E&TC (UG),0,0,0,1,1,0,,1,0,1,9
+251,Placement Report_modified_ 2020-21.csv,123,Sell.do,2020 -21,6.82,All (UG and PG),0,0,0,0,0,0,0,0,0,0,4
+252,Placement Report_modified_ 2020-21.csv,124,Sell.do,2020 -21,6.82,CE & IT (UG),3,2,1,0,0,0,0,2,1,3,7.87
+253,Placement Report_modified_ 2020-21.csv,143,Vertical Fox,2020 -21,6.82,CE & IT (UG),1,1,0,0,0,0,1,2,0,2,6
+254,Placement Report_modified_ 2020-21.csv,126,Sophos,2020 -21,6.82,All (UG),3,3,0,2,1,1,3,6,2,8,6.3
+255,Placement Report_modified_ 2020-21.csv,128,Symbl.ai,2020 -21,6.82,All (UG),0,0,0,1,0,1,0,1,0,1,12
+256,Placement Report_modified_ 2020-21.csv,129,Talentio,2020 -21,5.68,All (UG and PG),0,0,0,0,0,0,0,0,0,0,3
+257,Placement Report_modified_ 2020-21.csv,130,TCS Digital,2020 -21,7.95,All (UG and PG),12,11,1,12,10,2,5,21,8,29,7
+258,Placement Report_modified_ 2020-21.csv,131,TCS Ninja,2020 -21,7.95,All (UG and PG),1,1,0,5,3,2,1,3,4,7,3.36
+259,Placement Report_modified_ 2020-21.csv,132,TechVerito,2020 -21,7.38,CE & IT (UG),0,0,0,0,0,0,0,0,0,0,6
+260,Placement Report_modified_ 2020-21.csv,133,TIBCO,2020 -21,6.82,CE & IT (UG),1,0,1,0,0,0,1,1,1,2,7
+261,Placement Report_modified_ 2020-21.csv,134,Tracelink,2020 -21,7,CE & IT (UG),5,4,1,0,0,0,0,4,1,5,9
+262,Placement Report_modified_ 2020-21.csv,135,Trilogy Innovations,2020 -21,NC,All (UG),0,0,0,0,0,0,0,0,0,0,31
+263,Placement Report_modified_ 2020-21.csv,136,UBS,2020 -21,PPO,All (UG),2,2,0,0,0,0,1,3,0,3,10
+264,Placement Report_modified_ 2020-21.csv,137,UBS,2020 -21,7.95,All (UG),3,2,1,0,0,0,0,2,1,3,10
+265,Placement Report_modified_ 2020-21.csv,138,udChalo,2020 -21,6.5,All (UG),2,2,0,0,0,0,2,4,0,4,6.35
+266,Placement Report_modified_ 2020-21.csv,139,Unschool,2020 -21,NC,All (UG and PG),0,0,0,0,0,0,0,0,0,0,5
+267,Placement Report_modified_ 2020-21.csv,140,Uolo.com,2020 -21,6.82,CE & IT (UG),0,0,0,0,0,0,0,0,0,0,12
+268,Placement Report_modified_ 2020-21.csv,5,Accenture,2020 -21,7.38,All (UG),0,0,0,2,2,0,0,1,1,2,6.5
+269,Placement-Report_modified_2021-22.csv,94,64Squares,2021 -22,6.82,All (UG),0,0,0,1,1,0,0,1,0,1,7.5
+270,Placement-Report_modified_2021-22.csv,69,miniOrange,2021 -22,NC,All (UG and PG),0,0,0,1,1,0,1,1,1,2,12
+271,Placement-Report_modified_2021-22.csv,95,Credit Suisse,2021 -22,PPO,CE & IT (UG),2,1,1,0,0,0,3,3,2,5,13.59
+272,Placement-Report_modified_2021-22.csv,33,PhonePe,2021 -22,7.5,All (UG and PG),3,3,0,0,0,0,0,3,0,3,30.5
+273,Placement-Report_modified_2021-22.csv,32,Toshiba,2021 -22,7.95,IT(UG),0,0,0,0,0,0,3,2,1,3,9
+274,Placement-Report_modified_2021-22.csv,31,Barclays,2021 -22,6.82,CE & IT (UG),17,11,6,0,0,0,15,23,9,32,12.73
+275,Placement-Report_modified_2021-22.csv,30,NICE Systems,2021 -22,6.5,All (UG),4,3,1,9,8,1,7,13,7,20,7.5
+276,Placement-Report_modified_2021-22.csv,29,Veritas,2021 -22,6.82,CE & IT (UG),2,1,1,0,0,0,0,2,0,2,11.75
+277,Placement-Report_modified_2021-22.csv,28,Pubmatic,2021 -22,7.38,CE & IT (UG & PG),1,1,0,0,0,0,0,1,0,1,11.62
+278,Placement-Report_modified_2021-22.csv,27,Adobe,2021 -22,PPO,All (UG),1,1,0,0,0,0,0,0,1,1,40.92
+279,Placement-Report_modified_2021-22.csv,26,Tavisca Solutions,2021 -22,7.38,CE & IT (UG),4,2,2,0,0,0,2,5,1,6,14
+280,Placement-Report_modified_2021-22.csv,25,EQ Technologic,2021 -22,6.82,E&TC (UG),0,0,0,5,3,2,,4,1,5,10.22
+281,Placement-Report_modified_2021-22.csv,24,EQ Technologic,2021 -22,6.82,All (UG),6,5,1,1,1,0,4,9,2,11,11.89
+282,Placement-Report_modified_2021-22.csv,23,Platform 9,2021 -22,6.82,All (UG),2,1,1,0,0,0,1,2,1,3,14
+283,Placement-Report_modified_2021-22.csv,22,Mastercard,2021 -22,7.5,All (UG),2,2,0,3,3,0,6,6,5,11,9.69
+284,Placement-Report_modified_2021-22.csv,21,TCS Digital,2021 -22,7.95,All (UG and PG),1,1,0,5,4,1,1,4,3,7,7.01
+285,Placement-Report_modified_2021-22.csv,20,Persistent,2021 -22,6.82,All (UG),11,7,4,3,2,1,16,17,13,30,7.5
+286,Placement-Report_modified_2021-22.csv,19,Persistent,2021 -22,6.82,All (UG),3,1,2,0,0,0,3,5,1,6,9
+287,Placement-Report_modified_2021-22.csv,18,Persistent,2021 -22,6.82,CE & IT (UG),0,0,0,0,0,0,0,0,0,0,12.41
+288,Placement-Report_modified_2021-22.csv,17,BMC Software,2021 -22,6.82,All (UG),3,3,0,0,0,0,2,5,0,5,12.5
+289,Placement-Report_modified_2021-22.csv,16,Arista Networks,2021 -22,8,All (UG),3,3,0,0,0,0,1,4,0,4,21.5
+290,Placement-Report_modified_2021-22.csv,15,Arista Networks,2021 -22,PPO,All (UG),0,0,0,0,0,0,0,0,0,0,21.5
+291,Placement-Report_modified_2021-22.csv,14,Schlumberger,2021 -22,PPO,All (UG),2,0,2,2,1,1,1,0,5,5,9.58
+292,Placement-Report_modified_2021-22.csv,13,UBS,2021 -22,7,All (UG),6,5,1,0,0,0,6,10,4,14,10
+293,Placement-Report_modified_2021-22.csv,12,UBS,2021 -22,PPO,All (UG),3,2,1,0,0,0,0,3,0,3,10
+294,Placement-Report_modified_2021-22.csv,11,Siemens,2021 -22,7.5,CE & IT (UG & PG),6,5,1,3,3,0,7,8,8,16,11
+295,Placement-Report_modified_2021-22.csv,10,FinIQ,2021 -22,NC,CE & IT (UG),2,2,0,0,0,0,2,2,2,4,16.3
+296,Placement-Report_modified_2021-22.csv,9,Avaya,2021 -22,7.5,All (UG),6,4,2,0,0,0,6,10,2,12,12.07
+297,Placement-Report_modified_2021-22.csv,8,ZS Associates,2021 -22,6.5,All (UG),4,3,1,6,5,1,7,7,10,17,12.5
+298,Placement-Report_modified_2021-22.csv,7,ZS Associates,2021 -22,PPO,All (UG),0,0,0,1,1,0,0,1,0,1,12.5
+299,Placement-Report_modified_2021-22.csv,6,Productdossier,2021 -22,,All(UG),0,0,0,1,1,0,0,1,0,1,3
+300,Placement-Report_modified_2021-22.csv,5,ITC Infotech,2021 -22,6.82,All(UG),1,1,0,2,1,1,0,2,1,3,4.5
+301,Placement-Report_modified_2021-22.csv,4,Reliance,2021 -22,6.82,All(UG),0,0,0,0,0,0,0,0,0,0,4.25
+302,Placement-Report_modified_2021-22.csv,3,RBL Bank,2021 -22,NC,All (UG),1,1,0,4,4,0,3,2,6,8,9
+303,Placement-Report_modified_2021-22.csv,2,RBL Bank,2021 -22,PPO,CE & IT (UG),1,1,0,0,0,0,0,0,1,1,9
+304,Placement-Report_modified_2021-22.csv,1,Lowe's India,2021 -22,PPO,All (UG),0,0,0,1,1,0,0,0,1,1,19.34
+305,Placement-Report_modified_2021-22.csv,80,Berkadia,2021 -22,6.82,CE & IT (UG),3,1,2,0,0,0,0,2,1,3,9
+306,Placement-Report_modified_2021-22.csv,79,Innovaccer,2021 -22,NC,All (UG and PG),0,0,0,0,0,0,1,1,0,1,8
+307,Placement-Report_modified_2021-22.csv,78,Emerson,2021 -22,6.82,All (UG),0,0,0,3,3,0,3,4,2,6,7.19
+308,Placement-Report_modified_2021-22.csv,77,Helpshift,2021 -22,6,All (UG and PG),0,0,0,2,1,1,0,1,1,2,8.5
+309,Placement-Report_modified_2021-22.csv,76,MetaMorphoSys,2021 -22,6.82,All (UG),0,0,0,0,0,0,1,1,0,1,6.5
+310,Placement-Report_modified_2021-22.csv,75,HDFC Bank,2021 -22,5.68,All (UG),7,6,1,13,13,0,4,16,8,24,9.5
+311,Placement-Report_modified_2021-22.csv,74,Tracelink,2021 -22,7.5,All (UG),0,0,0,3,2,1,2,5,0,5,11.5
+312,Placement-Report_modified_2021-22.csv,73,Espressif Systems,2021 -22,8,All (UG and PG),5,5,0,1,1,0,0,6,0,6,18.9
+313,Placement-Report_modified_2021-22.csv,72,HSBC,2021 -22,6,All (UG),0,0,0,14,8,6,0,7,7,14,9
+314,Placement-Report_modified_2021-22.csv,71,HashedIn,2021 -22,6,All (UG),0,0,0,4,2,2,0,4,0,4,8
+315,Placement-Report_modified_2021-22.csv,81,Turtlemint,2021 -22,7,All (UG),2,2,0,1,1,0,0,2,1,3,19
+316,Placement-Report_modified_2021-22.csv,67,miniOrange,2021 -22,NC,All (UG and PG),0,0,0,3,3,0,1,4,0,4,10
+317,Placement-Report_modified_2021-22.csv,66,miniOrange,2021 -22,NC,All (UG and PG),1,0,1,6,5,1,1,6,2,8,9
+318,Placement-Report_modified_2021-22.csv,65,miniOrange,2021 -22,NC,All (UG and PG),2,1,1,7,6,1,1,8,2,10,8
+319,Placement-Report_modified_2021-22.csv,64,Fiserv,2021 -22,6.82,All (UG),2,2,0,0,0,0,3,2,3,5,8.85
+320,Placement-Report_modified_2021-22.csv,63,Sophos Technologies,2021 -22,6.82,All (UG),0,0,0,1,0,1,0,1,0,1,7.87
+321,Placement-Report_modified_2021-22.csv,62,Celebal Technologies,2021 -22,6.82,All (UG and PG),1,0,1,0,0,0,0,1,0,1,8
+322,Placement-Report_modified_2021-22.csv,61,Celebal Technologies,2021 -22,6.82,All (UG and PG),0,0,0,2,2,0,0,2,0,2,5
+323,Placement-Report_modified_2021-22.csv,60,Mindstix,2021 -22,NC,All (UG and PG),0,0,0,1,0,1,0,1,0,1,5.3
+324,Placement-Report_modified_2021-22.csv,59,Trilogy Innovations,2021 -22,NC,All (UG and PG),0,0,0,0,0,0,1,1,0,1,36.5
+325,Placement-Report_modified_2021-22.csv,58,Publicis Sapient,2021 -22,6.5,All (UG),0,0,0,8,5,3,0,4,4,8,6.5
+326,Placement-Report_modified_2021-22.csv,57,Zensar,2021 -22,6.82,All (UG),2,2,0,10,8,2,1,9,4,13,7
+327,Placement-Report_modified_2021-22.csv,56,Accenture,2021 -22,NC,All (UG and PG),2,2,0,1,1,0,0,3,0,3,6.5
+328,Placement-Report_modified_2021-22.csv,55,RIA Advisory,2021 -22,7.5,All (UG),0,0,0,4,2,2,1,2,3,5,5.5
+329,Placement-Report_modified_2021-22.csv,54,Ittiam,2021 -22,7.5,All (UG and PG),0,0,0,2,2,0,1,2,1,3,10.4
+330,Placement-Report_modified_2021-22.csv,53,IDeaS,2021 -22,8,CE & IT (UG),5,4,1,0,0,0,0,4,1,5,10.17
+331,Placement-Report_modified_2021-22.csv,52,Deloitte,2021 -22,6.5,All (UG),3,2,1,2,2,0,2,4,3,7,7.6
+332,Placement-Report_modified_2021-22.csv,51,Amdocs,2021 -22,6.82,All (UG),2,1,1,24,16,8,3,15,14,29,6
+333,Placement-Report_modified_2021-22.csv,50,Ubisoft,2021 -22,NC,All (UG),0,0,0,3,0,3,0,1,2,3,7.5
+334,Placement-Report_modified_2021-22.csv,49,Sell.do,2021 -22,8,CE & IT (UG),0,0,0,0,0,0,1,0,1,1,7.8
+335,Placement-Report_modified_2021-22.csv,48,Sell.do,2021 -22,8,CE & IT (UG),3,3,0,0,0,0,2,4,1,5,13.26
+336,Placement-Report_modified_2021-22.csv,47,Deutsche Bank,2021 -22,7.95,All (UG),6,6,0,0,0,0,1,6,1,7,19.63
+337,Placement-Report_modified_2021-22.csv,46,Deutsche Bank,2021 -22,PPO,All (UG),2,2,0,0,0,0,1,2,1,3,19.63
+338,Placement-Report_modified_2021-22.csv,45,Interactive Brokers,2021 -22,7.4,All (UG and PG),1,0,1,0,0,0,0,1,0,1,9.35
+339,Placement-Report_modified_2021-22.csv,44,Infogen Labs,2021 -22,6,CE & IT (UG),6,6,0,0,0,0,5,7,4,11,8
+340,Placement-Report_modified_2021-22.csv,43,LTI,2021 -22,6.82,All (UG),0,0,0,1,1,0,0,1,0,1,8
+341,Placement-Report_modified_2021-22.csv,42,LTI,2021 -22,6.82,All (UG),0,0,0,2,2,0,0,0,2,2,6.5
+342,Placement-Report_modified_2021-22.csv,41,LTI,2021 -22,6.82,All (UG),0,0,0,2,1,1,0,2,0,2,5
+343,Placement-Report_modified_2021-22.csv,40,OFSS,2021 -22,7,All (UG and PG),3,3,0,10,5,5,1,11,3,14,6.56
+344,Placement-Report_modified_2021-22.csv,39,Elastic Run,2021 -22,8,CE & IT (UG & PG),1,1,0,0,0,0,1,1,1,2,8
+345,Placement-Report_modified_2021-22.csv,38,Druva,2021 -22,7,CE & IT (UG),5,4,1,0,0,0,5,8,2,10,15
+346,Placement-Report_modified_2021-22.csv,37,Acquia,2021 -22,6.82,CE & IT (UG),2,1,1,0,0,0,3,1,4,5,8
+347,Placement-Report_modified_2021-22.csv,36,Paytm Money,2021 -22,7.95,CE & IT (UG & PG),9,7,2,0,0,0,2,10,1,11,16
+348,Placement-Report_modified_2021-22.csv,35,Aspect Ratio,2021 -22,NC,All (UG),1,1,0,1,1,0,0,2,0,2,10
+349,Placement-Report_modified_2021-22.csv,34,ION,2021 -22,6.82,All (UG),6,4,2,2,2,0,2,7,3,10,14.1
+350,Placement-Report_modified_2021-22.csv,82,Veras Retail,2021 -22,6.82,All (UG),0,0,0,1,1,0,0,1,0,1,7
+351,Placement-Report_modified_2021-22.csv,83,Lentra AI,2021 -22,6.82,All (UG),1,1,0,2,1,1,0,3,0,3,7.5
+352,Placement-Report_modified_2021-22.csv,84,Bajaj Finance,2021 -22,NC,All (UG),40,33,7,20,15,5,23,68,15,83,12
+353,Placement-Report_modified_2021-22.csv,85,CLSA,2021 -22,6.82,CE & IT (UG),0,0,0,0,0,0,1,1,0,1,8
+354,Placement-Report_modified_2021-22.csv,86,Ryussi Technologies,2021 -22,7,CE & IT (UG),0,0,0,0,0,0,2,2,0,2,7.5
+355,Placement-Report_modified_2021-22.csv,87,Honeywell,2021 -22,6.82,All (UG),1,1,0,1,0,1,1,1,2,3,5.5
+356,Placement-Report_modified_2021-22.csv,88,RedPanda,2021 -22,6.82,All(UG),0,0,0,1,1,0,0,0,1,1,6
+357,Placement-Report_modified_2021-22.csv,89,Acuitilabs,2021 -22,6.82,All(UG),1,1,0,0,0,0,0,1,0,1,8
+358,Placement-Report_modified_2021-22.csv,90,Media.net,2021 -22,7.5,ALL(UG),1,1,0,0,0,0,0,1,0,1,15.77
+359,Placement-Report_modified_2021-22.csv,91,Ciena,2021 -22,7,ALL(UG),0,0,0,1,1,0,0,1,0,1,11.38
+360,Placement-Report_modified_2021-22.csv,92,PharmEasy,2021 -22,6.82,CE & IT (UG),2,1,1,0,0,0,0,2,0,2,20
+361,Placement-Report_modified_2021-22.csv,93,Neal Analytics,2021 -22,6.82,CE & IT (UG),2,2,0,0,0,0,2,2,2,4,7
+362,Placement-Report_modified_2021-22.csv,118,Mindtree,2021 -22,6.82,All(UG),0,0,0,1,1,0,0,1,0,1,4.5
+363,Placement-Report_modified_2021-22.csv,117,Sell.do,2021 -22,6.82,All(UG),0,0,0,1,1,0,0,1,0,1,3.85
+364,Placement-Report_modified_2021-22.csv,116,Vodafone,2021 -22,6.82,All (UG),1,1,0,1,0,1,0,1,1,2,4.25
+365,Placement-Report_modified_2021-22.csv,115,i3Systems,2021 -22,NC,All (UG),0,0,0,1,1,0,1,1,1,2,4.5
+366,Placement-Report_modified_2021-22.csv,114,Atos,2021 -22,6.82,All (UG),0,0,0,2,0,2,0,0,2,2,3.1
+367,Placement-Report_modified_2021-22.csv,113,Capgemini,2021 -22,NC,All (UG),0,0,0,1,1,0,0,1,0,1,4
+368,Placement-Report_modified_2021-22.csv,112,TCS Ninja,2021 -22,6.82,All (UG and PG),0,0,0,1,1,0,0,0,1,1,3.36
+369,Placement-Report_modified_2021-22.csv,111,Accenture,2021 -22,NC,All (UG and PG),0,0,0,6,5,1,1,2,5,7,4.5
+370,Placement-Report_modified_2021-22.csv,110,Cognizant,2021 -22,6.82,All (UG and PG),0,0,0,3,1,2,0,4,1,5,4
+371,Placement-Report_modified_2021-22.csv,109,Persistent,2021 -22,6.82,E&TC (UG),0,0,0,4,4,0,,2,2,4,4.71
+372,Placement-Report_modified_2021-22.csv,108,Sandvine,2021 -22,7.5,All (UG),1,1,0,0,0,0,0,1,0,1,15.25
+373,Placement-Report_modified_2021-22.csv,107,Cumulus,2021 -22,,All(UG),2,2,0,2,1,1,0,2,2,4,8.53
+374,Placement-Report_modified_2021-22.csv,106,Finvu,2021 -22,,All(UG),0,0,0,2,1,1,0,2,0,2,7.5
+375,Placement-Report_modified_2021-22.csv,105,Tripstack,2021 -22,,All(UG),0,0,0,1,1,0,0,0,1,1,5.5
+376,Placement-Report_modified_2021-22.csv,104,T Systems,2021 -22,,All(UG),1,0,1,0,0,0,1,1,1,2,7.5
+377,Placement-Report_modified_2021-22.csv,103,LogiQuad,2021 -22,7.38,All(UG),1,0,1,1,1,0,0,2,0,2,7.5
+378,Placement-Report_modified_2021-22.csv,102,Rocket Software,2021 -22,NC,All(UG),1,0,1,1,1,0,0,2,0,2,10.5
+379,Placement-Report_modified_2021-22.csv,101,Amazon,2021 -22,6.5,All (UG),0,0,0,0,0,0,1,0,1,1,30.18
+380,Placement-Report_modified_2021-22.csv,100,Amazon,2021 -22,6.5,All (UG),6,6,0,1,1,0,4,9,2,11,44.14
+381,Placement-Report_modified_2021-22.csv,99,Amazon,2021 -22,PPO,All (UG),1,1,0,0,0,0,0,1,0,1,112
+382,Placement-Report_modified_2021-22.csv,98,Microsoft,2021 -22,PPO,All (UG),1,1,0,0,0,0,1,0,2,2,44.7
+383,Placement-Report_modified_2021-22.csv,97,Varian Medical System,2021 -22,6.82,All (UG),0,0,0,1,1,0,0,0,1,1,8.5
+384,Placement-Report_modified_2021-22.csv,70,FlexTrade,2021 -22,NC,All (UG),0,0,0,0,0,0,1,1,0,1,11
+385,Placement-Report_modified_2021-22.csv,68,miniorange,2021 -22,NC,All (UG and PG),1,1,0,0,0,0,0,0,1,1,11
+386,Placement-Report_modified_2021-22.csv,96,CION Digital,2021 -22,8,CE & IT (UG),2,2,0,0,0,0,0,1,1,2,20.15
