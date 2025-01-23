@@ -81,7 +81,7 @@
 80,Credit Suisse,2021 -22,PPO,CE & IT (UG),2,0,3,3,2,5,13.59
 81,CrowdStrike,2020 -21,7.95,CE & IT (UG and PG),1,0,0,1,0,1,12.65
 82,Crowdworks,2019-20,7,All (UG and PG),0,0,0,0,0,0,34
-83,Cumulus,2021 -22,,All(UG),2,2,0,2,2,4,8.53
+83,Cumulus,2021 -22,0,All(UG),2,2,0,2,2,4,8.53
 84,Deeptek,2019-20,NC,CE & IT (UG),1,0,0,0,1,1,6.5
 85,Delhivery,2020 -21,6.5,All (UG) and CE (PG),0,0,0,0,0,0,8
 86,Deloitte,2021 -22,6.5,All (UG),3,2,2,4,3,7,7.6
@@ -132,7 +132,7 @@
 131,FinIQ,2020 -21,NC,All (UG),1,0,0,1,0,1,20
 132,FinIQ,2019-20,6.82,All(UG),1,0,1,1,1,2,11.5
 133,FinIQ,2019-20,6.82,All (UG),3,1,1,3,2,5,9.5
-134,Finvu,2021 -22,,All(UG),0,2,0,2,0,2,7.5
+134,Finvu,2021 -22,0,All(UG),0,2,0,2,0,2,7.5
 135,Fiserv,2019-20,6.25,All(UG),8,14,0,13,9,22,5.2
 136,Fiserv,2021 -22,6.82,All (UG),2,0,3,2,3,5,8.85
 137,Flextrade,2019-20,NC,CE & IT (UG),2,0,1,3,0,3,8
@@ -262,7 +262,7 @@
 261,Platform 9,2021 -22,6.82,All (UG),2,0,1,2,1,3,14
 262,Platform9 Systems,2020 -21,7,All (UG),2,0,3,5,0,5,10
 263,Product Dossier,2020 -21,6.82,CE & IT (UG),2,0,4,3,3,6,3.5
-264,Productdossier,2021 -22,,All(UG),0,1,0,1,0,1,3
+264,Productdossier,2021 -22,0,All(UG),0,1,0,1,0,1,3
 265,PTC Software,2020 -21,NC,All (UG and PG),1,1,1,1,2,3,6
 266,Publicis Sapient,2021 -22,6.5,All (UG),0,8,0,4,4,8,6.5
 267,PublicisSapient,2020 -21,7.82,All (UG),0,3,0,2,1,3,6.5
@@ -326,7 +326,7 @@
 325,STL,2019-20,6.82,All (UG),3,2,0,2,3,5,8
 326,Swasthya AI,2020 -21,6.82,All (UG),0,0,0,0,0,0,6
 327,Symbl.ai,2020 -21,6.82,All (UG),0,1,0,1,0,1,12
-328,T Systems,2021 -22,,All(UG),1,0,1,1,1,2,7.5
+328,T Systems,2021 -22,0,All(UG),1,0,1,1,1,2,7.5
 329,Talentio,2020 -21,5.68,All (UG and PG),0,0,0,0,0,0,3
 330,Tavisca Solutions,2021 -22,7.38,CE & IT (UG),4,0,2,5,1,6,14
 331,TCS Digital,2021 -22,7.95,All (UG and PG),1,5,1,4,3,7,7.01
@@ -344,7 +344,7 @@
 343,Tracelink,2019-20,7.31,All(UG),2,2,0,4,0,4,8
 344,Trilogy Innovations,2020 -21,NC,All (UG),0,0,0,0,0,0,31
 345,Trilogy Innovations,2021 -22,NC,All (UG and PG),0,0,1,1,0,1,36.5
-346,Tripstack,2021 -22,,All(UG),0,1,0,0,1,1,5.5
+346,Tripstack,2021 -22,0,All(UG),0,1,0,0,1,1,5.5
 347,Turtlemint,2019-20,7.95,CE & IT (UG),0,0,0,0,0,0,12
 348,Turtlemint,2021 -22,7,All (UG),2,1,0,2,1,3,19
 349,Ubisoft,2021 -22,NC,All (UG),0,3,0,1,2,3,7.5
