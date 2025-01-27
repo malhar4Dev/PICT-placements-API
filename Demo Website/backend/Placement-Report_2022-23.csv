@@ -1,4 +1,4 @@
-Sr. No.,Company,CGPA,BRANCH,CE-1,CE-2,ENTC-1,ENTC-2,IT,M,F,T,SAL_LPA
+Sr. No.,Company_name,cgpa_criteria,branch_criteria,ce_shift1,ce_shift2,entc_shift1,entc_shift2,it,Male,Female,Total,Sal_lpa
 2,Siemens,PPO,All (UG),0,1,6,2,2,8,3,11,11
 4.b,Ittiam Systems,PPO,All (UG),3,0,0,1,1,4,1,5,16
 10.b,UBS,PPO,All (UG),5,0,3,1,6,13,2,15,12.5

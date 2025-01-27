@@ -1,0 +1,130 @@
+sr no.,Company_name,cgpa_criteria,branch_criteria,ce_shift1,ce_shift2,entc_shift1,entc_shift2,it,Male,Female,Total,Sal_lpa
+1,BMC Softwares,PPO,All UG,1,2,0,2,2,2,5,7,14
+2,Siemens,PPO,All UG,2,1,2,0,1,2,4,6,11
+3,Tiaa India,PPO,All UG,0,1,2,0,3,3,3,6,10.48
+4,Tracelink,PPO,All UG,2,1,0,0,1,4,0,4,12.75
+5,Deutsche Bank,PPO,All UG,0,0,0,0,2,1,1,2,19.63
+6,UBS,PPO,All UG,7,0,0,1,3,10,1,11,12.5
+7,UBS,6.82,All UG,2,1,4,0,4,9,1,11,12.5
+8,PhonePe,6,All UG,1,1,0,0,1,3,0,3,33.53
+9,BNY Mellon,7.5,All UG,4,0,0,0,1,5,0,5,21.64
+10,Druva,6.82,All UG,1,0,0,0,1,2,0,2,20.1
+11,Mastercard,PPO,All UG,7,3,3,0,3,4,12,16,13.4
+12,Mastercard,7.5,All UG,7,2,0,0,6,6,6,15,13.4
+13,UptiQ,6.82,All UG,1,0,0,0,0,1,0,1,22.5
+14,Avaya,8.5,All UG,4,0,0,0,1,5,0,5,12.5
+15,Altometa,PPO,All UG,1,0,0,0,0,1,0,1,15
+16,Schlumberger,7,All UG,0,0,0,0,2,0,2,2,19.73
+17,Bajaj Finserv,All,All UG,5,1,7,1,4,15,3,18,12.81
+18,Barclays,PPO,All UG,17,7,0,0,13,13,24,37,13.32
+19,Barclays,7,All UG,6,0,0,1,3,7,3,10,13.32
+20,Ion,8.52,All UG,7,2,1,2,5,17,0,17,14
+21,Toshiba,8,All UG,0,0,1,0,1,2,0,2,10
+22,Adobe,,All UG,1,0,0,0,1,0,2,2,47.28
+23,Ideas,6.82,All UG,0,2,0,0,0,2,0,2,12.4
+24,Searce,6.82,All UG,1,0,2,0,2,4,1,5,8
+25,eQ Technologies (SDE),6.82,All UG,8,2,0,0,2,11,1,12,13.88
+26,eQ Technologies (QA),6.82,All UG,0,0,5,2,1,6,2,8,11.13
+27,JPMC,,All UG,2,0,0,0,0,0,2,2,19.6
+28,Dragonfly Financial Technologies,8,All UG,2,0,1,0,3,6,0,6,12
+29,Energy Exemplar,7,All UG,3,0,1,0,0,4,0,4,11
+30,Metro-GSC,7,All UG,1,0,2,0,1,1,3,4,9
+31,ISS,8.5,All UG,3,0,0,1,0,4,0,4,13
+32,E2Open,9.09,All UG,1,2,0,0,2,2,2,5,8
+33,ACA Group,7,All UG,0,0,1,1,0,2,0,2,10
+34,Merilytics,6.5,All UG,2,0,0,0,0,1,1,2,8.5
+35,General Mills,6.62,All UG,2,1,0,1,0,2,2,4,12
+36,Wissen Technology,7.5,All UG,2,0,2,0,1,4,1,5,9.5
+37,Flextrade,8,All UG,1,0,1,0,1,3,0,3,9
+38,Altizon,7.5,All UG,2,0,1,0,2,5,0,5,8.25
+39,Tech Verito,8,CE&IT,0,0,0,0,1,0,1,1,8
+40,Intangles Lab,8,Entc,0,0,1,0,0,0,1,1,6
+41,HSBC,6,All UG,9,4,3,4,10,26,6,30,9
+42,Northern Trust,,All UG,0,0,0,0,3,0,3,3,12.5
+43,Emerson,6,All UG,4,0,0,0,2,2,4,6,8
+44,ZS Associates,,All UG,2,1,6,2,1,10,2,12,13.65
+45,Rockwell Automation,7.5,CE&IT,2,2,0,0,2,5,1,6,9
+46,Rockwell Automation (E),6,Entc,0,0,1,2,0,3,0,3,6
+47,Ayaan Autonomous,,All UG,1,0,0,0,0,1,0,1,8
+48,Amdocs,6.62,All UG,8,1,18,7,7,37,4,41,6.5
+49,TCS R&D,,All UG,1,0,0,0,0,1,0,1,9
+50,Qualys,6.82,All UG,5,1,0,0,7,11,2,13,7.25
+51,Nice Systems,6.82,All UG,4,0,1,2,4,9,2,11,8
+52,PWC,,All UG,0,0,0,0,1,1,0,1,6.5
+53,Principal Global Solutions,6.82,All UG,10,1,4,1,3,16,3,19,8
+54,NTT Business Solutions (SAP),7,All UG,0,0,4,1,0,2,3,5,8
+55,Cisco,,All UG,1,0,0,0,0,0,1,1,22
+56,Berkadia,8,CS&IT,2,0,0,0,1,2,1,3,8
+57,Pubmatic,7.386,CS&IT,5,1,0,0,3,9,0,9,18.38
+58,Foldhealth,7,All UG,1,0,0,0,1,2,0,2,12
+59,Persistent Systems,6.82,ALl UG,1,2,0,0,2,4,1,5,7.8
+60,JM Finance,7,ALl UG,0,0,1,1,0,2,0,2,10
+61,Ryussi Technologies,7.5,CE&IT,1,1,0,0,0,2,0,2,16
+62,WisdmLabs,6.82,ALl UG,1,0,2,0,0,2,1,3,6.5
+63,Godrej & Boyce,6.84,ALl UG,0,0,3,0,0,2,1,3,7.25
+64,Dataeze,6.82,ALl UG,1,0,1,0,0,1,1,2,8
+65,CodeWalla,6.82,ALl UG,1,0,1,0,0,1,1,2,10
+66,Corizo,5,ALl UG,0,0,1,0,1,2,0,2,6.5
+67,Mini Orange,6.8,ALl UG,0,0,1,0,1,2,0,2,6
+68,Palo Alto,8,ALl UG,2,0,0,0,0,1,1,2,40
+69,Hexaware,6.82,ALl UG,1,1,1,0,1,4,0,4,6
+70,Veritas,,ALl UG,0,0,0,0,0,0,0,0,16
+71,Launch Ventures,6.82,ALl UG,1,0,0,0,1,3,0,2,6
+72,Pubmatic (Drive2),7.38,CS&IT,2,1,0,0,1,2,2,4,18.38
+73,DeltaX,6.82,All UG,0,1,1,0,0,1,1,2,5
+74,Sell.do,6.82,CS&IT,2,0,0,0,2,4,0,4,7.5
+75,Bakliwal Tutorials,6.82,CS&IT,0,0,0,0,0,0,0,0,0
+76,DataAxle ( Pending ),7.95,All UG,0,0,0,0,0,0,0,0,0
+77,Cadence,,All UG,0,0,1,1,0,2,0,2,15
+78,Acuiti Labs,8,All UG,2,1,2,0,1,5,1,6,7
+79,TCS Prime,,ALL UG,2,1,3,0,1,7,0,7,9
+80,TCS Digital,,ALL UG,7,3,8,3,13,29,5,34,7
+81,Schlumberger (PWD Drive),5.68,ALL UG,0,0,0,0,1,1,0,1,9
+82,Fox Solutions,6.82,ALL UG,0,1,0,0,0,1,0,1,5.57
+83,Neilsoft,6.82,ALL UG,2,1,0,0,4,6,1,7,5
+84,Agiliad Technology,7.95,ALL UG,0,0,9,0,1,10,0,10,5.5
+85,Cencora,7.95,ALL UG,5,0,3,0,7,13,2,15,7
+86,Yardi,6.82,ALL UG,4,0,2,1,6,8,5,13,5.5
+87,Brainstorm Force,6.82,ALL UG,1,0,0,0,0,1,0,1,7
+88,Ittiam,8,ALL UG,0,0,2,0,1,3,1,3,16
+89,Ayaan & Symtronics,6.82,ALL UG,4,1,1,0,0,2,4,6,7.65
+90,Paypal,,All UG,0,0,0,0,1,1,0,1,34.8
+91,Atlan,,All UG,0,0,1,0,0,1,0,1,21
+92,Quorum Softwares,8,CE&IT,2,1,0,0,0,3,0,3,8
+93,Turing,6.82,ALL UG,1,0,1,0,0,2,0,2,7
+94,Ria Advisory,8,AlL UG,2,1,0,0,2,5,0,5,8.5
+95,Rinex,6.62,AlL UG,1,1,4,3,1,7,3,10,5.2
+96,Equifax,6.5,ALL UG,0,0,3,0,1,4,0,4,7
+97,Zensar,7.38,ALL UG,1,0,0,0,1,2,0,2,10
+98,Mindstix,6.82,ALL UG,0,0,2,0,0,1,1,2,6
+99,Vertical Fox,6.82,All UG,0,0,1,0,1,1,1,2,9
+100,Ordway Labs,7.5,All UG,3,1,2,0,0,2,2,6,8
+101,Alpha Sense,8,All UG,1,0,0,0,1,2,0,2,20
+102,Accelya,6.82,All UG,1,0,1,0,0,2,0,2,7
+103,Fiserv,8,CS&IT,0,0,0,0,1,1,0,1,9.65
+104,Sagitec,6.82,ALl UG,0,0,2,1,0,2,1,3,5
+105,Siemens Regular,PPO,ALL UG,0,0,4,0,3,4,3,7,11
+106,Sasken,6.82,ALL UG,0,0,1,0,0,1,0,1,5
+107,Entrata,7.95,CE&IT,3,0,0,0,3,,1,6,6
+108,NCS,6.82,ALL UG,3,1,0,0,2,5,1,6,6.82
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,P:F-TRPL/03/R0,,,,,,,,,,,
