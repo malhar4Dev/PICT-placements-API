@@ -141,6 +141,29 @@
         } else {
           alert('Chart data is only available for a single company in a single year.');
         }
+
+
+
+
+        try {
+          const response = await fetch(`/lpa??year=${year}&Company_name=${company}`);
+          const data = await response.json();
+
+          // Display the fetched LPA
+          const lpaDisplay = document.getElementById('lpa_num');
+          lpaDisplay.addEventListener("")
+          lpaDisplay.innerHTML = data.length > 0
+            ? `LPA: ${data[0].sal_lpa}`
+            : 'No data found for the selected filters.';
+        } catch (error) {
+          console.error('Error fetching LPA data:', error);
+        }
+
+
+
+
+
+
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -201,7 +224,38 @@
     });
 
 
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
 
+      const year = document.querySelector('input[list="years"]').value;
+      const company = document.querySelector('input[list="compnames"]').value;
+
+      if (!year || year === 'all years') {
+        alert('Please select a valid year.');
+        return;
+      }
+
+      if (!company) {
+        alert('Please select a company.');
+        return;
+      }
+
+      try {
+        const response = await fetch(`/lpa?year=${year}&Company_name=${company}`);
+        const data = await response.json();
+
+        if (data.error) {
+          alert(data.error);
+        } else if (data.length > 0) {
+          document.getElementById('lpa_num').innerHTML = `${data[0].sal_lpa} LPA`;
+        } else {
+          document.getElementById('lpa_num').innerHTML = 'No data available';
+        }
+      } catch (error) {
+        console.error('Error fetching LPA data:', error);
+        alert('An error occurred while fetching data.');
+      }
+    });
 
     async function fetchCompany() {
       const yearInput = document.querySelector('input[list="years"]').value;
@@ -235,23 +289,7 @@
       }
     }
 
-    async function fetchlpa() {
-      const year = document.querySelector('input[list="years"]').value;
-      const company = document.querySelector('input[list="compnames"]').value;
 
-      try {
-        const response = await fetch(`/lpa?year=${year}&Company_name=${company}`);
-        const data = await response.json();
-
-        // Display the fetched LPA
-        const lpaDisplay = document.getElementById('lpa_num');
-        lpaDisplay.innerHTML = data.length > 0
-          ? `LPA: ${data[0].sal_lpa}`
-          : 'No data found for the selected filters.';
-      } catch (error) {
-        console.error('Error fetching LPA data:', error);
-      }
-    }
 
   </script>
 </body>
