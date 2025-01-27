@@ -80,40 +80,58 @@ app.get('/cnames', (req, res) => {
 //     res.json(results);
 // });
 // });
+// app.get('/lpa', (req, res) => {
+//   const { year, Company_name } = req.query;
+
+//   // Start constructing the query
+//   let query = 'SELECT sal_lpa FROM dataset';
+//   const queryParams = [];
+
+//   // Add conditions dynamically
+//   const conditions = [];
+//   if (year && year !== 'all years') {
+//     conditions.push('year = ?');
+//     queryParams.push(year);
+//   }
+//   if (Company_name && Company_name !== 'all companies') {
+//     conditions.push('Company_name = ?');
+//     queryParams.push(Company_name);
+//   }
+
+//   // Combine conditions into the WHERE clause if any exist
+//   if (conditions.length > 0) {
+//     query += ' WHERE ' + conditions.join(' AND ');
+//   }
+
+//   // Execute the query
+//   connection.query(query, queryParams, (err, results) => {
+//     if (err) {
+//       console.error('Error fetching LPA data:', err);
+//       res.status(500).send('Error fetching data');
+//       return;
+//     }
+//     res.json(results);
+//   });
+// });
+
 app.get('/lpa', (req, res) => {
   const { year, Company_name } = req.query;
 
-  // Start constructing the query
-  let query = 'SELECT sal_lpa FROM dataset';
-  const queryParams = [];
-
-  // Add conditions dynamically
-  const conditions = [];
-  if (year && year !== 'all years') {
-    conditions.push('year = ?');
-    queryParams.push(year);
-  }
-  if (Company_name && Company_name !== 'all companies') {
-    conditions.push('Company_name = ?');
-    queryParams.push(Company_name);
+  if (!year || !Company_name) {
+    res.status(400).send({ error: 'Year and Company_name are required' });
+    return;
   }
 
-  // Combine conditions into the WHERE clause if any exist
-  if (conditions.length > 0) {
-    query += ' WHERE ' + conditions.join(' AND ');
-  }
-
-  // Execute the query
-  connection.query(query, queryParams, (err, results) => {
+  const query = 'SELECT sal_lpa FROM dataset WHERE year = ? AND Company_name = ?';
+  connection.query(query, [year, Company_name], (err, results) => {
     if (err) {
       console.error('Error fetching LPA data:', err);
-      res.status(500).send('Error fetching data');
+      res.status(500).send({ error: 'Error fetching LPA data' });
       return;
     }
     res.json(results);
   });
 });
-
 
 
 app.get('/filtered_data', (req, res) => {
