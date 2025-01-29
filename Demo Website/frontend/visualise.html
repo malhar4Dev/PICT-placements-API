@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VISUALISE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="visualise.css">
+    <script>
+        function toggleNavbar() {
+            const navMenu = document.getElementById("nav-menu");
+            navMenu.classList.toggle("hidden");
+        }
+    </script>
+</head>
+
+<body class="text-white bg-gradient-to-b from-black to-blue-800 min-h-screen flex flex-col">
+    <!-- ✅ Navbar -->
+    <header class="bg-black/50 border-b border-gray-500">
+        <div class="container mx-auto px-6 py-6 flex justify-between items-center">
+            <h1 class="text-2xl sm:text-2xl font-bold">PICT Placement Website</h1>
+            <button class="sm:hidden text-gray-300 focus:outline-none" onclick="toggleNavbar()">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+            <nav id="nav-menu" class="hidden sm:flex flex-col sm:flex-row bg-black w-full sm:w-auto absolute sm:static top-16 left-0 sm:top-auto sm:left-auto py-6 sm:py-0 px-6 sm:px-0 z-10 space-y-6 sm:space-y-0 sm:space-x-8">
+                <a href="home.html" class="block text-xl sm:text-lg text-gray-300 hover:text-white">Home</a>
+                <a href="visualise.html" class="block text-xl sm:text-lg text-gray-300 hover:text-white">Visualise</a>
+                <a href="#faq" class="block text-xl sm:text-lg text-gray-300 hover:text-white">FAQ's</a>
+                <a href="#about" class="block text-xl sm:text-lg text-gray-300 hover:text-white">About Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ✅ Main Section -->
+    <main class="flex-grow flex justify-center items-center">
+        <div class="bg-white p-8 rounded-xl shadow-lg max-w-lg w-full animate-box">
+            <h2 class="text-xl font-semibold text-center text-gray-900">Analyse the data using our API</h2>
+            <div class="mt-4 space-y-4">
+                <input type="text" placeholder="Select company" class="w-full p-2 border border-gray-300 rounded-md focus:ring">
+                <input type="text" placeholder="Year" class="w-full p-2 border border-gray-300 rounded-md focus:ring">
+                <input type="text" placeholder="Skills" class="w-full p-2 border border-gray-300 rounded-md focus:ring">
+            </div>
+            <button class="mt-4 w-full bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded-md animate-btn">Analyse it</button>
+        </div>
+    </main>
+
+    <!-- ✅ Footer -->
+    <footer class="bg-blue-900 text-center py-6 text-sm sm:text-base">
+        <p>&copy; 2025 PICT Placement Website. All rights reserved.</p>
+    </footer>
+    <script src="java.js"></script>
+</body>
+
+</html>
