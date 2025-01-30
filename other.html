@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Placement's</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      function toggleNavbar() {
+        const navMenu = document.getElementById("nav-menu");
+        const heroSection = document.getElementById("hero-section");
+
+        navMenu.classList.toggle("hidden");
+
+        // Adjust hero section padding based on dropdown visibility
+        if (!navMenu.classList.contains("hidden")) {
+          heroSection.classList.add("mt-40"); // Move hero section down
+        } else {
+          heroSection.classList.remove("mt-40");
+        }
+      }
+    </script>
+  <style>
+    /* Animated Gradient Background */
+    html::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: linear-gradient(45deg, #1a1a2e, #16213e, #0f3460, #53354a, #903749);
+      background-size: 300% 300%;
+      animation: gradient-animation 15s ease infinite;
+    }
+
+    @keyframes gradient-animation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+     /* Text Float Animation */
+     @keyframes float-in {
+        0% {
+          transform: translateY(100%);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .animate-float {
+        animation: float-in 1.5s ease-out forwards;
+      }
+
+      /* Scroll Animation */
+      .hidden-section {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 1s ease, transform 1s ease;
+      }
+
+      .visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Overflow Fix */
+    html,body {
+      overflow-x: hidden;
+    }
+
+    /* Decorative Bubbles */
+    .decorative-bubble {
+      position: absolute;
+      pointer-events: none;
+      transform: translateX(-50%);
+    }
+
+    /* Smooth Scroll */
+    html {
+        scroll-behavior: smooth;
+      }
+
+  </style>
+
+</head>
+<body class="text-white min-h-screen flex flex-col">
+  <!-- Navbar -->
+  <header class="bg-[#0f3460]/90 border-b border-[#53354a] fixed top-0 w-full z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <!-- Logo -->
+      <h1 class="text-2xl sm:text-2xl font-bold">PICT Placement Website</h1>
+  
+      <!-- Hamburger Button for Mobile -->
+      <button 
+        class="sm:hidden text-gray-300 focus:outline-none" 
+        onclick="toggleNavbar()"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+  
+      <!-- Navigation Links -->
+      <nav 
+        id="nav-menu" 
+        class="hidden sm:flex flex-col sm:flex-row bg-[#0f3460] w-full sm:w-auto absolute sm:static top-16 left-0 sm:top-auto sm:left-auto py-6 sm:py-0 px-6 sm:px-0 z-10 space-y-6 sm:space-y-0 sm:space-x-8"
+      >
+      <a href="#" class="block text-xl sm:text-lg text-gray-300 hover:text-[#903749]">Home</a>
+      <a href="#" class="block text-xl sm:text-lg text-gray-300 hover:text-[#903749]">Visualise</a>
+      <a href="faq.html" class="block text-xl sm:text-lg text-gray-300 hover:text-[#903749]">FAQ's</a>
+      <a href="aboutus.html" class="block text-xl sm:text-lg text-gray-300 hover:text-[#903749]">About Us</a>
+      </nav>
+    </div>
+  </header>
+  <main class="flex-grow container mx-auto px-6 py-10 mt-24">
+  <!-- Hero Section -->
+  <section class="h-screen flex items-center justify-center text-center relative hidden-section">
+    <div class="container mx-auto px-6">
+      <h1 class="text-5xl sm:text-6xl font-extrabold mb-8">
+        Empowering Your Path Towards <br>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Placement Success</span>
+      </h1>
+      <p class="text-lg sm:text-2xl text-gray-300 mb-10">
+        Unlock your potential with resources, statistics, and insights tailored for your placement journey.
+      </p>
+      <a href="#why-choose-us" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-12 rounded-lg shadow-lg text-lg sm:text-xl transform hover:scale-105 transition inline-block">
+        Explore
+      </a>
+    </div>
+
+    <!-- Decorative Bubbles -->
+    <div class="decorative-bubble top-10 right-10 h-64 w-64 bg-blue-500 rounded-full filter blur-3xl opacity-50"></div>
+    <div class="decorative-bubble bottom-10 left-10 h-48 w-48 bg-pink-500 rounded-full filter blur-3xl opacity-50"></div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section id="why-choose-us" class="py-20 hidden-section scroll-mt-24">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-8">Why Choose Us?</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-black/50 p-8 rounded-lg shadow-lg hover:scale-105 transition">
+          <span class="text-blue-400 text-4xl">📊</span>
+          <h3 class="text-2xl font-bold mt-4 mb-2">Placement Statistics</h3>
+          <p class="text-gray-300">Year-wise data to help you track trends and improve your preparation.</p>
+        </div>
+        <div class="bg-black/50 p-8 rounded-lg shadow-lg hover:scale-105 transition">
+          <span class="text-blue-400 text-4xl">📈</span>
+          <h3 class="text-2xl font-bold mt-4 mb-2">Interactive Visualizations</h3>
+          <p class="text-gray-300">Graphs and charts showing success rates and growth patterns.</p>
+        </div>
+        <div class="bg-black/50 p-8 rounded-lg shadow-lg hover:scale-105 transition">
+          <span class="text-blue-400 text-4xl">🏢</span>
+          <h3 class="text-2xl font-bold mt-4 mb-2">Top Recruiters</h3>
+          <p class="text-gray-300">Profiles of top companies visiting our campus for recruitment.</p>
+        </div>
+        <div class="bg-black/50 p-8 rounded-lg shadow-lg hover:scale-105 transition">
+          <span class="text-blue-400 text-4xl">📚</span>
+          <h3 class="text-2xl font-bold mt-4 mb-2">Resource Library</h3>
+          <p class="text-gray-300">Guides, templates, and tools to help you ace your placements.</p>
+        </div>
+        <div class="bg-black/50 p-8 rounded-lg shadow-lg hover:scale-105 transition">
+          <span class="text-blue-400 text-4xl">🤝</span>
+          <h3 class="text-2xl font-bold mt-4 mb-2">Alumni Connect</h3>
+          <p class="text-gray-300">Connect with successful alumni for mentorship and guidance.</p>
+        </div>
+        <div class="bg-black/50 p-8 rounded-lg shadow-lg hover:scale-105 transition">
+          <span class="text-blue-400 text-4xl">⚡</span>
+          <h3 class="text-2xl font-bold mt-4 mb-2">Fast Processes</h3>
+          <p class="text-gray-300">Our tools and resources are designed to save your time and improve efficiency.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What is an API Section -->
+  <section class="py-20 hidden-section">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-8">What is an API?</h2>
+      <div class="max-w-lg mx-auto">
+        <p class="text-gray-300 text-lg mb-12 text-center md:text-left leading-relaxed">
+          APIs (Application Programming Interfaces) are tools that enable communication between different software applications. 
+          Our Placement API bridges the gap between students, faculty, and recruiters, streamlining the placement process.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div class="bg-black/50 p-8 rounded-lg shadow-lg hover:scale-105 transition">
+          <span class="text-blue-400 text-4xl">🎓</span>
+          <h3 class="text-2xl font-bold mt-4 mb-2">For Students</h3>
+          <p class="text-gray-300">Easily access placement statistics, company profiles, and prepare with tailored resources.</p>
+        </div>
+        <div class="bg-black/50 p-8 rounded-lg shadow-lg hover:scale-105 transition">
+          <span class="text-blue-400 text-4xl">👩‍🏫</span>
+          <h3 class="text-2xl font-bold mt-4 mb-2">For Faculty</h3>
+          <p class="text-gray-300">Monitor student progress, analyze placement data, and streamline coordination with recruiters.</p>
+        </div>
+        <div class="bg-black/50 p-8 rounded-lg shadow-lg hover:scale-105 transition">
+          <span class="text-blue-400 text-4xl">🏢</span>
+          <h3 class="text-2xl font-bold mt-4 mb-2">For Recruiters</h3>
+          <p class="text-gray-300">Access detailed student profiles, simplify hiring, and save time with advanced filtering tools.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mockup Section -->
+  <section class="flex justify-center items-center py-12 px-4 hidden-section">
+    <div class="bg-black/50 h-64 sm:h-80 md:h-[60vh] w-full sm:w-[80vw] md:w-[58vw] rounded-lg border-2 border-white-500 shadow-lg relative overflow-hidden transition duration-300 hover:scale-105 hover:border-blue-500">
+      <img src="./Images/OHTNL00.jpg" alt="Pie Chart" class="h-full w-full object-contain" />
+    </div>
+  </section>
+
+  <!-- Get Started Button -->
+  <div class="text-center my-12 hidden-section">
+    <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-12 rounded-lg shadow-lg text-lg sm:text-xl transform hover:scale-105 transition">
+      Get Started
+    </button>
+  </div>
+
+  <!-- Section with Images -->
+  <section class="container mx-auto px-6 py-12 text-center hidden-section">
+    <h2 class="text-lg sm:text-2xl text-gray-300 mb-6">MNCs Visiting Us</h2>
+    <div class="flex justify-center flex-wrap gap-8 sm:gap-12">
+      <img src="./Images/amazon-brands-solid.svg" alt="Amazon" class="h-10 w-10 sm:h-16 sm:w-16 object-contain">
+      <img src="./Images/cc-mastercard-brands-solid.svg" alt="MasterCard" class="h-10 w-10 sm:h-16 sm:w-16 object-contain">
+      <img src="./Images/google-brands-solid.svg" alt="Google" class="h-10 w-10 sm:h-16 sm:w-16 object-contain">
+      <img src="./Images/microsoft-brands-solid.svg" alt="Microsoft" class="h-10 w-10 sm:h-16 sm:w-16 object-contain">
+    </div>
+  </section>
+</main>
+
+  <!-- Footer -->
+  <footer class="bg-opacity-50 bg-black py-4 hidden-section">
+    <div class="container mx-auto px-6 text-center">
+      <p class="text-gray-400">© 2025 PICT Placement Website. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const hiddenSections = document.querySelectorAll(".hidden-section");
+  
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+  
+      hiddenSections.forEach((section) => {
+        observer.observe(section);
+      });
+    });
+  </script>
+
+  </body>
+</html>

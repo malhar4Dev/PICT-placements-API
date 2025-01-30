@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      function toggleNavbar() {
+        const navMenu = document.getElementById("nav-menu");
+        navMenu.classList.toggle("hidden");
+      }
+    </script>
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+
+  <body
+    class="text-white bg-gradient-to-b from-[#1a1a2e] to-[#16213e] min-h-screen flex flex-col"
+  >
+    <!-- Navbar -->
+    <header class="bg-[#0f3460]/90 border-b border-[#53354a] sticky top-0 z-50">
+      <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <!-- Logo -->
+        <h1 class="text-2xl sm:text-2xl font-bold">PICT Placement Website</h1>
+    
+        <!-- Hamburger Button for Mobile -->
+        <button 
+          class="sm:hidden text-gray-300 focus:outline-none" 
+          onclick="toggleNavbar()"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+    
+        <!-- Navigation Links -->
+        <nav 
+          id="nav-menu" 
+          class="hidden sm:flex flex-col sm:flex-row bg-[#0f3460] w-full sm:w-auto absolute sm:static top-16 left-0 sm:top-auto sm:left-auto py-6 sm:py-0 px-6 sm:px-0 z-10 space-y-6 sm:space-y-0 sm:space-x-8"
+        >
+        <a href="other.html" class="block text-xl sm:text-lg text-gray-300 hover:text-[#903749]">Home</a>
+        <a href="#" class="block text-xl sm:text-lg text-gray-300 hover:text-[#903749]">Visualise</a>
+        <a href="faq.html" class="block text-xl sm:text-lg text-gray-300 hover:text-[#903749]">FAQ's</a>
+        <a href="#" class="block text-xl sm:text-lg text-gray-300 hover:text-[#903749]">About Us</a>
+        </nav>
+      </div>
+    </header>
+</head>
+    <!-- Team Section -->
+    <div class="container mx-auto p-6 flex-grow pt-20">
+      <h1 class="text-3xl font-bold text-center mb-6">Meet Our Team</h1>
+      <!-- card1 -->
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="bg-black p-3 items-center text-center rounded-lg shadow-lg border-2 border-white-500 transform transition duration-300 hover:scale-105 hover:border-blue-500 fade-in">
+          <img class="w-40 h-40 mx-auto object-cover rounded-lg" src="./Images/Malhar.jpg" alt="Malhar Kulkarni">
+          <h2 class="text-lg font-semibold mt-3">Malhar Kulkarni</h2>
+          <div class="flex justify-center space-x-4 mt-3">
+            <a href="https://www.linkedin.com/in/chaitanya-patil-7769b1292" target="_blank">
+              <img src="Images/linkedin.png" alt="LinkedIn" class="w-6 h-6 hover:scale-110 transition-transform">
+            </a>
+            <a href="https://github.com/Cyp5556" target="_blank">
+              <img src="Images/github.png" alt="GitHub" class="w-6 h-6 hover:scale-110 transition-transform">
+            </a>
+          </div>
+        </div>
+        <!-- card2 -->
+        <div class="bg-black p-3 items-center text-center rounded-lg shadow-lg border-2 border-white-500 transform transition duration-300 hover:scale-105 hover:border-blue-500 fade-in">
+          <img class="w-40 h-40 mx-auto object-cover rounded-lg" src="./Images/WhatsApp Image 2025-01-29 at 16.31.36_3b0a61a7.jpg" alt="Samartha Kundilkar">
+          <h2 class="text-lg font-semibold mt-3">Samartha Kundilkar</h2>
+          <div class="flex justify-center space-x-4 mt-3">
+            <a href="https://www.linkedin.com/in/chaitanya-patil-7769b1292" target="_blank">
+              <img src="Images/linkedin.png" alt="LinkedIn" class="w-6 h-6 hover:scale-110 transition-transform">
+            </a>
+            <a href="https://github.com/Cyp5556" target="_blank">
+              <img src="Images/github.png" alt="GitHub" class="w-6 h-6 hover:scale-110 transition-transform">
+            </a>
+          </div>
+        </div>
+        <!-- card3 -->
+        <div class="bg-black p-3 items-center text-center rounded-lg shadow-lg border-2 border-white-500 transform transition duration-300 hover:scale-105 hover:border-blue-500 fade-in">
+          <img class="w-40 h-40 mx-auto object-cover rounded-lg" src="./Images/WhatsApp Image 2025-01-29 at 16.31.36_b9601fd5.jpg" alt="Diveysh Mystery">
+          <h2 class="text-lg font-semibold mt-3">Diveysh Mystery</h2>
+          <div class="flex justify-center space-x-4 mt-3">
+            <a href="https://www.linkedin.com/in/chaitanya-patil-7769b1292" target="_blank">
+              <img src="Images/linkedin.png" alt="LinkedIn" class="w-6 h-6 hover:scale-110 transition-transform">
+            </a>
+            <a href="https://github.com/Cyp5556" target="_blank">
+              <img src="Images/github.png" alt="GitHub" class="w-6 h-6 hover:scale-110 transition-transform">
+            </a>
+          </div>
+        </div>
+        <!-- card4 -->
+        <div class="bg-black p-3 items-center text-center rounded-lg shadow-lg border-2 border-white-500 transform transition duration-300 hover:scale-105 hover:border-blue-500 fade-in">
+          <img class="w-40 h-40 mx-auto object-cover rounded-lg" src="./Images/chaitanya.jpg" alt="Chaitanya Patil">
+          <h2 class="text-lg font-semibold mt-3">Chaitanya Patil</h2>
+          <div class="flex justify-center space-x-4 mt-3">
+            <a href="https://www.linkedin.com/in/chaitanya-patil-7769b1292" target="_blank">
+              <img src="Images/linkedin.png" alt="LinkedIn" class="w-6 h-6 hover:scale-110 transition-transform">
+            </a>
+            <a href="https://github.com/Cyp5556" target="_blank">
+              <img src="Images/github.png" alt="GitHub" class="w-6 h-6 hover:scale-110 transition-transform">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer -->
+    <footer class="bg-[#0f3460]/90 text-center py-4 text-sm sm:text-base">
+      <p>&copy; 2025 PICT Placement Website. All rights reserved.</p>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const fadeInElements = document.querySelectorAll(".fade-in");
+        fadeInElements.forEach((el, index) => {
+          setTimeout(() => {
+            el.classList.add("visible");
+          }, index * 200);
+        });
+      });
+    </script>
+
+</body>
+</html>
