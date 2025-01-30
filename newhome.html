@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VISUALISE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <script>
+
+
+
+        async function fetchCompany() {
+            try {
+                const response = await fetch('/cnames');
+                const info  = await response.json();
+
+                const nameoptions = document.getElementById('compnames');
+                info.forEach(company => {
+                    const names = `<option>${company.Company_name}</option>`;
+                    nameoptions.innerHTML += names;
+                });
+
+
+
+            } catch (error) {
+                console.error('Error fetching users:', error);
+            }
+        }
+
+        // Fetch data when the page loads
+        window.onload = fetchCompany;
+        async function fetchFilteredData() {
+            const company = document.querySelector('input[list="compnames"]').value;
+            const year = document.querySelector('input[list="years"]').value;
+
+            try {
+                const response = await fetch(`/filter?company=${encodeURIComponent(company)}&year=${encodeURIComponent(year)}`);
+                const data = await response.json();
+
+                // Display the fetched data
+                const resultContainer = document.getElementById('results');
+                resultContainer.innerHTML = '';
+                data.forEach(item => {
+                    const div = document.createElement('div');
+                    div.textContent = `Company: ${item.Company_name}, Year: ${item.year}, CGPA: ${item.cgpa_criteria}`;
+                    resultContainer.appendChild(div);
+                });
+
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+
+
+
+    </script>
+    <link rel="stylesheet" href="website/visu.css">
+
+</head>
+
+<body>
+    <header class="bg-white shadow-sm py-3">
+        <div class="container d-flex justify-content-between align-items-center" id="navbar">
+            <!-- Logo and Title -->
+            <div class="d-flex align-items-center" id="logo">
+                <img src="Screenshot.png" alt="Logo" class="me-2 logo-img">
+                <span class="fs-5 fw-bold">PLACEMENT WEBSITE</span>
+            </div>
+            <!-- Navigation and Search Bar -->
+            <nav class="d-flex align-items-center">
+                <div class="search-container me-3">
+                    <input id="search-input" type="search" class="form-control me-2" placeholder="Search...">
+                    <button id="search-button" type="button" class="btn btn-primary">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <a href="home.html" class="nav-link">HOME</a>
+                <a href="visualise.html" class="nav-link">VISUALISE</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="#login" class="nav-link">ABOUT US</a>
+                <form action="/amazon.html">
+                    <button type="submit" class="btn btn-primary rounded-pill px-4">Get Started</button>
+                </form>
+            </nav>
+        </div>
+    </header>
+    <section>
+        <div class="rect">
+            <div>
+                <h2>Analyse the data using our API</h2>
+            </div>
+            <div class="selectors">
+                <div class="button">
+                    <input type="text" placeholder="select company" spellcheck="true" list="compnames">
+                    <!-- this datalist is used for providing the options for above input text. -->
+                    <datalist id="compnames">
+                        <!-- the suggestions should appear here -->
+                        <option value="all companies"></option>
+                        
+                    </datalist>
+
+                </div>
+                <div class="button">
+                    <input type="text" placeholder="year" spellcheck="true" list="years">
+                    <datalist id="years">
+                        <!-- the suggestions should appear here -->
+                        <option value="all years"></option>
+                        <option value="2019-20"></option>
+                        <option value="2020-21"></option>
+                        <option value="2021-22"></option>
+                        <option value="2022-23"></option>
+                        <option value="2023-24"></option>
+                        <option value="2024-25"></option>
+
+                        
+                    </datalist>
+                </div>
+                <div class="button">
+                    <input type="text" placeholder="skills" spellcheck="true" list="skillset">
+                    <datalist id="skillset">
+                        <!-- the suggestions should appear here -->
+                        <option value="all skills"></option>
+                        <option value="DSA"></option>
+                        <option value="Development"></option>
+                        <option value="Apptitude"></option>
+
+                        
+                    </datalist>
+                </div>
+            </div>
+            <div class="button">
+                <button onclick="fetchFilteredData()">Fetch Data</button>
+            </div>
+        </div>
+
+
+    </section>
+</body>
+
+</html>
