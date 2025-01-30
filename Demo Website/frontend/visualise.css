@@ -1,0 +1,148 @@
+/* ✅ Smooth Fade-In for Page Content */
+body {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ✅ Navbar Slide Down Effect */
+header {
+    transform: translateY(-100%);
+    animation: slideDown 0.8s ease-in-out forwards;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* ✅ Navbar Link Hover Effect */
+nav a {
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* ✅ Adjusted Main Section for More Space */
+main {
+    min-height: 75vh; /* Ensures blank space below for future charts */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Moves the box up */
+    padding-top: 3rem; /* Extra space at the top */
+}
+
+/* ✅ Moves the Animated Box Higher */
+.animate-box {
+    margin-top: 10px;
+    margin-bottom: auto; /* Keeps space below */
+    height: auto;
+    min-height: 250px; /* Ensures a consistent size */
+    max-height: 350px; /* Avoids stretching too much */
+    opacity: 0;
+    transform: scale(0.9);
+    animation: fadeInBox 1s ease-in-out forwards, bounce 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes fadeInBox {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ✅ Subtle Bounce Effect */
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-5px);
+    }
+}
+
+/* ✅ Button Hover & Pulse Animation */
+.animate-btn {
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.animate-btn:hover {
+    transform: scale(1.1);
+    background-color: #1e40af;
+}
+
+/* ✅ Input Floating Effect on Focus */
+input {
+    transition: all 0.3s ease-in-out;
+}
+
+input:focus {
+    box-shadow: 0 0 15px rgba(30, 64, 175, 0.6);
+    transform: translateY(-3px);
+}
+
+/* ✅ Footer */
+footer {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    flex-shrink: 0; /* Prevents shrinking */
+}
+
+/* ✅ Responsive Adjustments */
+@media (max-width: 768px) {
+    main {
+        padding-top: 2rem; /* Less space for mobile */
+    }
+
+    .animate-box {
+        min-height: 220px;
+        max-height: 300px;
+    }
+}

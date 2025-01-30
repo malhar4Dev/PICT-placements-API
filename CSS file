@@ -1,0 +1,208 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header Styles */
+header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+#logo .logo-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    animation: logoAnimation 1.2s ease-out;
+}
+
+.nav-link {
+    color: #333;
+    font-weight: bold;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #007bff;
+}
+
+/* Search Bar */
+.search-container {
+    display: flex;
+    align-items: center;
+    max-width: 350px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+#search-input {
+    flex: 1;
+    max-width: 200px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#search-button {
+    padding: 5px 15px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#search-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+#search-button:hover {
+    transform: scale(1.1); /* Slightly increases button size */
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Section Styles */
+section {
+    background-color: #f8f9fa;
+    padding: 3rem 0;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+h1 {
+    animation: slideInLeft 1s ease-out;
+}
+
+h1 span {
+    color: #007bff;
+    display: inline-block;
+    animation: typing 3s steps(30) 1s forwards, colorChange 3s ease-in-out infinite, fadeZoom 2s ease-out;
+    white-space: nowrap;
+    border-right: 3px solid #333; /* Simulate typing cursor */
+}
+
+/* Card Styles */
+.bg-gradient-card {
+    display: flex;
+    justify-content: center; /* Horizontally centers the content */
+    align-items: center; /* Vertically centers the content */
+    width: 50%; /* Set responsive width */
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bg-gradient-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.bg-gradient-card img {
+    width: 50px;
+    height: 50px;
+}
+
+.bg-gradient-card p {
+    color: #333;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+    .search-container {
+        flex-direction: column;
+    }
+
+    #search-input {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    #search-button {
+        width: 100%;
+    }
+}
+
+/* Vector Image Placeholder (bi class) */
+.bi {
+    min-height: 50vh;
+    min-width: 70vw;
+    background-image: url('360_F_211732841_GknumxwhSdceiB38k7s8fpueXhZQ6RDC.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Slide-In from Left Animation */
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Typing Effect Animation */
+@keyframes typing {
+    from {
+        width: 0;
+        border-right: 3px solid #333; /* Cursor effect */
+    }
+    to {
+        width: 100%;
+        border-right: none; /* Remove the cursor when animation ends */
+    }
+}
+
+/* Color Change Animation */
+@keyframes colorChange {
+    0% {
+        color: #007bff;
+    }
+    50% {
+        color: #ff6347;
+    }
+    100% {
+        color: #28a745;
+    }
+}
+
+/* Fade-In and Zoom Animation */
+@keyframes fadeZoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Logo Animation */
+@keyframes logoAnimation {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
