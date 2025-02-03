@@ -40,15 +40,137 @@ header {
     max-width: 200px;
 }
 
-/* Section Styles */
-section {
-    background-color: #f8f9fa;
-    padding: 3rem 0;
+section{
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-h1 span {
+.rect{
+    background-color: rgba(119, 138, 165, 0.136);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* gap: 5%; */
+    align-items: center;
+    width: 70%;
+    height: 60vh;
+
+
+}
+.rect h2 {
+    padding-top: 10%;
     color: #007bff;
 }
+
+/* section .selectors{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    gap: 5%;
+}
+
+.selectors .button input{
+    background-color: rgba(0, 123, 255, 0.198);
+    border: 1px solid rgba(60, 60, 60, 0.332);
+    border-radius: 8%;
+}
+
+datalist {
+    overflow-y: hidden;
+} */
+
+
+
+.selectors {
+    display: flex;
+     /* flex-direction: column; */
+    gap: 15px;
+    /* width: 500px; */
+    width: 100%;
+    margin: 0 auto;
+}
+ 
+/* .selectors {
+    display: grid;
+    grid-template-columns: ;
+    gap: 15px;
+    width: 500px;
+    margin: 0 auto;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+} */
+
+.frect{
+    display: grid;
+
+}
+.button input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 123, 255, 0.094);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button input:focus {
+    border-color: #547AA5; /* Your preferred blue shade */
+    box-shadow: 0 0 8px rgba(84, 122, 165, 0.5);
+    outline: none;
+}
+
+.button input::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+.button input[list]::-webkit-calendar-picker-indicator {
+    display: none !important;
+}
+
+
+
+
+.generated{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.chart-container{
+    width: 50%;
+    height: 100%;
+    border: 1px solid red;
+}
+.lpa{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 100%;
+    background-color: rgba(113, 188, 249, 0.406);
+}
+.skill_set{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 100%;
+    background-color: rgba(113, 188, 249, 0.406);
+}
+
 
 /* Card Styles */
 .bg-gradient-card {
@@ -90,3 +212,50 @@ h1 span {
         width: 100%;
     }
 }
+
+.dropdown {
+    position: relative;
+    width: 250% ;
+    display: inline-block;
+  }
+
+  .dropdown button {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    background: rgba(113, 188, 249, 0.168);
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    max-height: 150px; /* Fixed height */
+    overflow-y: auto; /* Enables scrolling */
+    border: 1px solid #ccc;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: 10px;
+    z-index: 1000;
+  }
+
+  .dropdown-content label {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+    gap: 8px; /* Even spacing between checkbox and text */
+  }
+
+  .dropdown-content input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #1b263b; /* Matches UI theme */
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+

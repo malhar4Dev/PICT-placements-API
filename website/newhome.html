@@ -11,42 +11,7 @@
     <script>
 
 
-        // function msg(){
-        //     alert('select the year first !');
-        // }
 
-        // const compInput = document.querySelector('input[list="compnames"]');
-        // compInput.addEventListener('change', msg);
-
-        // document.addEventListener('DOMContentLoaded', () => {
-        //     const yearInput = document.querySelector('input[list="years"]');
-        //     if (yearInput) {
-        //         yearInput.addEventListener('change', fetchCompany);
-        //     } else {
-        //         console.error('Year input not found.');
-
-        //     }
-        // });
-
-        // async function fetchCompany() {
-        //     try {
-        //         const yearInput = document.querySelector('input[list="years"]').value;
-
-        //         const response = await fetch(`/cnames?year=${yearInput}`);
-        //         const info = await response.json();
-
-        //         const nameoptions = document.getElementById('compnames');
-        //         nameoptions.innerHTML = ''; // Clear previous options
-        //         nameoptions.innerHTML = '<option>all companies</option>';
-        //         info.forEach(company => {
-        //             const names = `<option>${company.Company_name}</option>`;
-        //             nameoptions.innerHTML += names;
-        //         });
-
-        //     } catch (error) {
-        //         console.error('Error fetching companies:', error);
-        //     }
-        // }
 
         document.addEventListener('DOMContentLoaded', () => {
             const yearInput = document.querySelector('input[list="years"]');
@@ -76,10 +41,48 @@
 
 
         }
+
+        // window.onload = function () {
+        //     fetchCompany();
+
+        //     // Add event listeners to track user selections
+        //     const companyInput = document.querySelector('input[list="compnames"]');
+        //     const yearInput = document.querySelector('input[list="years"]');
+        //     const skillsInput = document.querySelector('input[list="skillset"]');
+
+        //     companyInput.addEventListener('change', () => {
+        //         console.log("Selected Company:", companyInput.value);
+        //     });
+
+        //     yearInput.addEventListener('change', () => {
+        //         console.log("Selected Year:", yearInput.value);
+        //     });
+
+        //     skillsInput.addEventListener('change', () => {
+        //         console.log("Selected Skill:", skillsInput.value);
+        //     });
+
+        //     // Example: Add a button click listener to collect all values
+        //     const analyseButton = document.querySelector('.button button');
+        //     analyseButton.addEventListener('click', (event) => {
+        //         event.preventDefault(); // Prevent form submission
+        //         const selectedCompany = companyInput.value;
+        //         const selectedYear = yearInput.value;
+        //         const selectedSkill = skillsInput.value;
+
+        //         console.log("Analyse Data:");
+        //         console.log("Company:", selectedCompany);
+        //         console.log("Year:", selectedYear);
+        //         console.log("Skill:", selectedSkill);
+
+        //     })
+        // };
+
+
+
         async function fetchCompany() {
             const yearInput = document.querySelector('input[list="years"]').value;
             const compInput = document.querySelector('input[list="compnames"]');
-
             if (!yearInput) {
                 compInput.disabled = true; // Disable if no year is selected
                 return;
@@ -155,52 +158,14 @@
             <div>
                 <h2>Analyse the data using our API</h2>
             </div>
-            <form id="analyseForm" action="data.html" method="GET">
-            <div class="selectors">
-                <div class="button">
-                    <input type="text" placeholder="year" spellcheck="true" list="years" required>
-                    <datalist id="years">
-                        <!-- the suggestions should appear here -->
-                        <option value="all years"></option>
-                        <option value="2019 -20"></option>
-                        <option value="2020 -21"></option>
-                        <option value="2021 -22"></option>
-                        <option value="2022 -23"></option>
-                        <option value="2023 -24"></option>
-                        <option value="2024 -25"></option>
-                    </datalist>
-                </div>
-
-                <div class="button">
-                    <input type="text" placeholder="select company" spellcheck="true" list="compnames" required>
-                    <!-- this datalist is used for providing the options for above input text. -->
-                    <datalist id="compnames">
-                        <!-- the suggestions should appear here -->
-                        <option value="all companies"></option>
-
-                    </datalist>
-
-                </div>
-
-                <div class="button">
-                    <input type="text" placeholder="skills" spellcheck="true" list="skillset">
-                    <datalist id="skillset">
-                        <!-- the suggestions should appear here -->
-                        <option value="all skills"></option>
-                        <option value="DSA"></option>
-                        <option value="Development"></option>
-                        <option value="Apptitude"></option>
+            <form id="analyseForm" method="GET">
 
 
-                    </datalist>
-                </div>
-            </div>
-            <div class="button">
 
-                <button type="submit">Analyse it</button>
 
-            </div>
             </form>
+
+
         </div>
 
 

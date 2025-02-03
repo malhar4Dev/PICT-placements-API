@@ -1,60 +1,358 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <!-- External CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <link rel="stylesheet" href="home.css">
 </head>
-<body>
-    <header class="bg-white shadow-sm py-3">
-        <div class="container d-flex justify-content-between align-items-center" id="navbar">
-            <!-- Logo and Title -->
-            <div class="d-flex align-items-center" id="logo">
-                <img src="Screenshot.png" alt="Logo" class="me-2 logo-img">
-                <span class="fs-5 fw-bold">PLACEMENT WEBSITE</span>
-            </div>
-            <!-- Navigation and Search Bar -->
-            <nav class="d-flex align-items-center">
-                <div class="search-container me-3">
-                    <input id="search-input" type="search" class="form-control me-2" placeholder="Search...">
-                    <button id="search-button" type="button" class="btn btn-primary">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </div>
-                <a href="home.html" class="nav-link">HOME</a>
-                <a href="visualise.html" class="nav-link">VISUALISE</a>
-                <a href="#faq" class="nav-link">FAQ</a>
-                <a href="#login" class="nav-link">ABOUT US</a>
-                <form action="/amazon.html">
-                    <button type="submit" class="btn btn-primary rounded-pill px-4">Get Started</button>
-                </form>
-            </nav>
-        </div>
-    </header>
+<section>
 
-    <section class="text-center py-5 bg-light">
-        <div class="container">
-            <h1 class="display-4 fw-bold">Empowering Your Path to <br><span class="text-primary">Placement Success!</span></h1>
-            <form action="/amazon.html">
-                <button type="submit" class="btn btn-primary btn-lg rounded-pill mt-4">Get Started</button>
+    <div class="rect">
+        <div>
+            <h2>Analyse the data using our API</h2>
+        </div>
+        <div class="frect">
+            <form id="analyseForm" method="GET">
+                <div class="selectors">
+                    <div class="button">
+                        <input type="text" placeholder="year" spellcheck="true" list="years" required>
+                        <datalist id="years">
+                            <!-- the suggestions should appear here -->
+                            <option value="all years"></option>
+                            <option value="2019 -20"></option>
+                            <option value="2020 -21"></option>
+                            <option value="2021 -22"></option>
+                            <option value="2022 -23"></option>
+                            <option value="2023 -24"></option>
+                            <option value="2024 -25"></option>
+                        </datalist>
+                    </div>
+
+                    <div class="button">
+                        <!-- <input type="text" placeholder="select company" spellcheck="true" list="compnames" required> -->
+                        <div class=" dropdown">
+                            <button>Select companies</button>
+                            <div class="dropdown-content" id="compnames">
+                                <label><input type="checkbox" value="all companies">all companies</label>
+
+                            </div>
+
+
+                        </div>
+                        <!-- <p>Selected Skills: <span id="selectedSkills"></span></p> -->
+                    </div>
+                    <div class="button">
+                        <div class=" dropdown">
+                            <input type="text" placeholder="Skills" spellcheck="true" list="years" required>
+                            <!-- <button>Select Skills</button> -->
+                            <div class="dropdown-content">
+                                <label><input type="checkbox" value="DSA"> DSA</label>
+                                <label><input type="checkbox" value="Development"> Development</label>
+                                <label><input type="checkbox" value="Aptitude"> Aptitude</label>
+                                <label><input type="checkbox" value="Machine Learning"> Machine Learning</label>
+                                <label><input type="checkbox" value="Cloud Computing"> Cloud Computing</label>
+                                <label><input type="checkbox" value="AI"> AI</label>
+                                <label><input type="checkbox" value="Cybersecurity"> Cybersecurity</label>
+                                <label><input type="checkbox" value="Blockchain"> Blockchain</label>
+                                <label><input type="checkbox" value="DevOps"> DevOps</label>
+                                <label><input type="checkbox" value="Data Science"> Data Science</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="button">
+
+                        <button type="submit">Analyse it</button>
+
+                    </div>
             </form>
         </div>
-    </section>
+        <div class="generated">
+            <div class="chart-container">
+                <canvas id="placementChart" width="400" height="200"></canvas>
+            </div>
+            <div class="lpa">
+                <h2 style="font-size: larger;">Salary offered : </h2>
+                <h2 style="font-size: larger;" id="lpa_num"> X LPA </h2>
+            </div>
+            <div class="skill_set">
+                here it should display the skillset required
+            </div>
+        </div>
 
-    <div class="card mx-auto my-5 p-4 text-center bg-gradient-card">
-        <img src="images.jpeg" alt="BG Icon" class="mb-3" style="position: absolute; scale: 500%; width: 100%; z-index: -1;"> 
-        <img src="https://via.placeholder.com/50" alt="AI Icon" class="mb-3">
-        <p class="mb-3">Try the AI-generated NLP system to enhance your company&#39;s connections</p>
-    
     </div>
 
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</section>
+
+<script>
+    const form = document.getElementById('analyseForm');
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const year = document.querySelector('input[list="years"]').value;
+        const company = document.querySelector('input[list="compnames"]').value;
+
+        if (!year) {
+            alert('Please select a year.');
+            return;
+        }
+        if (year == 'all years') {
+            alert('Please select a single year.');
+            return;
+        }
+        if (!company) {
+            alert('Please select a company.');
+            return;
+        }
+
+        try {
+            // Fetch filtered data
+            const response = await fetch(`/filtered_data?year=${year}&Company_name=${company}`);
+            const { data, chartData } = await response.json();
+
+            // Handle the case where chartData is available
+            if (chartData) {
+                renderChart(chartData.maleCount, chartData.femaleCount);
+            } else {
+                alert('Chart data is only available for a single company in a single year.');
+            }
+
+
+
+
+            try {
+                const response = await fetch(`/lpa?year=${year}&Company_name=${company}`);
+                const data = await response.json();
+
+                // Display the fetched LPA
+                const lpaDisplay = document.getElementById('lpa_num');
+                if (data.length > 0 && data[0].sal_lpa) {
+                    lpaDisplay.innerText = `Salary offered: ${data[0].sal_lpa} LPA`;
+                } else {
+                    lpaDisplay.innerText = 'No data found for the selected company & year.';
+                }
+
+            } catch (error) {
+                console.error('Error fetching LPA data:', error);
+            }
+
+
+
+
+
+
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    });
+
+    function renderComparisonChart(data) {
+        const ctx = document.getElementById('placementChart').getContext('2d');
+
+        // Destroy the previous chart instance (if any)
+        if (window.myChart) {
+            window.myChart.destroy();
+        }
+
+        // Group data by company
+        const groupedData = data.reduce((acc, row) => {
+            if (!acc[row.Company_name]) {
+                acc[row.Company_name] = { male: 0, female: 0 };
+            }
+            acc[row.Company_name].male += row.Male;
+            acc[row.Company_name].female += row.Female;
+            return acc;
+        }, {});
+
+        const labels = Object.keys(groupedData);
+        const maleCounts = labels.map(company => groupedData[company].male);
+        const femaleCounts = labels.map(company => groupedData[company].female);
+
+        // Create a new chart
+        window.myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Male',
+                        data: maleCounts,
+                        backgroundColor: '#4CAF50',
+                    },
+                    {
+                        label: 'Female',
+                        data: femaleCounts,
+                        backgroundColor: '#FF6384',
+                    },
+                ],
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                },
+            },
+        });
+    }
+
+    function renderChart(maleCount, femaleCount) {
+        const ctx = document.getElementById('placementChart').getContext('2d');
+
+        // Destroy the previous chart instance (if any)
+        if (window.myChart) {
+            window.myChart.destroy();
+        }
+
+        // Create a new chart
+        window.myChart = new Chart(ctx, {
+            type: 'bar', // Use 'bar' if you prefer
+            data: {
+                labels: ['Male', 'Female'],
+                datasets: [
+                    {
+                        label: 'Students Placed',
+                        data: [maleCount, femaleCount],
+                        backgroundColor: ['#4CAF50', '#FF6384'],
+                    },
+                ],
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                },
+            },
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const yearInput = document.querySelector('input[list="years"]');
+        const compInput = document.querySelector('input[list="compnames"]');
+        compInput.disabled = false; // Disable company name input by default
+
+        if (yearInput) {
+            yearInput.addEventListener('change', fetchCompany);
+        } else {
+            console.error('Year input not found.');
+        }
+
+        // Alert if company name is selected without selecting a year first
+        compInput.addEventListener('focus', function () {
+            const yearInputValue = document.querySelector('input[list="years"]').value;
+            if (!yearInputValue) {
+                console.log("select year!")
+                alert('Please select the year first!');
+                compInput.disabled = true;  // Disable company input until a year is selected
+            }
+        });
+    });
+
+
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const year = document.querySelector('input[list="years"]').value;
+        const companies = document.querySelector('input[list="compnames"]').value;
+
+        if (!year) {
+            alert('Please select a year.');
+            return;
+        }
+        if (year === 'all years') {
+            alert('Please select a single year.');
+            return;
+        }
+        if (!companies) {
+            alert('Please select at least one company.');
+            return;
+        }
+
+        try {
+            // Fetch filtered data
+            const response = await fetch(`/filtered_data?year=${year}&Company_name=${companies}`);
+            const { data, chartData } = await response.json();
+
+            // Handle the case where chartData is available (single company)
+            if (chartData) {
+                renderChart(chartData.maleCount, chartData.femaleCount);
+            } else {
+                // Handle multiple companies or "all companies"
+                renderComparisonChart(data);
+            }
+
+            // Fetch LPA data
+            const lpaResponse = await fetch(`/lpa?year=${year}&Company_name=${companies}`);
+            const lpaData = await lpaResponse.json();
+
+            // Display the fetched LPA
+            const lpaDisplay = document.getElementById('lpa_num');
+            lpaDisplay.innerHTML = lpaData.length > 0
+                ? `LPA: ${lpaData[0].sal_lpa}`
+                : 'No data found for the selected filters.';
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    });
+
+    async function fetchCompany() {
+        const yearInput = document.querySelector('input[list="years"]').value;
+        const compInput = document.querySelector('input[list="compnames"]');
+        if (!yearInput) {
+            compInput.disabled = true; // Disable if no year is selected
+            return;
+        }
+
+        try {
+            const response = await fetch(`/cnames?year=${yearInput}`);
+            const info = await response.json();
+
+            const nameoptions = document.getElementById('compnames');
+            nameoptions.innerHTML = ''; // Clear previous options
+            nameoptions.innerHTML = '<option>all companies</option>';
+
+            if (info.length === 0) {
+                alert("no data found for this year")
+                compInput.disabled = true; // Disable if no companies are returned
+            } else {
+                info.forEach(company => {
+                    const names = `<option>${company.Company_name}</option>`;
+                    nameoptions.innerHTML += names;
+                });
+                compInput.disabled = false; // Enable if data is returned
+            }
+        } catch (error) {
+            console.error('Error fetching companies:', error);
+            compInput.disabled = true; // Disable if there's an error fetching data
+        }
+    }
+
+
+    const checkboxes = document.querySelectorAll('.dropdown-content input[type="checkbox"]');
+    const selectedSkillsSpan = document.getElementById('selectedSkills');
+
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            const selectedValues = Array.from(checkboxes)
+                .filter(cb => cb.checked)
+                .map(cb => cb.value);
+
+            selectedSkillsSpan.textContent = selectedValues.join(', ');
+        });
+    });
+
+
+</script>
 </body>
+
 </html>
