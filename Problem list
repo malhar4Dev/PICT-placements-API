@@ -1,0 +1,14 @@
+All the problems that need attention --> 
+
+defining the data rules : 
+when company has appeared more than once in a single year:
+when company criteria is ppo :
+single year multiple companies --> top 10 results and making the graphs
+all years single company --> over the years students placed as well as the lpa trend.
+
+selecting any company -> makes the skillset field disabled.
+
+should user be able to select multiple companies or multiple skillset ?
+
+single year --> skillset --> companies that wanted that skills lpa wise graph , top results.
+multiple years --> skillset --> top results lpa wise of the companies that wanted that skill.
