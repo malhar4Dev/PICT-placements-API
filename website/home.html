@@ -17,40 +17,36 @@
         <div>
             <h2>Analyse the data using our API</h2>
         </div>
-        <div class="frect">
+        
             <form id="analyseForm" method="GET">
                 <div class="selectors">
                     <div class="button">
-                        <input type="text" placeholder="year" spellcheck="true" list="years" required>
-                        <datalist id="years">
-                            <!-- the suggestions should appear here -->
-                            <option value="all years"></option>
-                            <option value="2019 -20"></option>
-                            <option value="2020 -21"></option>
-                            <option value="2021 -22"></option>
-                            <option value="2022 -23"></option>
-                            <option value="2023 -24"></option>
-                            <option value="2024 -25"></option>
-                        </datalist>
-                    </div>
-
-                    <div class="button">
-                        <!-- <input type="text" placeholder="select company" spellcheck="true" list="compnames" required> -->
-                        <div class=" dropdown">
-                            <button>Select companies</button>
-                            <div class="dropdown-content" id="compnames">
-                                <label><input type="checkbox" value="all companies">all companies</label>
-
+                        <div class="dropdown">
+                            <input type="text" placeholder="year" spellcheck="true" list="years" required>
+                            <div class="dropdown-content">
+                                <label><input type="checkbox" value="all years"> all years</label>
+                                <label><input type="checkbox" value="2019 -20"> 2019 -20</label>
+                                <label><input type="checkbox" value="2020 -21"> 2020 -21</label>
+                                <label><input type="checkbox" value="2021 -22"> 2021 -22</label>
+                                <label><input type="checkbox" value="2022 -23"> 2022 -23</label>
+                                <label><input type="checkbox" value="2023 -24"> 2023 -24</label>
+                                <label><input type="checkbox" value="2024 -25"> 2024 -25</label>  
                             </div>
-
-
                         </div>
-                        <!-- <p>Selected Skills: <span id="selectedSkills"></span></p> -->
                     </div>
+
                     <div class="button">
-                        <div class=" dropdown">
-                            <input type="text" placeholder="Skills" spellcheck="true" list="years" required>
-                            <!-- <button>Select Skills</button> -->
+                        <div class="dropdown">
+                            <input type="text" id="companiesInput" placeholder="Select Companies" spellcheck="true" readonly>
+                            <div class="dropdown-content" id="compnames">
+                                <label><input type="checkbox" value="all companies"> All Companies</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="button">
+                        <div class="dropdown">
+                            <input type="text" id="skillsInput" placeholder="Skills" spellcheck="true" readonly>
                             <div class="dropdown-content">
                                 <label><input type="checkbox" value="DSA"> DSA</label>
                                 <label><input type="checkbox" value="Development"> Development</label>
@@ -65,6 +61,7 @@
                             </div>
                         </div>
                     </div>
+                    
                 </div>
                     <div class="button">
 
@@ -72,7 +69,7 @@
 
                     </div>
             </form>
-        </div>
+        
         <div class="generated">
             <div class="chart-container">
                 <canvas id="placementChart" width="400" height="200"></canvas>
@@ -239,7 +236,7 @@
     document.addEventListener('DOMContentLoaded', () => {
         const yearInput = document.querySelector('input[list="years"]');
         const compInput = document.querySelector('input[list="compnames"]');
-        compInput.disabled = false; // Disable company name input by default
+        compInput.disabled = false; 
 
         if (yearInput) {
             yearInput.addEventListener('change', fetchCompany);
@@ -247,13 +244,13 @@
             console.error('Year input not found.');
         }
 
-        // Alert if company name is selected without selecting a year first
+        
         compInput.addEventListener('focus', function () {
             const yearInputValue = document.querySelector('input[list="years"]').value;
             if (!yearInputValue) {
                 console.log("select year!")
                 alert('Please select the year first!');
-                compInput.disabled = true;  // Disable company input until a year is selected
+                compInput.disabled = true;  
             }
         });
     });
@@ -305,51 +302,91 @@
         }
     });
 
+
+    document.addEventListener("DOMContentLoaded", () => {
+    const companiesInput = document.getElementById("companiesInput");
+    const compnamesDropdown = document.getElementById("compnames");
+
     async function fetchCompany() {
         const yearInput = document.querySelector('input[list="years"]').value;
-        const compInput = document.querySelector('input[list="compnames"]');
-        if (!yearInput) {
-            compInput.disabled = true; // Disable if no year is selected
-            return;
-        }
+        if (!yearInput) return;
 
         try {
             const response = await fetch(`/cnames?year=${yearInput}`);
             const info = await response.json();
 
-            const nameoptions = document.getElementById('compnames');
-            nameoptions.innerHTML = ''; // Clear previous options
-            nameoptions.innerHTML = '<option>all companies</option>';
+            compnamesDropdown.innerHTML = ''; // Clear previous options
+            compnamesDropdown.innerHTML = `<label><input type="checkbox" value="all companies"> All Companies</label>`;
 
             if (info.length === 0) {
-                alert("no data found for this year")
-                compInput.disabled = true; // Disable if no companies are returned
+                alert("No data found for this year");
             } else {
                 info.forEach(company => {
-                    const names = `<option>${company.Company_name}</option>`;
-                    nameoptions.innerHTML += names;
+                    const companyLabel = document.createElement("label");
+                    companyLabel.innerHTML = `<input type="checkbox" value="${company.Company_name}"> ${company.Company_name}`;
+                    compnamesDropdown.appendChild(companyLabel);
                 });
-                compInput.disabled = false; // Enable if data is returned
             }
+
+            setupCompanySelection();
         } catch (error) {
-            console.error('Error fetching companies:', error);
-            compInput.disabled = true; // Disable if there's an error fetching data
+            console.error("Error fetching companies:", error);
         }
     }
 
+    function setupCompanySelection() {
+        const checkboxes = compnamesDropdown.querySelectorAll("input[type='checkbox']");
 
-    const checkboxes = document.querySelectorAll('.dropdown-content input[type="checkbox"]');
-    const selectedSkillsSpan = document.getElementById('selectedSkills');
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener("change", () => {
+                let selectedCompanies = Array.from(checkboxes)
+                    .filter(cb => cb.checked)
+                    .map(cb => cb.value);
+
+                // Prevent selecting more than 3 companies
+                if (selectedCompanies.length > 3) {
+                    alert("You can select a maximum of 3 companies.");
+                    checkbox.checked = false; // Uncheck the last selected checkbox
+                    return;
+                }
+
+                // If "All Companies" is selected, uncheck other options
+                if (selectedCompanies.includes("all companies")) {
+                    checkboxes.forEach(cb => {
+                        if (cb.value !== "all companies") cb.checked = false;
+                    });
+                    selectedCompanies = ["All Companies"];
+                }
+
+                // Update input field
+                companiesInput.value = selectedCompanies.join(", ");
+            });
+        });
+    }
+
+    document.querySelector('input[list="years"]').addEventListener("change", fetchCompany);
+});
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+    const skillsInput = document.getElementById("skillsInput");
+    const checkboxes = document.querySelectorAll(".dropdown-content input[type='checkbox']");
 
     checkboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', () => {
-            const selectedValues = Array.from(checkboxes)
-                .filter(cb => cb.checked)
-                .map(cb => cb.value);
+        checkbox.addEventListener("change", () => {
+            let selectedSkills = [];
 
-            selectedSkillsSpan.textContent = selectedValues.join(', ');
+            checkboxes.forEach(cb => {
+                if (cb.checked) {
+                    selectedSkills.push(cb.value);
+                }
+            });
+
+            // Update the input field with selected skills as a comma-separated string
+            skillsInput.value = selectedSkills.join(", ");
         });
     });
+});
 
 
 </script>

@@ -3,57 +3,295 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
-  <script>
-    // Fetch data from the server
-    async function fetchUsers() {
-      try {
-        const response = await fetch('/sample_data1'); // Call the `/users` route
-        const sample_data = await response.json();
+  <title>Landing Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+  <section>
+    <div class="rect">
+      <div>
+        <h2>Analyse the data using our API</h2>
+      </div>
+      <div class="frect">
+        <form id="analyseForm" method="GET">
+          <div class="selectors">
+            <div class="button">
+              <div class="dropdown">
+                <input type="text" placeholder="year" spellcheck="true" list="years" required>
+                  <div class="dropdown-content">
+                      <label><input type="checkbox" value="all years"> all years</label>
+                      <label><input type="checkbox" value="2019 -20"> 2019 -20</label>
+                      <label><input type="checkbox" value="2020 -21"> 2020 -21</label>
+                      <label><input type="checkbox" value="2021 -22"> 2021 -22</label>
+                      <label><input type="checkbox" value="2022 -23"> 2022 -23</label>
+                      <label><input type="checkbox" value="2023 -24"> 2023 -24</label>
+                      <label><input type="checkbox" value="2024 -25"> 2024 -25</label>  
+                  </div>
+              </div>
+          </div>
 
-        // Display data in a table
-        const table = document.getElementById('data-table');
-        sample_data.forEach(company => {
-          const row = `<tr>
-                        <td>${company.unique_id}</td>
-                        <td>${company.Company_name}</td>
-                        <td>${company.year}</td>
-                        <td>${company.cgpa_criteria}</td>
-                        <td>${company.deg_criteria}</td>
-                        <td>${company.branch_criteria}</td>
-                        <td>${company.sal_lpa}</td>
-                      </tr>`;
-          table.innerHTML += row;
+            <!-- Company selection using custom dropdown with checkboxes -->
+            <div class="button">
+              <div class="dropdown">
+                <input type="text" id="companiesInput" placeholder="Select Companies" spellcheck="true" readonly>
+                <div class="dropdown-content" id="compnames">
+                  <label><input type="checkbox" value="all companies"> All Companies</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Skills selection using custom dropdown with checkboxes -->
+            <div class="button">
+              <div class="dropdown">
+                <input type="text" id="skillsInput" placeholder="Skills" spellcheck="true" readonly>
+                <div class="dropdown-content">
+                  <label><input type="checkbox" value="DSA"> DSA</label>
+                  <label><input type="checkbox" value="Development"> Development</label>
+                  <label><input type="checkbox" value="Aptitude"> Aptitude</label>
+                  <label><input type="checkbox" value="Machine Learning"> Machine Learning</label>
+                  <label><input type="checkbox" value="Cloud Computing"> Cloud Computing</label>
+                  <label><input type="checkbox" value="AI"> AI</label>
+                  <label><input type="checkbox" value="Cybersecurity"> Cybersecurity</label>
+                  <label><input type="checkbox" value="Blockchain"> Blockchain</label>
+                  <label><input type="checkbox" value="DevOps"> DevOps</label>
+                  <label><input type="checkbox" value="Data Science"> Data Science</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="button">
+            <button type="submit">Analyse it</button>
+          </div>
+        </form>
+      </div>
+      <div class="generated">
+        <div class="chart-container">
+          <canvas id="placementChart" width="400" height="200"></canvas>
+        </div>
+        <div class="lpa">
+          <h2 style="font-size: larger;">Salary offered : </h2>
+          <h2 style="font-size: larger;" id="lpa_num"> X LPA </h2>
+        </div>
+        <div class="skill_set">
+          <h3>Selected Skillset:</h3>
+          <p id="selectedSkills">None</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Helper function to gather selected checkbox values as a comma-separated string
+    function getSelectedValues(containerId) {
+      const checkboxes = document.querySelectorAll(`#${containerId} input[type="checkbox"]:checked`);
+      return Array.from(checkboxes).map(cb => cb.value).join(",");
+    }
+
+    // Handle skills selection so that the input field displays selected skills
+    document.addEventListener("DOMContentLoaded", () => {
+      const skillsInput = document.getElementById("skillsInput");
+      const skillsCheckboxes = document.querySelectorAll("#skillsInput ~ .dropdown .dropdown-content input[type='checkbox']");
+      const selectedSkillsSpan = document.getElementById("selectedSkills");
+
+      // For skills, add event listeners on each checkbox
+      skillsCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener("change", () => {
+          const selected = Array.from(skillsCheckboxes)
+            .filter(cb => cb.checked)
+            .map(cb => cb.value);
+          skillsInput.value = selected.join(", ");
+          selectedSkillsSpan.textContent = selected.join(", ") || "None";
         });
+      });
+    });
+
+    // Fetch companies based on selected year and populate the companies dropdown
+    async function fetchCompany() {
+      const year = document.getElementById("yearInput").value;
+      const compnamesDropdown = document.getElementById("compnames");
+      if (!year) return;
+
+      try {
+        const response = await fetch(`/compnames?year=${encodeURIComponent(year)}`);
+        const companies = await response.json();
+
+        // Clear previous company options and add default "All Companies"
+        compnamesDropdown.innerHTML = `<label><input type="checkbox" value="all companies"> All Companies</label>`;
+
+        if (companies.length === 0) {
+          alert("No data found for this year");
+        } else {
+          companies.forEach(item => {
+            const label = document.createElement("label");
+            label.innerHTML = `<input type="checkbox" value="${item.Company_name}"> ${item.Company_name}`;
+            compnamesDropdown.appendChild(label);
+          });
+        }
+        setupCompanySelection();
       } catch (error) {
-        console.error('Error fetching users:', error);
+        console.error("Error fetching companies:", error);
       }
     }
 
-    // Fetch data when the page loads
-    window.onload = fetchUsers;
+    // Setup event listeners for company checkboxes and update the companies input
+    function setupCompanySelection() {
+      const compnamesDropdown = document.getElementById("compnames");
+      const companiesInput = document.getElementById("companiesInput");
+      const checkboxes = compnamesDropdown.querySelectorAll("input[type='checkbox']");
+
+      checkboxes.forEach(checkbox => {
+        checkbox.addEventListener("change", () => {
+          let selectedCompanies = Array.from(checkboxes)
+            .filter(cb => cb.checked)
+            .map(cb => cb.value);
+
+          // Enforce a maximum of 3 selections
+          if (selectedCompanies.length > 3) {
+            alert("You can select a maximum of 3 companies.");
+            checkbox.checked = false;
+            selectedCompanies = Array.from(checkboxes)
+              .filter(cb => cb.checked)
+              .map(cb => cb.value);
+          }
+
+          // If "all companies" is selected, uncheck other options
+          if (selectedCompanies.includes("all companies")) {
+            checkboxes.forEach(cb => {
+              if (cb.value !== "all companies") cb.checked = false;
+            });
+            selectedCompanies = ["all companies"];
+          }
+
+          companiesInput.value = selectedCompanies.join(", ");
+        });
+      });
+    }
+
+    // When the year selection changes, fetch companies for that year
+    document.querySelector('input[list="years"]').addEventListener("change", fetchCompany);
+
+    // Handle the form submission: use selected year, companies, and skills to fetch data
+    const form = document.getElementById("analyseForm");
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      // Get year (assumed to be a single selection from datalist)
+      const year = document.getElementById("yearInput").value;
+      // For companies, get selected checkboxes from compnames dropdown
+      const companies = getSelectedValues("compnames");
+      // For skills, get selected checkboxes from the skills dropdown (if needed)
+      const skills = document.getElementById("skillsInput").value; // Already updated via event listener
+
+      if (!year) {
+        alert("Please select a year.");
+        return;
+      }
+      if (year === "all years") {
+        alert("Please select a single year.");
+        return;
+      }
+      if (!companies) {
+        alert("Please select at least one company.");
+        return;
+      }
+
+      try {
+        // Fetch filtered data (if your API expects multiple companies as comma-separated values)
+        const response = await fetch(`/filtered_data?year=${encodeURIComponent(year)}&Company_name=${encodeURIComponent(companies)}`);
+        const { data, chartData } = await response.json();
+
+        // Render chart based on API response: single company chart or comparison chart
+        if (chartData) {
+          renderChart(chartData.maleCount, chartData.femaleCount);
+        } else {
+          renderComparisonChart(data);
+        }
+
+        // Fetch LPA data similarly
+        const lpaResponse = await fetch(`/lpa?year=${encodeURIComponent(year)}&Company_name=${encodeURIComponent(companies)}`);
+        const lpaData = await lpaResponse.json();
+        const lpaDisplay = document.getElementById("lpa_num");
+        lpaDisplay.innerText = lpaData.length > 0 && lpaData[0].sal_lpa
+          ? `Salary offered: ${lpaData[0].sal_lpa} LPA`
+          : "No data found for the selected filters.";
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    });
+
+    // Chart rendering functions
+    function renderComparisonChart(data) {
+      const ctx = document.getElementById("placementChart").getContext("2d");
+
+      if (window.myChart) {
+        window.myChart.destroy();
+      }
+
+      const groupedData = data.reduce((acc, row) => {
+        if (!acc[row.Company_name]) {
+          acc[row.Company_name] = { male: 0, female: 0 };
+        }
+        acc[row.Company_name].male += row.Male;
+        acc[row.Company_name].female += row.Female;
+        return acc;
+      }, {});
+
+      const labels = Object.keys(groupedData);
+      const maleCounts = labels.map(company => groupedData[company].male);
+      const femaleCounts = labels.map(company => groupedData[company].female);
+
+      window.myChart = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: "Male",
+              data: maleCounts,
+              backgroundColor: "#4CAF50",
+            },
+            {
+              label: "Female",
+              data: femaleCounts,
+              backgroundColor: "#FF6384",
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { position: "top" } },
+        },
+      });
+    }
+
+    function renderChart(maleCount, femaleCount) {
+      const ctx = document.getElementById("placementChart").getContext("2d");
+
+      if (window.myChart) {
+        window.myChart.destroy();
+      }
+
+      window.myChart = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: ["Male", "Female"],
+          datasets: [
+            {
+              label: "Students Placed",
+              data: [maleCount, femaleCount],
+              backgroundColor: ["#4CAF50", "#FF6384"],
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { position: "top" } },
+        },
+      });
+    }
   </script>
-</head>
-<body>
-  <h1>Users Data</h1>
-  <table border="1">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>year</th>
-        <th>cgpa</th>
-        <th>degree</th>
-        <th>branch</th>
-        <th>salary</th>
-      </tr>
-    </thead>
-    <tbody id="data-table">
-      <!-- Data will be inserted here -->
-    </tbody>
-  </table>
-
-
-  
 </body>
 </html>
