@@ -1,0 +1,331 @@
+Company,dsa,cp,water meter
+ITC Infotech,true,true,true
+RBL Bank,true,false,true
+Veritas,false,false,false
+Visteon,true,false,false
+Zocdoc,false,false,false
+Toshiba,false,true,false
+Metro-GSC,false,false,true
+JM Finance,true,true,false
+Cencora,false,false,false
+CrowdStrike,false,true,true
+Reflexis,false,false,false
+Barclays,false,true,true
+Valuence Holdings,false,false,false
+Salesforce,false,false,false
+Northern Trust,true,true,false
+K12 Techno Services,false,false,false
+Sell.Do (Beyondwalls),false,false,false
+Zensar,false,false,false
+TCS R&D,false,false,false
+NCS,false,false,false
+Publicis Sapient,true,true,true
+Groww,false,false,false
+Innoplexus,true,true,true
+Moxie,false,false,false
+General Mills,false,false,false
+AGCO,false,false,false
+eQ Technologies (QA),false,false,false
+Rockwell Automation,false,false,false
+Samsung Semiconductor,false,false,false
+UptiQ,false,false,false
+Compass,false,false,false
+Emerson,false,false,false
+Sandvine,false,false,false
+Quantiphi,false,false,false
+TIAA India,false,false,false
+Ittiam,false,false,false
+Godrej & Boyce,false,false,false
+Eumentis Cloud,true,true,false
+Icertis,false,false,false
+Altometa,false,false,false
+Codevita Live,false,false,false
+ADP,false,false,false
+PhonePe,false,false,false
+Fiat India Automobile,false,false,false
+Tiaa India,false,true,true
+TCS Ninja,false,false,false
+3EA,false,false,false
+HashedIn,false,false,false
+BBD,false,false,false
+Zinrelo,false,false,false
+BMC Softwares,false,false,false
+HDFC Bank,false,false,false
+BUDDI.AI,false,false,false
+Acquia,false,false,false
+Fold Health,false,false,false
+Avaya,false,false,false
+Varian Medical System,false,false,false
+ACA Group,false,false,false
+Kylas,false,false,false
+InnoGenium,false,false,false
+Xorient,false,false,false
+Numerator,false,false,false
+Symbl.ai,false,false,false
+Quantiphi Analytics,false,false,false
+Lentra AI,false,false,false
+Wissen Technology,false,false,false
+Druva,false,false,false
+Vertical Fox,false,false,false
+Agiliad Technology,false,false,false
+Media.net,false,false,false
+oneXtel,false,false,false
+SE2,false,false,false
+Talentio,false,false,false
+Flo Group,false,false,false
+Rudder Analytics,false,false,false
+Bajaj Finance,false,false,false
+Eternus Solutions,false,false,false
+Deeptek,false,false,false
+WisdmLabs,false,false,false
+Quorum Softwares,false,false,false
+Tech Prescient,false,false,false
+RackWare Technologies,false,false,false
+Demand Matrix,false,false,false
+GNS Engg.,false,false,false
+Intangles Lab,false,false,false
+HCL Technologies,false,false,false
+Arista Networks,false,false,false
+eInfochip,false,false,false
+Wednesday Solutions,false,false,false
+Amdocs,false,false,false
+Schlumberger,false,false,false
+LTI Spark,false,false,false
+FlexTrade,false,false,false
+Mobikasa,false,false,false
+Cognizant,false,false,false
+Trilogy Innovations,false,false,false
+Sincro (CDK Global),false,false,false
+Jombay,false,false,false
+Energy Exemplar,false,false,false
+Goldman Sachs,false,false,false
+Rakuten,false,false,false
+Helpshift Technologies,false,false,false
+Imagination Technologies,false,false,false
+Live Health,false,false,false
+EXL,false,false,false
+Launch Ventures,false,false,false
+TIBCO,false,false,false
+Xpanxion,false,false,false
+Infogen Labs,false,false,false
+Incubyte,false,false,false
+Delhivery,false,false,false
+evosys global,false,false,false
+i3Systems,false,false,false
+NICE Inc.,false,false,false
+Veritas Technologies,false,false,false
+RIA Advisory,false,false,false
+Amazon,false,false,false
+EnthrallTech,false,false,false
+Atos,false,false,false
+Sophos,false,false,false
+Accelya,false,false,false
+Valuefy,false,false,false
+Berkadia,false,false,false
+McKinley & Rice,false,false,false
+Finastra,false,false,false
+Aligned Automation,false,false,false
+UPTIQ,false,false,false
+Celebal Technologies,false,false,false
+Financial sofware systems,false,false,false
+rtCamp,false,false,false
+Paragyte,false,false,false
+NICE Systems,false,false,false
+bizAmica Software,false,false,false
+Extramarks Education,false,false,false
+Promobi Technology,false,false,false
+Trading Technologies,false,false,false
+Mindtree,false,false,false
+Nihilent,false,false,false
+Principal Global Services,false,false,false
+IGT Solutions,false,false,false
+IDFC FIRST Bank,false,false,false
+DeltaX,false,false,false
+Relfor Lab,false,false,false
+Jaro Education,false,false,false
+Jio,false,false,false
+BirlaSoft,false,false,false
+Sophos Technologies,false,false,false
+Blue Flame Labs,false,false,false
+eQ Technologies (SDE),false,false,false
+Siemens,false,false,false
+Cloudlex,false,false,false
+RackWare,false,false,false
+Bloomberg,false,false,false
+Paytm Money,false,false,false
+PharmEasy,false,false,false
+NTT Business Solutions (SAP),false,false,false
+HSBC,false,false,false
+Musigma,false,false,false
+Sasken,false,false,false
+Red Panda,false,false,false
+Fox Solutions,false,false,false
+JPMC,false,false,false
+Crowdworks,false,false,false
+Palo Alto,false,false,false
+TCS Digital,false,false,false
+Lowe's India,false,false,false
+Deutsche Bank,false,false,false
+Deqode,false,false,false
+LogiQuad,false,false,false
+ACI Worldwide,false,false,false
+Mastercard,false,false,false
+Altizon Inc.,false,false,false
+e-Emphasys,false,false,false
+Veras Retail,false,false,false
+AlefEdge,false,false,false
+Elastic Run,false,false,false
+ISS,false,false,false
+Cutshort,false,false,false
+L & T Infotech,false,false,false
+Logicmonitor,false,false,false
+NTT Data,false,false,false
+64Squares,false,false,false
+Platform 9,false,false,false
+Screen Magic,false,false,false
+Codenation,false,false,false
+Equifax,false,false,false
+Unschool,false,false,false
+e-Zest,false,false,false
+Mindstix Software Labs,false,false,false
+Sapient,false,false,false
+Endurance International,false,false,false
+Ugam,false,false,false
+Mediaocean,false,false,false
+Accenture,false,false,false
+Turing,false,false,false
+Honeywell,false,false,false
+Searce,false,false,false
+Hitachi Vantara,false,false,false
+Lifeline Systech,false,false,false
+Product Dossier,false,false,false
+Facctum IT Solutions,false,false,false
+Growisto,false,false,false
+EQ Technologic,false,false,false
+Yardi,false,false,false
+Oracle,false,false,false
+Ryussi Technologies,false,false,false
+Yahoo (Japan),false,false,false
+Schlumberger (PWD Drive),false,false,false
+Rocket Software,false,false,false
+Entrata,false,false,false
+Cloudwerx,false,false,false
+Persistent Systems,false,false,false
+Bajaj Finserv,false,false,false
+TCS R&I,false,false,false
+UBS,false,false,false
+SAS,false,false,false
+Crane process flow,false,false,false
+Infosys,false,false,false
+Reposenergy,false,false,false
+Aspect Ratio,false,false,false
+PWC,false,false,false
+Dataeaze,false,false,false
+Qualys,false,false,false
+IBM,false,false,false
+ION,false,false,false
+Dragonfly Financial Technologies,false,false,false
+Ciena,false,false,false
+Ubisoft,false,false,false
+Sagitec,false,false,false
+IDeaS A SAS,false,false,false
+ETraveli,false,false,false
+Purplle.com,false,false,false
+PlanetSpark,false,false,false
+Acuiti Labs,false,false,false
+Atlan,false,false,false
+Paypal,false,false,false
+Bizreach,false,false,false
+ION Group,false,false,false
+IntegriChain Inc.,false,false,false
+BNY Mellon,false,false,false
+Alpha Sense,false,false,false
+Cisco,false,false,false
+MetaMorphoSys,false,false,false
+CLSA,false,false,false
+TCS Prime,false,false,false
+Mini Orange,false,false,false
+Tracelink,false,false,false
+Neilsoft,false,false,false
+PTC Software,false,false,false
+Neal Analytics,false,false,false
+Ideas,false,false,false
+Innovaccer,false,false,false
+Tripstack,false,false,false
+Bakliwal Tutorials,false,false,false
+Findability Sciences,false,false,false
+Reliance,false,false,false
+Hexaview Technologies,false,false,false
+Capgemini,false,false,false
+Siemens Regular,false,false,false
+Espressif,false,false,false
+Merilytics,false,false,false
+Anchanto,false,false,false
+PubMatic,false,false,false
+Hexaware Technologies,false,false,false
+Datametica,false,false,false
+Vertiv,false,false,false
+Winjit Technologies,false,false,false
+EPIKInDiFi,false,false,false
+IDeaS,false,false,false
+STL,false,false,false
+FinIQ,false,false,false
+Ordway Labs,false,false,false
+PubMatic India,false,false,false
+Avalara Technologies,false,false,false
+Ernst & Young,false,false,false
+CakeSoft Technologies,false,false,false
+CodeWalla,false,false,false
+TechVerito,false,false,false
+JISA Softech,false,false,false
+Mindstix,false,false,false
+Tavisca Solutions,false,false,false
+Source.One,false,false,false
+Raja Software Lab,false,false,false
+Avegen,false,false,false
+Cumulus,false,false,false
+Microsoft,false,false,false
+Persistent,false,false,false
+Platform9 Systems,false,false,false
+Suzlon,false,false,false
+Interactive Brokers,false,false,false
+Altimetrik,false,false,false
+Deloitte,false,false,false
+Principal Global Solutions,false,false,false
+Pubmatic (Drive2),false,false,false
+Cadence,false,false,false
+RIA Advisory LLP,false,false,false
+Ayaan Autonomous,false,false,false
+Sell.do,false,false,false
+iQ Digital,false,false,false
+Rockwell Automation (E),false,false,false
+Uolo.com,false,false,false
+Amura,false,false,false
+Medly Pharmacy,false,false,false
+DataAxle ( Pending ),false,false,false
+Miko,false,false,false
+Vodafone,false,false,false
+Turtlemint,false,false,false
+CION Digital,false,false,false
+Sedemac Mechatronics,false,false,false
+Rinex,false,false,false
+Ittiam Systems,false,false,false
+udChalo,false,false,false
+T Systems,false,false,false
+Apisero,false,false,false
+Shoreline,false,false,false
+Veritas India,false,false,false
+Corizo,false,false,false
+Swasthya AI,false,false,false
+ZS Associates,false,false,false
+Credit Suisse,false,false,false
+Finvu,false,false,false
+Tech Verito,false,false,false
+E2Open,false,false,false
+Adobe,false,false,false
+Centiro,false,false,false
+OFSS,false,false,false
+Fiserv,false,false,false
+LTI,false,false,false
+Fabric Inc,false,false,false
+Brainstorm Force,false,false,false
