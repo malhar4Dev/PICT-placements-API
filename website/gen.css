@@ -1,0 +1,108 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+}
+
+#logo .logo-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.nav-link {
+    color: #333;
+    font-weight: bold;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: #007bff;
+}
+
+/* Search Bar */
+.search-container {
+    display: flex;
+    align-items: center;
+    max-width: 350px;
+}
+
+#search-input {
+    flex: 1;
+    max-width: 200px;
+}
+
+.content{
+    display: flex;
+    position: relative;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.content .input-field {
+    /* position: fixed; */
+}
+.content form button{
+    position: fixed;
+    bottom: 20%;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.tag {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin: 2px;
+    display: flex;
+    align-items: center;
+}
+
+.tag .remove {
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.suggestions {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-height: 150px;
+    overflow-y: auto;
+    position: absolute;
+    background-color: white;
+    z-index: 1000;
+    width: calc(20% - 12px);
+}
+
+.suggestion-item {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+
+input {
+    border: none;
+    outline: none;
+    flex: 1;
+}
