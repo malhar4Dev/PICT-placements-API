@@ -1,34 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Gen page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="visualiseit.css">
-
-    <script>
-        // Fetch data from the server
-        async function fetchSpecific() {
-          try {
-            const response = await fetch('/filtered_data'); // Call the `/users` route
-            const filtered_data = await response.json();
-    
-            // Display data in a table
-            const card = document.getElementById('data-table');
-            filtered_data.forEach(value => {
-              card.innerHTML = ''
-            });
-          } catch (error) {
-            console.error('Error fetching users:', error);
-          }
+    <link rel="stylesheet" href="gen.css">
+    <!-- Include Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Center the chart container */
+        .graphgen {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto;
+            border: 2px solid black;
+            width: 80%;
+            max-width: 600px;
+            height: 400px;
+            padding: 20px;
         }
-    
-        // Fetch data when the page loads
-        window.onload = fetchSpecific;
-      </script>
+
+        .chart-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Move the "Analyse it" button below the input fields */
+        #analyseForm {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        #analyseForm button {
+            align-self: flex-start;
+            margin-top: 10px;
+            position: static; /* Ensure the button doesn't stick to the screen */
+        }
+    </style>
 </head>
+
 <body>
     <header class="bg-white shadow-sm py-3">
         <div class="container d-flex justify-content-between align-items-center" id="navbar">
@@ -55,13 +70,335 @@
             </nav>
         </div>
     </header>
-    <section>
-        <div class="infodisplay">
-            <div class="textinfo">
-                
-            </div>
-            <div class="graph"></div>
+    <div class="content">
+        <div class="input-field">
+            <form id="analyseForm" method="GET">
+                <div class="tags" id="yearTagsContainer">
+                    <input type="text" id="yearInput" placeholder="select year" oninput="showYearSuggestions(this.value)" spellcheck="true" list="years">
+                </div>
+                <div class="suggestions" id="yearSuggestions" style="display: none;"></div>
+                <div class="tags" id="companyTagsContainer">
+                    <input type="text" id="companyInput" placeholder="select company" oninput="showCompanySuggestions(this.value)" spellcheck="true" list="compnames">
+                </div>
+                <div class="suggestions" id="companySuggestions" style="display: none;"></div>
+                <div class="tags" id="skillsTagsContainer">
+                    <input type="text" id="skillsInput" placeholder="select skillset" oninput="showSkillSuggestions(this.value)" spellcheck="true" list="skillset">
+                </div>
+                <div class="suggestions" id="skillsSuggestions" style="display: none;"></div>
+                <button type="submit">Analyse it</button>
+            </form>
         </div>
-    </section>
+    </div>
+
+    <div class="graphgen">
+        <div class="generated">
+            <div class="chart-container">
+                <canvas id="placementChart" width="400" height="200"></canvas>
+            </div>
+            <div class="lpa">
+                <h2 style="font-size: larger;">Salary offered : </h2>
+                <h2 style="font-size: larger;" id="lpa_num"> X LPA </h2>
+            </div>
+            <div class="skill_set">
+                here it should display the skillset required
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const skills = [
+            "DSA",
+            "Development",
+            "Aptitude",
+            "Machine Learning",
+            "Cloud Computing",
+            "AI",
+            "Cybersecurity",
+            "Blockchain",
+            "DevOps",
+            "Data Science"
+        ];
+
+        const years = [
+            "2019 -20",
+            "2020 -21",
+            "2021 -22",
+            "2022 -23",
+            "2023 -24",
+            "2024 -25"
+        ];
+
+        let companies = []; // Initialize as empty, will be populated dynamically
+
+        function showSkillSuggestions(value) {
+            const skillsSuggestions = document.getElementById('skillsSuggestions');
+            skillsSuggestions.innerHTML = ''; // Clear previous suggestions
+            if (!value) {
+                skillsSuggestions.style.display = 'none';
+                return;
+            }
+
+            const filteredSkills = skills.filter(skill => skill.toLowerCase().includes(value.toLowerCase()));
+            if (filteredSkills.length === 0) {
+                skillsSuggestions.style.display = 'none';
+                return;
+            }
+
+            filteredSkills.forEach(skill => {
+                const suggestionItem = document.createElement('div');
+                suggestionItem.className = 'suggestion-item';
+                suggestionItem.textContent = skill;
+                suggestionItem.onclick = () => selectSkill(skill);
+                skillsSuggestions.appendChild(suggestionItem);
+            });
+
+            skillsSuggestions.style.display = 'block';
+        }
+
+        function showYearSuggestions(value) {
+            const yearSuggestions = document.getElementById('yearSuggestions');
+            yearSuggestions.innerHTML = ''; // Clear previous suggestions
+            if (!value) {
+                yearSuggestions.style.display = 'none';
+                return;
+            }
+
+            const filteredYears = years.filter(year => year.toLowerCase().includes(value.toLowerCase()));
+            if (filteredYears.length === 0) {
+                yearSuggestions.style.display = 'none';
+                return;
+            }
+
+            filteredYears.forEach(year => {
+                const suggestionItem = document.createElement('div');
+                suggestionItem.className = 'suggestion-item';
+                suggestionItem.textContent = year;
+                suggestionItem.onclick = () => selectYear(year);
+                yearSuggestions.appendChild(suggestionItem);
+            });
+
+            yearSuggestions.style.display = 'block';
+        }
+
+        function showCompanySuggestions(value) {
+            const companySuggestions = document.getElementById('companySuggestions');
+            companySuggestions.innerHTML = ''; // Clear previous suggestions
+            if (!value) {
+                companySuggestions.style.display = 'none';
+                return;
+            }
+
+            const filteredCompanies = companies.filter(company => company.toLowerCase().includes(value.toLowerCase()));
+            if (filteredCompanies.length === 0) {
+                companySuggestions.style.display = 'none';
+                return;
+            }
+
+            filteredCompanies.forEach(company => {
+                const suggestionItem = document.createElement('div');
+                suggestionItem.className = 'suggestion-item';
+                suggestionItem.textContent = company;
+                suggestionItem.onclick = () => selectCompany(company);
+                companySuggestions.appendChild(suggestionItem);
+            });
+
+            companySuggestions.style.display = 'block';
+        }
+
+        function selectSkill(skill) {
+            const tagsContainer = document.getElementById('skillsTagsContainer');
+            const existingTags = Array.from(tagsContainer.getElementsByClassName('tag')).map(tag => tag.textContent.trim());
+
+            if (!existingTags.includes(skill)) {
+                const tag = document.createElement('div');
+                tag.className = 'tag';
+                tag.textContent = skill;
+
+                const removeBtn = document.createElement('span');
+                removeBtn.className = 'remove';
+                removeBtn.textContent = 'x';
+                removeBtn.onclick = () => {
+                    tagsContainer.removeChild(tag);
+                    if (tagsContainer.children.length === 0) {
+                        document.getElementById('skillsInput').value = '';
+                    }
+                };
+
+                tag.appendChild(removeBtn);
+                tagsContainer.insertBefore(tag, document.getElementById('skillsInput'));
+                document.getElementById('skillsInput').value = ''; // Clear input
+                document.getElementById('skillsSuggestions').style.display = 'none'; // Hide suggestions
+            }
+        }
+
+        function selectYear(year) {
+            const tagsContainer = document.getElementById('yearTagsContainer');
+            const existingTags = Array.from(tagsContainer.getElementsByClassName('tag')).map(tag => tag.textContent.trim());
+
+            if (!existingTags.includes(year)) {
+                const tag = document.createElement('div');
+                tag.className = 'tag';
+                tag.textContent = year;
+
+                const removeBtn = document.createElement('span');
+                removeBtn.className = 'remove';
+                removeBtn.textContent = 'x';
+                removeBtn.onclick = () => {
+                    tagsContainer.removeChild(tag);
+                    if (tagsContainer.children.length === 0) {
+                        document.getElementById('yearInput').value = '';
+                    }
+                };
+
+                tag.appendChild(removeBtn);
+                tagsContainer.insertBefore(tag, document.getElementById('yearInput'));
+                document.getElementById('yearInput').value = ''; // Clear input
+                document.getElementById('yearSuggestions').style.display = 'none'; // Hide suggestions
+            }
+
+            // Fetch companies for the selected years
+            const selectedYears = Array.from(document.querySelectorAll('#yearTagsContainer .tag')).map(tag => tag.textContent.replace('x', '').trim());
+            fetchCompany(selectedYears);
+        }
+
+        function selectCompany(company) {
+            const tagsContainer = document.getElementById('companyTagsContainer');
+            const existingTags = Array.from(tagsContainer.getElementsByClassName('tag')).map(tag => tag.textContent.trim());
+
+            if (!existingTags.includes(company)) {
+                const tag = document.createElement('div');
+                tag.className = 'tag';
+                tag.textContent = company;
+
+                const removeBtn = document.createElement('span');
+                removeBtn.className = 'remove';
+                removeBtn.textContent = 'x';
+                removeBtn.onclick = () => {
+                    tagsContainer.removeChild(tag);
+                    if (tagsContainer.children.length === 0) {
+                        document.getElementById('companyInput').value = '';
+                    }
+                };
+
+                tag.appendChild(removeBtn);
+                tagsContainer.insertBefore(tag, document.getElementById('companyInput'));
+                document.getElementById('companyInput').value = ''; // Clear input
+                document.getElementById('companySuggestions').style.display = 'none'; // Hide suggestions
+            }
+        }
+
+        // Close suggestions when clicking outside
+        document.addEventListener('focus', (event) => {
+            const skillsSuggestions = document.getElementById('skillsSuggestions');
+            const yearSuggestions = document.getElementById('yearSuggestions');
+            const companySuggestions = document.getElementById('companySuggestions');
+
+            if (!event.target.closest('.tags') && !event.target.closest('.suggestions')) {
+                skillsSuggestions.style.display = 'none';
+                yearSuggestions.style.display = 'none';
+                companySuggestions.style.display = 'none';
+            }
+        });
+
+        async function fetchCompany(selectedYears) {
+            const companyInput = document.getElementById('companyInput');
+            if (selectedYears.length === 0) {
+                companyInput.disabled = true; // Disable if no year is selected
+                return;
+            }
+
+            try {
+                const response = await fetch(`/cnames?years=${selectedYears.join(',')}`);
+                const data = await response.json();
+
+                // Clear the companies array and repopulate it
+                companies = data.map(company => company.Company_name);
+
+                // Enable the company input field
+                companyInput.disabled = false;
+
+                // Update the company suggestions dropdown
+                showCompanySuggestions('');
+            } catch (error) {
+                console.error('Error fetching companies:', error);
+                companyInput.disabled = true; // Disable if there's an error fetching data
+            }
+        }
+
+        const form = document.getElementById('analyseForm');
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            // Get selected year and company from tags
+            const yearTags = Array.from(document.querySelectorAll('#yearTagsContainer .tag'));
+            const companyTags = Array.from(document.querySelectorAll('#companyTagsContainer .tag'));
+
+            if (yearTags.length === 0) {
+                alert('Please select at least one year.');
+                return;
+            }
+            if (companyTags.length === 0) {
+                alert('Please select at least one company.');
+                return;
+            }
+
+            const selectedYears = yearTags.map(tag => tag.textContent.replace('x', '').trim());
+            const selectedCompanies = companyTags.map(tag => tag.textContent.replace('x', '').trim());
+
+            try {
+                // Fetch filtered data for all selected years and companies
+                const response = await fetch(`/filtered_data?years=${selectedYears.join(',')}&companies=${selectedCompanies.join(',')}`);
+                const { data, chartData } = await response.json();
+
+                // Render the comparison chart
+                if (chartData) {
+                    renderComparisonChart(chartData);
+                } else {
+                    alert('No chart data available for the selected filters.');
+                }
+
+                // Fetch LPA data for all selected years and companies
+                const lpaResponse = await fetch(`/lpa?years=${selectedYears.join(',')}&companies=${selectedCompanies.join(',')}`);
+                const lpaData = await lpaResponse.json();
+
+                // Display the fetched LPA
+                const lpaDisplay = document.getElementById('lpa_num');
+                if (lpaData.length > 0) {
+                    lpaDisplay.innerText = `Salary offered: ${lpaData.map(item => `${item.sal_lpa} LPA (${item.year})`).join(', ')}`;
+                } else {
+                    lpaDisplay.innerText = 'No data found for the selected filters.';
+                }
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        });
+
+        function renderComparisonChart(chartData) {
+            const ctx = document.getElementById('placementChart').getContext('2d');
+
+            // Destroy the previous chart instance (if any)
+            if (window.myChart) {
+                window.myChart.destroy();
+            }
+
+            // Create a new chart
+            window.myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: chartData.labels,
+                    datasets: chartData.datasets,
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                    },
+                },
+            });
+        }
+    </script>
 </body>
+
 </html>
