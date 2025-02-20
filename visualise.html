@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VISUALISE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="visualise.css">
+    <script>
+        function toggleNavbar() {
+            const navMenu = document.getElementById("nav-menu");
+            navMenu.classList.toggle("hidden");
+        }
+    </script>
+</head>
+
+<body class="text-white bg-gradient-to-b from-black to-blue-800 min-h-screen flex flex-col">
+    <!-- ✅ Navbar -->
+    <header class="bg-black/50 border-b border-gray-500">
+        <div class="container mx-auto px-6 py-6 flex justify-between items-center">
+            <h1 class="text-2xl sm:text-2xl font-bold">PICT Placement Website</h1>
+            <button class="sm:hidden text-gray-300 focus:outline-none" onclick="toggleNavbar()">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+            <nav id="nav-menu" class="hidden sm:flex flex-col sm:flex-row bg-black w-full sm:w-auto absolute sm:static top-16 left-0 sm:top-auto sm:left-auto py-6 sm:py-0 px-6 sm:px-0 z-10 space-y-6 sm:space-y-0 sm:space-x-8">
+                <a href="home.html" class="block text-xl sm:text-lg text-gray-300 hover:text-white">Home</a>
+                <a href="visualise.html" class="block text-xl sm:text-lg text-gray-300 hover:text-white">Visualise</a>
+                <a href="#faq" class="block text-xl sm:text-lg text-gray-300 hover:text-white">FAQ's</a>
+                <a href="#about" class="block text-xl sm:text-lg text-gray-300 hover:text-white">About Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ✅ Main Section -->
+    <main class="flex-grow flex justify-center items-center">
+        <div class="bg-white p-8 rounded-xl shadow-lg max-w-lg w-full animate-box">
+            <h2 class="text-xl font-semibold text-center text-gray-900">Analyse the data using our API</h2>
+            <div class="mt-4 space-y-4">
+                <form id="analyseForm" method="GET">
+                <!-- ✅ Company Input (Remains the same) -->
+                <input type="text" placeholder="Select company" class="w-full p-2 border border-gray-300 rounded-md focus:ring">
+                <datalist id="compnames">
+                    <!-- the suggestions should appear here -->
+                    <option value="all companies"></option>
+      
+                  </datalist>
+            
+                <!-- ✅ Year Input with Datalist -->
+                <input list="years" placeholder="Select Year" class="w-full p-2 border border-gray-300 rounded-md focus:ring">
+                <datalist id="years">
+                    <option value="All Years"></option>
+                    <option value="2019-20"></option>
+                    <option value="2020-21"></option>
+                    <option value="2021-22"></option>
+                    <option value="2022-23"></option>
+                    <option value="2023-24"></option>
+                    <option value="2024-25"></option>
+                </datalist>
+            
+                <!-- ✅ Skills Input with Datalist -->
+                <input list="skillset" placeholder="Select Skills" class="w-full p-2 border border-gray-300 rounded-md focus:ring">
+                <datalist id="skillset">
+                    <option value="All Skills"></option>
+                    <option value="DSA"></option>
+                    <option value="Development"></option>
+                    <option value="Aptitude"></option>
+                </datalist>
+            </form>
+            </div>
+            
+            
+            
+            <button class="mt-4 w-full bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded-md animate-btn">Analyse it</button>
+        </div>
+    </main>
+
+    <div class="chart">
+        
+    </div>
+
+    <!-- ✅ Footer -->
+    <footer class="bg-blue-900 text-center py-6 text-sm sm:text-base">
+        <p>&copy; 2025 PICT Placement Website. All rights reserved.</p>
+    </footer>
+    <script src="java.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("analyseForm");
+            const yearInput = document.querySelector('input[list="years"]');
+            const compInput = document.querySelector('input[list="compnames"]');
+            const footer = document.querySelector("footer");
+        
+            // ✅ Ensure elements exist before running script
+            if (!form || !yearInput || !compInput) {
+                console.error("Error: One or more input fields are missing.");
+                return;
+            }
+        
+            // ✅ Initially disable company input
+            compInput.disabled = true;
+        
+            // ✅ Enable company input only if a year is selected
+            yearInput.addEventListener("input", function () {
+                if (yearInput.value.trim() !== "") {
+                    compInput.disabled = false;
+                } else {
+                    compInput.disabled = true;
+                }
+            });
+        
+            // ✅ Show alert if company input is clicked before selecting a year
+            compInput.addEventListener("focus", function () {
+                if (yearInput.value.trim() === "") {
+                    alert("Please select the year first!");
+                    compInput.disabled = true;
+                    yearInput.focus(); // Move focus back to year input
+                }
+            });
+        
+            // ✅ Handle form submission
+            form.addEventListener("submit", async (event) => {
+                event.preventDefault();
+        
+                const year = yearInput.value.trim();
+                const company = compInput.value.trim();
+        
+                if (!year) {
+                    alert("Please select a valid year.");
+                    return;
+                }
+                if (year.toLowerCase() === "all years") {
+                    alert("Please select a single year.");
+                    return;
+                }
+                if (!company) {
+                    alert("Please select a company.");
+                    return;
+                }
+        
+                try {
+                    // ✅ Fetch placement data
+                    const response = await fetch(`/filtered_data?year=${year}&Company_name=${company}`);
+                    const { data, chartData } = await response.json();
+        
+                    // ✅ Render chart if data is available
+                    if (chartData) {
+                        renderChart(chartData.maleCount, chartData.femaleCount);
+                    } else {
+                        alert("Chart data is only available for a single company in a single year.");
+                    }
+        
+                    // ✅ Fetch salary (LPA) data
+                    const lpaResponse = await fetch(`/lpa?year=${year}&Company_name=${company}`);
+                    const lpaData = await lpaResponse.json();
+        
+                    if (lpaData.length > 0) {
+                        document.getElementById("lpa_num").innerText = `${lpaData[0].sal_lpa} LPA`;
+                    } else {
+                        document.getElementById("lpa_num").innerText = "No data available";
+                    }
+        
+                } catch (error) {
+                    console.error("Error fetching data:", error);
+                    alert("An error occurred while fetching data.");
+                }
+            });
+        
+            // ✅ Fetch company names dynamically when year is selected
+            async function fetchCompany() {
+                const yearValue = yearInput.value.trim();
+        
+                if (!yearValue) {
+                    compInput.disabled = true;
+                    return;
+                }
+        
+                try {
+                    const response = await fetch(`/cnames?year=${yearValue}`);
+                    const companies = await response.json();
+                    const compDatalist = document.getElementById("compnames");
+        
+                    compDatalist.innerHTML = '<option value="all companies"></option>';
+        
+                    if (companies.length === 0) {
+                        alert("No companies found for this year.");
+                        compInput.disabled = true;
+                    } else {
+                        companies.forEach(company => {
+                            compDatalist.innerHTML += `<option value="${company.Company_name}"></option>`;
+                        });
+                        compInput.disabled = false;
+                    }
+                } catch (error) {
+                    console.error("Error fetching companies:", error);
+                    compInput.disabled = true;
+                }
+            }
+        
+            // ✅ Call fetchCompany when year input changes
+            yearInput.addEventListener("change", fetchCompany);
+        
+            // ✅ Chart Rendering Function
+            function renderChart(maleCount, femaleCount) {
+                let chartContainer = document.querySelector(".chart-container");
+        
+                if (!chartContainer) {
+                    chartContainer = document.createElement("div");
+                    chartContainer.classList.add("chart-container");
+        
+                    chartContainer.innerHTML = `
+                        <div class="bg-white p-6 rounded-xl shadow-lg max-w-2xl mx-auto mt-6 opacity-0 transition-opacity duration-700 ease-in-out">
+                            <h2 class="text-lg font-semibold text-gray-900 text-center">📊 Data Analysis Results</h2>
+                            <canvas id="placementChart"></canvas>
+                        </div>
+                    `;
+        
+                    chartContainer.style.height = "400px";  
+                    chartContainer.style.marginTop = "-30px"; 
+                    chartContainer.style.marginBottom = "50px"; 
+        
+                    document.body.insertBefore(chartContainer, footer);
+        
+                    setTimeout(() => {
+                        chartContainer.firstElementChild.classList.add("opacity-100");
+                    }, 200);
+                }
+        
+                const ctx = document.getElementById("placementChart").getContext("2d");
+        
+                if (window.myChart) {
+                    window.myChart.destroy();
+                }
+        
+                window.myChart = new Chart(ctx, {
+                    type: "bar",
+                    data: {
+                        labels: ["Male", "Female"],
+                        datasets: [{
+                            label: "Students Placed",
+                            data: [maleCount, femaleCount],
+                            backgroundColor: ["#4CAF50", "#FF6384"],
+                        }],
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: "top",
+                            },
+                        },
+                    },
+                });
+        
+                window.scrollTo({
+                    top: chartContainer.offsetTop - 100,
+                    behavior: "smooth",
+                });
+            }
+        });
+        </script>
+        
+</body>
+
+</html>
