@@ -1,0 +1,3 @@
+what is needed to be done --> 
+make the dropdown accesible for user through arrow keys / tab ?
+think for the logic of all years -->
