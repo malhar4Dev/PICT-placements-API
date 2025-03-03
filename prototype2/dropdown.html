@@ -4,31 +4,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>creating the perfect dropdown</title>
+    <title>Creating the Perfect Dropdown</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="dorpdown.css">
-    <script src="drop.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
-    <div class="dropdown-wrapper">
-        <div class="dropdown-btn">
-            <span id="selected-item"> select year</span>
-            <span><i class="fa-solid fa-caret-down"></i> </span>
+    
+        <div class="dropdown-wrapper">
+            <div class="dropdown-btn">
+                <div class="tags-container" id="year-tags-container"></div>
+                <span id="selected-year">Select Year</span>
+                <span><i class="fa-solid fa-caret-down"></i></span>
+            </div>
+
+            <div class="dropdown-menu year-menu">
+                <div class="item">All years</div>
+                <div class="item">2019 -20</div>
+                <div class="item">2020 -21</div>
+                <div class="item">2021 -22</div>
+                <div class="item">2022 -23</div>
+                <div class="item">2023 -24</div>
+                <div class="item">2024 -25</div>
+            </div>
         </div>
 
-        <div class="dropdown-menu ">
-            <div class="item">All years</div>
-            <div class="item">2019 -20</div>
-            <div class="item">2020 -21</div>
-            <div class="item">2021 -22</div>
-            <div class="item">2022 -23</div>
-            <div class="item">2023 -24</div>
-            <div class="item">2024 -25</div>
+        <div class="dropdown-wrapper">
+            <div class="dropdown-btn">
+                <div class="tags-container" id="company-tags-container"></div>
+                <span id="selected-company">Select Company</span>
+                <span><i class="fa-solid fa-caret-down"></i></span>
+            </div>
+
+            <div class="dropdown-menu comp-menu">
+                <div class="item">All Companies</div>
+            </div>
         </div>
+
+        <div class="dropdown-wrapper">
+            <div class="dropdown-btn">
+                <div class="tags-container" id="skill-tags-container"></div>
+                <span id="selected-skill">Select Skill</span>
+                <span><i class="fa-solid fa-caret-down"></i></span>
+            </div>
+
+            <div class="dropdown-menu skill-menu">
+                <div class="item">All skills</div>
+                <div class="item">DSA</div>
+                <div class="item">Development</div>
+                <div class="item">Apptitude</div>
+                <div class="item">ML</div>
+                <div class="item">Cloud Computing</div>
+                <div class="item">AI</div>
+                <div class="item">Cybersecurity</div>
+            </div>
+        </div>
+    
+    <button id="analyze-button">Analyze It</button>
+    <div id="graph-gen" class="graph-container" style="display:none;">
+        <canvas id="results-chart"></canvas>
     </div>
+
+
+    <script src="drop.js" defer></script>
+    <script>
+       // Existing code...
+
+// Add event listener for the Analyze It button
+document.getElementById('analyze-button').addEventListener('click', async () => {
+    if (selectedYears.length === 0) {
+        alert('Please select at least one year.');
+        return;
+    }
+
+    // Prepare the selected years and companies for the API call
+    const selectedCompaniesList = selectedCompanies.length > 0 ? selectedCompanies : ['all companies'];
+    const selectedYearsList = selectedYears.length > 0 ? selectedYears : ['all years'];
+
+    // Fetch filtered data based on selected years and companies
+    const responses = await Promise.all(selectedYearsList.map(year => {
+        return Promise.all(selectedCompaniesList.map(company => {
+            return fetch(`/filtered_data?year=${year}&Company_name=${company}`);
+        }));
+    }));
+
+    // Process the responses to extract male and female counts
+    const dataCounts = responses.flat().map(response => response.json());
+    const results = await Promise.all(dataCounts);
+
+    // Prepare data for the chart
+    const maleCounts = results.map(data => data.chartData ? data.chartData.maleCount : 0);
+    const femaleCounts = results.map(data => data.chartData ? data.chartData.femaleCount : 0);
+    const labels = results.map((data, index) => {
+        const year = selectedYearsList[Math.floor(index / selectedCompaniesList.length)];
+        const company = selectedCompaniesList[index % selectedCompaniesList.length];
+        return `${company} (${year})`;
+    });
+
+    // Generate the chart
+    generateChart(labels, maleCounts, femaleCounts);
+});
+
+function generateChart(labels, maleCounts, femaleCounts) {
+    const ctx = document.getElementById('results-chart').getContext('2d');
+
+    // Clear the previous chart if it exists
+    if (Chart.getChart("results-chart")) {
+        Chart.getChart("results-chart").destroy(); // Destroy the previous chart
+    }
+
+    const chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Male Placed Students',
+                data: maleCounts,
+                backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 2 // Thinner bars
+            }, {
+                label: 'Female Placed Students',
+                data: femaleCounts,
+                backgroundColor: 'rgba(255, 99, 132, 0.6)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 2 // Thinner bars
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        callback: function(value) {
+                            return value; // Display the value on the y-axis
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    // Show the graph container and scroll to it
+    const graphContainer = document.getElementById('graph-gen');
+    graphContainer.classList.add('show'); // Add class to trigger CSS transition
+    graphContainer.style.display = 'flex'; // Ensure it's displayed as flex
+
+    // Set the width based on the number of selected inputs
+    const totalInputs = selectedYears.length + selectedCompanies.length;
+    graphContainer.style.width = `${Math.max(40, totalInputs * 20)}vw`; // Minimum width of 40vw, increase with inputs
+
+    graphContainer.scrollIntoView({ behavior: 'smooth', block: 'center' }); // Scroll to the graph container
+}
+    </script>
+
 </body>
 
 </html>
