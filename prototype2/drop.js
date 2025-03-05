@@ -76,7 +76,7 @@ function handleSelection(dropdownType, selectedItemText, selectedItemsArray, con
 
         // Fetch all companies if "All years" is selected
         if (dropdownType === 'year') {
-            fetchCompaniesForYears(['all']);
+            fetchCompanies(['all']);
         }
     } else {
         // Add the selected item
@@ -84,7 +84,7 @@ function handleSelection(dropdownType, selectedItemText, selectedItemsArray, con
 
         // Fetch companies for selected years
         if (dropdownType === 'year') {
-            fetchCompaniesForYears(selectedItemsArray);
+            fetchCompanies(selectedItemsArray);
         }
     }
 
@@ -102,32 +102,104 @@ function handleSelection(dropdownType, selectedItemText, selectedItemsArray, con
     }
 }
 
-// Function to fetch company names based on selected years
-async function fetchCompaniesForYears(selectedYears) {
-    try {
-        // Fetch companies for all selected years
-        const response = await fetch(`/cnames?years=${selectedYears.join(',')}`);
-        const data = await response.json();
+document.getElementById('skill-tags-container').addEventListener('click', async () => {
+    if (selectedYears.length === 0) {
+        alert('Please select at least one year first!');
+        return;
+    }
 
-        // Clear the company dropdown
+    const selectedYearsList = selectedYears.join(',');
+    const selectedSkillsList = selectedSkills.length > 0 ? selectedSkills.join(',') : null;
+
+    try {
+        // Fetch companies filtered by year & skill
+        const response = await fetch(`/cnames?years=${selectedYearsList}${selectedSkillsList ? `&skills=${selectedSkillsList}` : ''}`);
+        const companies = await response.json();
+
+        // Update the company dropdown
         const companyMenu = document.querySelector('.comp-menu');
         companyMenu.innerHTML = '<div class="item">All Companies</div>';
 
-        // Add fetched companies to the dropdown
-        data.forEach(company => {
+        companies.forEach(company => {
             const item = document.createElement('div');
             item.className = 'item';
             item.textContent = company.Company_name;
-
-            // Use an arrow function to ensure the event object is passed correctly
             item.onclick = (e) => itemClickHandler(e);
+            companyMenu.appendChild(item);
+        });
+    } catch (error) {
+        console.error('Error fetching companies:', error);
+    }
+});
 
+
+// Function to fetch company names based on selected years
+// async function fetchCompanies(selectedYears) {
+//     try {
+//         // Fetch companies for all selected years
+//         const response = await fetch(`/cnames?years=${selectedYears.join(',')}`);
+//         const data = await response.json();
+
+//         // Clear the company dropdown
+//         const companyMenu = document.querySelector('.comp-menu');
+//         companyMenu.innerHTML = '<div class="item">All Companies</div>';
+
+//         // Add fetched companies to the dropdown
+//         data.forEach(company => {
+//             const item = document.createElement('div');
+//             item.className = 'item';
+//             item.textContent = company.Company_name;
+
+//             // Use an arrow function to ensure the event object is passed correctly
+//             item.onclick = (e) => itemClickHandler(e);
+
+//             companyMenu.appendChild(item);
+//         });
+//     } catch (error) {
+//         console.error('Error fetching companies:', error);
+//     }
+// }
+
+async function fetchCompanies() {
+    if (selectedYears.length === 0) {
+        alert('Please select at least one year first!');
+        return;
+    }
+
+    const selectedYearsList = selectedYears.join(',');
+    const selectedSkillsList = selectedSkills.length > 0 ? selectedSkills.join(',') : null;
+
+    let queryUrl = `/cnames?years=${selectedYearsList}`;
+    if (selectedSkills.length > 0) {
+        queryUrl += `&skills=${selectedSkillsList}`;
+    }
+
+    try {
+        const response = await fetch(queryUrl);
+        const companies = await response.json();
+
+        // Update the company dropdown
+        const companyMenu = document.querySelector('.comp-menu');
+        companyMenu.innerHTML = '<div class="item">All Companies</div>';
+
+        companies.forEach(company => {
+            const item = document.createElement('div');
+            item.className = 'item';
+            item.textContent = company.Company_name;
+            item.onclick = (e) => itemClickHandler(e);
             companyMenu.appendChild(item);
         });
     } catch (error) {
         console.error('Error fetching companies:', error);
     }
 }
+
+// Call fetchCompanies() when a year is selected
+document.getElementById('year-tags-container').addEventListener('click', fetchCompanies);
+
+// Call fetchCompanies() again when a skill is selected
+document.getElementById('skill-tags-container').addEventListener('click', fetchCompanies);
+
 
 function addTag(containerId, itemText, selectedItemsArray, selectedTextId) {
     let tagsContainer = document.getElementById(containerId);

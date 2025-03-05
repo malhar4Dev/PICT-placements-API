@@ -1,0 +1,298 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    background: #191B31;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* Align dropdowns horizontally */
+    gap: 20px;
+    /* Space between dropdowns */
+    padding: 20px;
+    /* Add padding to the body */
+}
+
+.dropdown-wrapper {
+    position: relative;
+    width: 200px;
+    /* Fixed width for consistency */
+    font-size: 14px;
+}
+
+.dropdown-btn {
+    padding: 12px 16px;
+    /* Increased padding for better spacing */
+    background-color: white;
+    border-radius: 8px;
+    /* Rounded corners */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    /* Enhanced shadow */
+    transition: all 0.3s ease;
+    /* Smooth transition for hover effects */
+}
+
+.dropdown-btn:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    /* Enhanced shadow on hover */
+    transform: translateY(-2px);
+    /* Slight lift on hover */
+}
+
+.dropdown-btn span {
+    font-weight: 500;
+    /* Slightly bolder text */
+}
+
+.dropdown-btn i {
+    transition: transform 0.3s ease;
+    /* Smooth rotation for the caret */
+}
+
+.dropdown-btn.open i {
+    transform: rotate(180deg);
+    /* Rotate caret when dropdown is open */
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    /* Position below the dropdown button */
+    right: 0;
+    width: 100%;
+    margin-top: 10px;
+    /* Increased margin for better spacing */
+    padding: 8px 0;
+    /* Increased padding */
+    background-color: white;
+    border-radius: 8px;
+    /* Rounded corners */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    /* Enhanced shadow */
+    opacity: 0;
+    transform: scale(0.95);
+    transform-origin: top;
+    transition: opacity 0.3s ease, transform 0.3s ease, pointer-events 0.3s ease;
+    /* Add pointer-events to transition */
+    pointer-events: none;
+    /* Disable clicks when dropdown is closed */
+    z-index: 10;
+    /* Ensure dropdown appears above other elements */
+    max-height: 200px;
+    /* Fixed height for the dropdown */
+    overflow-y: auto;
+    /* Enable vertical scrolling */
+}
+
+/* Ensure dropdown items are not clickable when the dropdown is closed */
+.dropdown-menu {
+    pointer-events: none; /* Disable clicks when closed */
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown-menu.open {
+    pointer-events: auto; /* Enable clicks when open */
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+.dropdown-menu .item {
+    padding: 10px 16px;
+    /* Increased padding for better spacing */
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    /* Align text to the left */
+    align-items: center;
+    transition: background-color 0.3s ease;
+    /* Smooth hover effect */
+}
+
+.dropdown-menu .item:hover {
+    background-color: #f0f0f0;
+    /* Light gray background on hover */
+}
+
+.dropdown-menu .item.active {
+    font-weight: bold;
+    background-color: #e0e0e0;
+    /* Highlight active item */
+}
+
+.tags-container {
+    display: flex;
+    flex-wrap: nowrap;
+    /* Prevent wrapping */
+    overflow-x: auto;
+    /* Allow horizontal scrolling if needed */
+    gap: 5px;
+    /* Space between tags */
+    margin-bottom: 5px;
+    /* Maintain spacing */
+}
+
+.tag {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    /* Space between text and remove button */
+    font-size: 12px;
+    /* Smaller font size for tags */
+}
+
+.tag .remove {
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.tag .remove:hover {
+    color: #ff4d4d;
+    /* Red color on hover */
+}
+
+.item.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.selectors {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 200px;
+    width: 50%;
+    background-color: whitesmoke;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+#analyze-button{
+    text-decoration: none;
+    padding: 5px;
+    background-color: rgb(156, 194, 240);
+    border: 1px dotted whitesmoke;
+    border-radius: 2px;
+}
+
+.graph-container {
+    background-color: white;
+    min-height: 65vh;
+    /* Minimum height */
+    min-width: 40vw;
+    /* Minimum width */
+    width: auto;
+    /* Width will be set dynamically */
+    margin-top: 20px;
+    /* Space above the graph */
+    border-radius: 10px;
+    /* Rounded corners */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    /* Shadow for depth */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /* Align items to the bottom */
+    opacity: 0;
+    /* Start hidden */
+    transform: translateY(20px);
+    /* Start slightly below */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    /* Transition for smooth appearance */
+}
+
+.graph-container.show {
+    opacity: 1;
+    /* Fully visible */
+    transform: translateY(0);
+    /* Move to original position */
+}
+
+canvas {
+    max-width: 90%;
+    /* Make the canvas responsive */
+    max-height: 90%;
+    /* Make the canvas responsive */
+    margin: 20px;
+    /* Space around the canvas */
+    border-radius: 10px;
+    /* Rounded corners for the canvas */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    /* Shadow for 3D effect */
+}
+
+/* .gen-info{
+    display: flex;
+    opacity: 0;
+     transform: translateY(20px); 
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.gen-info.show{
+    opacity: 1;
+    transform: translateY(0);
+
+} */
+
+.gen-info {
+    display: flex;
+    gap: 20px; /* Space between graph and analysis report */
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.gen-info.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.analysis-report {
+    background-color: white;
+    border: 2px solid rgb(157, 192, 246);
+    width: 40vw;
+    min-height: 30vh;
+    max-height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    opacity: 0;
+    transform: translateX(20px); /* Initially off-screen */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.analysis-report.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.lpa-fetched ,.report{
+    height: 50%;
+    width: 100%;
+    background-color: #007bff57;
+    color: rgb(40, 39, 39);
+    align-items: center;
+    padding: 10px;
+}
+
