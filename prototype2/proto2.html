@@ -56,7 +56,6 @@
 
             <div class="dropdown-menu skill-menu">
                 <div class="item">All skills</div>
-                <div class="item">API Development</div>
                 <div class="item">API Devlopment</div>
                 <div class="item">Adaptability</div>
                 <div class="item">App Devlopment</div>
@@ -135,12 +134,15 @@
         <div id="graph-gen" class="graph-container" style="display:none;">
             <canvas id="results-chart"></canvas>
         </div>
-        <div class="analysis-report">
-            <div class="lpa-fetched"> Display LPA here</div>
-            <div class="report"> Display analysis log here</div>
+        <div class="analysis">
+            <div class="lpa-fetched"></div>
+            <div class="skillset2"></div>
         </div>
     </div>
-    
+    <div class="report">
+        <div class="year-wise"> here it will display the year - wise lpa graph for respective company if the user choses to do so</div>
+        <div class="report-log"> here we will add a report log.</div>
+    </div>
 
     <script src="drop.js" defer></script>
     <script>
@@ -222,10 +224,10 @@
             // Show the graph container and scroll to it
             const genInfoContainer = document.querySelector('.gen-info');
             const graphContainer = document.getElementById('graph-gen');
-            const analysisReport = document.querySelector('.analysis-report');
+            const analysi = document.querySelector('.analysis');
 
             graphContainer.classList.add('show'); // Show graph
-            analysisReport.classList.add('show'); // Show analysis report
+            analysi.classList.add('show'); // Show analysis
             genInfoContainer.classList.add('show'); // Make the entire section visible
             graphContainer.style.display = 'flex';
 
@@ -256,24 +258,38 @@
 
                 // Display LPA Data
                 const lpaContainer = document.querySelector('.lpa-fetched');
-                lpaContainer.innerHTML = '<strong>Average LPA:</strong><br>';
+                lpaContainer.innerHTML = '<h3>💰 Average LPA</h3>';
+
                 lpaData.forEach(item => {
-                    lpaContainer.innerHTML += `${item.Company_name} (${item.year}): ${item.sal_lpa} LPA<br>`;
+                    lpaContainer.innerHTML += `
+                <div class="info-card lpa-entry">
+                    <strong>${item.Company_name} (${item.year}):</strong> 
+                    <span>₹${item.sal_lpa} LPA</span>
+                </div>
+            `;
                 });
 
                 // Display Skills Data
-                const skillsContainer = document.querySelector('.report');
-                skillsContainer.innerHTML = '<strong>Required Skills:</strong><br>';
+                const skillsContainer = document.querySelector('.skillset2');
+                skillsContainer.innerHTML = '<h3>🚀 Required Skills</h3>';
+
                 Object.entries(skillsData).forEach(([company, skills]) => {
-                    skillsContainer.innerHTML += `<b>${company}:</b> ${skills.join(', ')}<br>`;
+                    let skillTags = skills.map(skill => `<span class="skill-tag">${skill}</span>`).join('');
+                    skillsContainer.innerHTML += `
+                <div class="info-card">
+                    <strong>${company}:</strong> <br> ${skillTags}
+                </div>
+            `;
                 });
 
-                // Show the analysis report
-                document.querySelector('.analysis-report').classList.add('show');
+                // Show the analysis with a smooth transition
+                document.querySelector('.analysis').classList.add('show');
+
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
         });
+
 
 
     </script>

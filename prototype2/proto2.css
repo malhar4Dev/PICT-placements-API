@@ -13,11 +13,9 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* Align dropdowns horizontally */
     gap: 20px;
-    /* Space between dropdowns */
     padding: 20px;
-    /* Add padding to the body */
+    overflow-x: hidden;
 }
 
 .dropdown-wrapper {
@@ -254,9 +252,11 @@ canvas {
 
 .gen-info {
     display: flex;
-    gap: 20px; /* Space between graph and analysis report */
+    flex-wrap:wrap;
+    width: 100vw;
+    gap: 10px; 
     justify-content: center;
-    align-items: center;
+    align-items:flex-start;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
@@ -267,7 +267,7 @@ canvas {
     transform: translateY(0);
 }
 
-.analysis-report {
+/* .analysis {
     background-color: white;
     border: 2px solid rgb(157, 192, 246);
     width: 40vw;
@@ -278,21 +278,118 @@ canvas {
     align-items: center;
     justify-content: space-around;
     opacity: 0;
-    transform: translateX(20px); /* Initially off-screen */
+    transform: translateX(20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.analysis-report.show {
+.analysis.show {
     opacity: 1;
     transform: translateX(0);
 }
 
-.lpa-fetched ,.report{
+.lpa-fetched ,.skillset2{
     height: 50%;
     width: 100%;
     background-color: #007bff57;
     color: rgb(40, 39, 39);
     align-items: center;
     padding: 10px;
+} */
+
+/* Style the entire Analysis skillset2 Section */
+.analysis {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    width: 30vw;
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, opacity 0.3s;
+}
+
+/* Ensure smooth entry */
+.analysis.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Card Layout for LPA & Skills */
+.info-card {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.info-card:hover {
+    transform: scale(1.02);
+}
+
+/* LPA Section */
+.lpa-fetched {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Individual LPA Entries */
+.lpa-entry {
+    font-size: 0.9rem;
+    color: #555;
+    padding: 5px;
+    border-left: 4px solid #007bff;
+    margin: 5px 0;
+}
+
+/* Skills Section */
+.skillset2 {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #444;
+}
+
+/* Skill Tags */
+.skill-tag {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin: 3px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 800px) {
+    .analysis {
+        width: 80vw;
+    }
+}
+
+.report{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 30vh;
+    max-height: fit-content;
+    width: 90vw;
+    background-color: whitesmoke;
+    border: 2px solid black;
+}
+
+.report .year-wise,.report-log{
+    min-height: 28vh;
+    max-height: 30vh;
+    width: 40%;
+    border: 2px solid gainsboro;
+    background-color: #accdf0;
 }
 
