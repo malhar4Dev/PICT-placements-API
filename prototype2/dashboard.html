@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dash.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="nav-div">
+        <nav></nav>
+    </div>
+    <div class="dashboard">
+        <div class="dash-nav">
+            <i id="selectors" class="fa-solid fa-magnifying-glass-chart active"></i>
+            <i id="placement-graphs" class="fa-solid fa-square-poll-vertical"></i>
+            <i id="lpa-graphs" class="fa-solid fa-chart-line"></i>
+            <i id="piechart" class="fa-solid fa-chart-pie"></i>
+            <i id="complist" class="fa-solid fa-ranking-star"></i>
+        </div>
+        <div class="content">
+            <div class="selectors">
+                <!-- Selectors content will go here -->
+            </div>
+            <div class="placement-graphs">
+                <!-- Placement graphs content will go here -->
+            </div>
+            <div class="lpa-graphs">
+                <!-- LPA graphs content will go here -->
+            </div>
+            <div class="piechart">
+                <!-- Pie chart content will go here -->
+            </div>
+            <div class="complist">
+                <!-- Company list content will go here -->
+            </div>
+        </div>
+    </div>
+    <footer></footer>
+
+    <script>
+        // JavaScript to handle tab switching and icon glow
+        document.addEventListener('DOMContentLoaded', function() {
+            const icons = document.querySelectorAll('.dash-nav i');
+            const tabs = document.querySelectorAll('.content > div');
+
+            icons.forEach(icon => {
+                icon.addEventListener('click', function() {
+                    // Remove active class from all icons
+                    icons.forEach(i => i.classList.remove('active'));
+                    // Add active class to the clicked icon
+                    this.classList.add('active');
+
+                    // Hide all tabs
+                    tabs.forEach(tab => tab.style.display = 'none');
+
+                    // Show the corresponding tab
+                    const tabId = this.id;
+                    const tabToShow = document.querySelector(`.content .${tabId}`);
+                    if (tabToShow) {
+                        tabToShow.style.display = 'block';
+                    }
+                });
+            });
+
+            // Initially show the selectors tab
+            document.querySelector('.selectors').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

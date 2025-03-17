@@ -140,7 +140,8 @@
         </div>
     </div>
     <div class="report">
-        <div class="year-wise"> here it will display the year - wise lpa graph for respective company if the user choses to do so</div>
+        <div class="year-wise"> here it will display the year - wise lpa graph for respective company if the user choses
+            to do so</div>
         <div class="report-log"> here we will add a report log.</div>
     </div>
 
@@ -238,6 +239,95 @@
             graphContainer.scrollIntoView({ behavior: 'smooth', block: 'center' }); // Scroll to the graph container
         }
 
+        // document.getElementById('analyze-button').addEventListener('click', async () => {
+        //     if (selectedYears.length === 0 || selectedCompanies.length === 0) {
+        //         alert('Please select at least one year and one company.');
+        //         return;
+        //     }
+
+        //     const selectedYearsList = selectedYears.join(',');
+        //     const selectedCompaniesList = selectedCompanies.join(',');
+
+        //     try {
+        //         // Fetch LPA Data
+        //         const lpaResponse = await fetch(`/lpa?years=${selectedYearsList}&companies=${selectedCompaniesList}`);
+        //         const lpaData = await lpaResponse.json();
+
+        //         // Fetch Skills Data
+        //         const skillsResponse = await fetch(`/skills?companies=${selectedCompaniesList}`);
+        //         const skillsData = await skillsResponse.json();
+
+        //         // Display LPA Data
+        //         const lpaContainer = document.querySelector('.lpa-fetched');
+        //         lpaContainer.innerHTML = '<h3>💰 Average LPA</h3>';
+
+        //         lpaData.forEach(item => {
+        //             lpaContainer.innerHTML += `
+        //         <div class="info-card lpa-entry">
+        //             <strong>${item.Company_name} (${item.year}):</strong> 
+        //             <span>₹${item.sal_lpa} LPA</span>
+        //         </div>
+        //     `;
+        //         });
+
+        //         // Display Skills Data
+        //         const skillsContainer = document.querySelector('.skillset2');
+        //         skillsContainer.innerHTML = '<h3>🚀 Required Skills</h3>';
+
+        //         Object.entries(skillsData).forEach(([company, skills]) => {
+        //             let skillTags = skills.map(skill => `<span class="skill-tag">${skill}</span>`).join('');
+        //             skillsContainer.innerHTML += `
+        //         <div class="info-card">
+        //             <strong>${company}:</strong> <br> ${skillTags}
+        //         </div>
+        //     `;
+        //         });
+
+        //         // Show the analysis with a smooth transition
+        //         document.querySelector('.analysis').classList.add('show');
+
+        //     } catch (error) {
+        //         console.error('Error fetching data:', error);
+        //     }
+        // });
+
+        // Function to update session storage and report log
+        function updateReportLog(year, company, lpa) {
+            const logKey = "analysisLog";
+            let logs = JSON.parse(sessionStorage.getItem(logKey)) || [];
+
+            // Prevent duplicate entries for the same year & company
+            const existingLog = logs.find(log => log.year === year && log.company === company);
+            if (!existingLog) {
+                logs.push({ year, company, lpa });
+                sessionStorage.setItem(logKey, JSON.stringify(logs));
+            }
+
+            renderReportLog(); // Refresh the log display
+        }
+
+        // Function to render the report log from session storage
+        function renderReportLog() {
+            const reportLogContainer = document.querySelector('.report-log');
+            reportLogContainer.innerHTML = ""; // Clear previous logs
+
+            let logs = JSON.parse(sessionStorage.getItem("analysisLog")) || [];
+            logs.forEach(log => {
+                const logEntry = document.createElement('div');
+                logEntry.classList.add('log-entry');
+                logEntry.textContent = `📅 ${log.year} | 🏢 ${log.company} | 💰 ${log.lpa} LPA`;
+
+                reportLogContainer.appendChild(logEntry);
+            });
+
+            // Ensure scrolling remains intact
+            reportLogContainer.scrollTop = reportLogContainer.scrollHeight;
+        }
+
+        // Call this function on page load to display stored logs
+        document.addEventListener("DOMContentLoaded", renderReportLog);
+
+        // Modify the existing analyze-button event listener to include this function
         document.getElementById('analyze-button').addEventListener('click', async () => {
             if (selectedYears.length === 0 || selectedCompanies.length === 0) {
                 alert('Please select at least one year and one company.');
@@ -267,6 +357,9 @@
                     <span>₹${item.sal_lpa} LPA</span>
                 </div>
             `;
+
+                    // Store in session storage & update log
+                    updateReportLog(item.year, item.Company_name, item.sal_lpa);
                 });
 
                 // Display Skills Data
@@ -282,13 +375,14 @@
             `;
                 });
 
-                // Show the analysis with a smooth transition
+                // Show the analysis
                 document.querySelector('.analysis').classList.add('show');
 
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
         });
+
 
 
 

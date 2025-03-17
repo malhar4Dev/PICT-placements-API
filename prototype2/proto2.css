@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: Poppins ;
 }
 
 body {
@@ -14,7 +14,6 @@ body {
     align-items: center;
     flex-direction: column;
     gap: 20px;
-    padding: 20px;
     overflow-x: hidden;
 }
 
@@ -252,7 +251,7 @@ canvas {
 
 .gen-info {
     display: flex;
-    flex-wrap:wrap;
+    /* flex-wrap:wrap; */
     width: 100vw;
     gap: 10px; 
     justify-content: center;
@@ -393,3 +392,102 @@ canvas {
     background-color: #accdf0;
 }
 
+.report-log {
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    max-height: 30vh; /* Ensure it does not exceed fixed height */
+    display: flex;
+    flex-direction: column;
+}
+
+.log-entry {
+    background: #f0f8ff;
+    padding: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border-left: 4px solid #007bff;
+    font-size: 12px;
+    white-space: nowrap; /* Ensure text remains in a single line */
+}
+
+/* Add these styles to proto2.css */
+
+.graph-and-skillset {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    gap: 20px; /* Space between graph and skillset */
+    width: 100%;
+    height: 100%;
+    overflow-x: auto; /* Allow horizontal scrolling for graphs */
+}
+
+.graph-container {
+    flex: 1 1 70%; /* Take 70% of the width */
+    min-width: 400px; /* Minimum width for the graph container */
+    overflow-x: auto; /* Allow horizontal scrolling */
+    overflow-y: hidden; /* Prevent vertical scrolling */
+}
+
+.skillset-section {
+    flex: 1 1 30%; /* Take 30% of the width */
+    min-width: 300px; /* Minimum width for the skillset container */
+    overflow-y: auto; /* Allow vertical scrolling */
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skillset-section h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.skillset-section .info-card {
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.skill-tag {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin: 3px;
+}
+
+.report-log {
+    
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-height: 100px;
+    max-height: 200px; /* Fixed height for report log */
+    overflow-y: auto; /* Allow vertical scrolling */
+}
+
+.report-log h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.log-entry {
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    border-left: 4px solid #007bff;
+    font-size: 0.9rem;
+    white-space: nowrap; /* Prevent text wrapping */
+}
