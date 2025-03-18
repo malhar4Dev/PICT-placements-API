@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ Section</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    function toggleNavbar() {
+      const navMenu = document.getElementById("nav-menu");
+      navMenu.classList.toggle("hidden");
+    }
+  </script>
+</head>
+<body
+  class="text-white bg-gradient-to-b from-[#1a1a2e] to-[#16213e] min-h-screen flex flex-col"
+>
+  <!-- Navbar -->
+  <header class="bg-[#0f3460]/90 border-b border-[#53354a] fixed top-0 w-full z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <!-- Logo -->
+      <h1 class="text-2xl sm:text-2xl font-bold">PICT Placement Website</h1>
+  
+      <!-- Hamburger Button for Mobile -->
+      <button 
+        class="sm:hidden text-gray-300 focus:outline-none" 
+        onclick="toggleNavbar()"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+  
+      <!-- Navigation Links -->
+      <nav 
+        id="nav-menu" 
+        class="hidden sm:flex flex-col sm:flex-row bg-[#0f3460] w-full sm:w-auto absolute sm:static top-16 left-0 sm:top-auto sm:left-auto py-6 sm:py-0 px-6 sm:px-0 z-10 space-y-6 sm:space-y-0 sm:space-x-8"
+      >
+      <a href="other.html" class="block text-xl sm:text-lg text-gray-300 hover:text-[#903749]">Home</a>
+      <a href="visualise.html" class="block text-xl sm:text-lg text-gray-300 hover:text-[#903749]">Visualise</a>
+      <a href="#" class="block text-xl sm:text-lg text-gray-300 hover:text-[#903749]">FAQ's</a>
+      <a href="aboutus.html" class="block text-xl sm:text-lg text-gray-300 hover:text-[#903749]">About Us</a>
+      </nav>
+    </div>
+  </header>
+        
+   <!-- FAQ Section -->     
+   <main class="flex-grow container mx-auto px-6 py-12 mt-20">
+  <div class="container mx-auto px-6 py-0">
+    <h1 class="text-5xl sm:text-5xl font-bold text-center mb-6">FAQ</h1>
+    <p class="text-center text-lg text-gray-300 mb-12">
+      Here are some of the frequently asked questions
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- FAQ Item -->
+      <div class="flex items-start gap-4">
+        <div class="text-blue-400 text-3xl">🎯</div>
+        <div>
+          <h3 class="text-3xl font-semibold mb-2">How Does the Placement API Integration Work?</h3>
+          <p class="text-gray-300 mb-2">
+            Our platform integrates with PICT's Placement API to provide real-time updates on drives, student applications, and recruiter interactions.          </p>
+          <a href="#" class="text-blue-400 font-medium hover:underline">READ MORE</a>
+        </div>
+      </div>
+
+      <!-- FAQ Item -->
+      <div class="flex items-start gap-4">
+        <div class="text-blue-400 text-3xl">🎯</div>
+        <div>
+          <h3 class="text-3xl font-semibold mb-2">What Information is Available About Companies?</h3>
+          <p class="text-gray-300 mb-2">
+            Our platform provides data on companies visiting the college, including the year of the visit, skills required, and LPA offered.          </p>
+          <a href="#" class="text-blue-400 font-medium hover:underline">READ MORE</a>
+        </div>
+      </div>
+
+      <!-- FAQ Item -->
+      <div class="flex items-start gap-4">
+        <div class="text-blue-400 text-3xl">🎯</div>
+        <div>
+          <h3 class="text-3xl font-semibold mb-2">How is Student Selection Data Displayed?</h3>
+          <p class="text-gray-300 mb-2">
+            Data on the number of male and female students selected, as well as branch-wise selection, is presented in graphical form for clarity.          </p>
+          <a href="#" class="text-blue-400 font-medium hover:underline">READ MORE</a>
+        </div>
+      </div>
+
+      <!-- FAQ Item -->
+      <div class="flex items-start gap-4">
+        <div class="text-blue-400 text-3xl">🎯</div>
+        <div>
+          <h3 class="text-3xl font-semibold mb-2">Can I View Year-Wise Placement Trends?</h3>
+          <p class="text-gray-300 mb-2">
+            Yes, you can explore company visit and placement trends year by year through our interactive visualizations.          </p>
+          <a href="#" class="text-blue-400 font-medium hover:underline">READ MORE</a>
+        </div>
+      </div>
+
+      <!-- FAQ Item -->
+      <div class="flex items-start gap-4">
+        <div class="text-blue-400 text-3xl">🎯</div>
+        <div>
+          <h3 class="text-3xl font-semibold mb-2">How Can This Data Help Students?</h3>
+          <p class="text-gray-300 mb-2">
+            Students can identify trends in company requirements, popular skills, and branch-wise placement patterns to better prepare for future drives.          </p>
+          <a href="#" class="text-blue-400 font-medium hover:underline">READ MORE</a>
+        </div>
+      </div>
+
+      <!-- FAQ Item -->
+      <div class="flex items-start gap-4">
+        <div class="text-blue-400 text-3xl">🎯</div>
+        <div>
+          <h3 class="text-3xl font-semibold mb-2">Who Can Access This Data?</h3>
+          <p class="text-gray-300 mb-2">
+            The platform is accessible to students, faculty, and recruiters seeking detailed insights into campus placements.
+          </p>
+          <a href="#" class="text-blue-400 font-medium hover:underline">READ MORE</a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</main>
+  
+  <footer class="bg-[#0f3460]/90 text-center py-4 text-sm sm:text-base text-gray">
+    <p>&copy; 2025 PICT Placement Website. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

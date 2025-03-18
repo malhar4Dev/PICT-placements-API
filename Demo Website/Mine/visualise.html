@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visualise Placements</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    function toggleNavbar() {
+      const navMenu = document.getElementById("nav-menu");
+      navMenu.classList.toggle("hidden");
+    }
+  </script>
+  <style>
+    /* Marquee Animation */
+    @keyframes marquee {
+      from {
+        transform: translateX(100%);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+    .marquee {
+      display: flex;
+      white-space: nowrap;
+      animation: marquee 15s linear infinite;
+    }
+  </style>
+</head>
+<body class="text-white bg-gradient-to-b from-[#1a1a2e] to-[#16213e] min-h-screen flex flex-col">
+
+  <!-- Navbar -->
+  <header class="bg-[#0f3460]/90 border-b border-[#53354a] fixed top-0 w-full z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl sm:text-2xl font-bold">PICT Placement Website</h1>
+      <button class="sm:hidden text-gray-300 focus:outline-none" onclick="toggleNavbar()">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+      <nav id="nav-menu" class="hidden sm:flex flex-col sm:flex-row bg-[#0f3460] w-full sm:w-auto absolute sm:static top-16 left-0 sm:top-auto sm:left-auto py-6 sm:py-0 px-6 sm:px-0 z-10 space-y-6 sm:space-y-0 sm:space-x-8">
+        <a href="other.html" class="block text-xl sm:text-lg text-gray-300 hover:text-[#903749]">Home</a>
+        <a href="#" class="block text-xl sm:text-lg text-gray-300 hover:text-[#903749]">Visualise</a>
+        <a href="faq.html" class="block text-xl sm:text-lg text-gray-300 hover:text-[#903749]">FAQ's</a>
+        <a href="aboutus.html" class="block text-xl sm:text-lg text-gray-300 hover:text-[#903749]">About Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-6 py-24 mt-24 flex flex-col items-center text-center">
+    <h1 class="text-5xl sm:text-5xl font-bold mb-6">Top Placements</h1>
+    <p class="text-lg text-gray-300 mb-6">Check out the highest placements of PICT students!</p>
+
+    <!-- Flashing Marquee Banner -->
+    <div class="overflow-hidden bg-[#0f3460] py-3 rounded-lg shadow-lg border border-[#903749] w-full max-w-4xl">
+      <div class="marquee flex gap-12">
+        <div class="text-lg font-semibold text-[#f5a623]">🎓 Rishi Shekhwat - ₹45 LPA - Google</div>
+        <div class="text-lg font-semibold text-[#f5a623]">🎓 Malhar Patil - ₹42 LPA - Amazon</div>
+        <div class="text-lg font-semibold text-[#f5a623]">🎓 Samarth Kulkarni - ₹40 LPA - Microsoft</div>
+        <div class="text-lg font-semibold text-[#f5a623]">🎓 Divyesh Kundilkar - ₹38 LPA - Meta</div>
+        <div class="text-lg font-semibold text-[#f5a623]">🎓 Chaitanya Mehta - ₹35 LPA - Adobe</div>
+        <div class="text-lg font-semibold text-[#f5a623]">🎓 Priya Patel - ₹32 LPA - Tesla</div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#0f3460]/90 text-center py-4 text-sm sm:text-base text-gray w-full mt-auto">
+    <p>&copy; 2025 PICT Placement Website. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
