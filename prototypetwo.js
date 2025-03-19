@@ -7,8 +7,8 @@ const app = express();
 const connection = mysql.createConnection({
   host: 'localhost',      // Replace with your MySQL host
   user: 'root',           // Replace with your MySQL username
-  password: 'Malh2005',           // Replace with your MySQL password
-  database: 'Placement_record'     // Replace with your database name
+  password: 'Malh2005',   // Replace with your MySQL password
+  database: 'Placement_record' // Replace with your database name
 });
 
 // Connect to the database
@@ -33,61 +33,86 @@ app.get('/dataset2', (req, res) => {
   });
 });
 
-
-
-
-
 app.get('/cnames', (req, res) => {
   const { years, skills } = req.query;
+  
+  // Initialize the query
+  let query = 'SELECT DISTINCT Company_name FROM dataset2';
+  let queryParams = [];
+  let whereAdded = false;
 
-  if (!years) {
-      res.status(400).send({ error: 'Years parameter is required' });
-      return;
+  // Handle years filter - now properly handles 'all years'
+  if (years && years !== 'all years') {
+    const yearList = years.split(',');
+    query += ' WHERE year IN (?)';
+    queryParams.push(yearList);
+    whereAdded = true;
   }
 
-  const yearList = years.split(',');
-  let query = 'SELECT DISTINCT Company_name FROM dataset2 WHERE year IN (?)';
-  let queryParams = [yearList];
-
-  // If skills are provided, filter companies based on both year & skill
-  if (skills) {
-      const skillList = skills.split(',');
+  // Handle skills filter
+  if (skills && skills !== 'all skills') {
+    const skillList = skills.split(',');
+    
+    if (whereAdded) {
       query = `
-          SELECT DISTINCT d.Company_name 
-          FROM dataset2 d 
-          JOIN skills_data s ON d.Company_name = s.Company
-          WHERE d.year IN (?) AND s.Skill IN (${skillList.map(() => '?').join(',')})
+        SELECT DISTINCT d.Company_name 
+        FROM dataset2 d 
+        JOIN skills_data s ON d.Company_name = s.Company
+        WHERE d.year IN (?) AND s.Skill IN (${skillList.map(() => '?').join(',')})
       `;
-      queryParams = [yearList, ...skillList];
+      queryParams = [queryParams[0], ...skillList];
+    } else {
+      query = `
+        SELECT DISTINCT d.Company_name 
+        FROM dataset2 d 
+        JOIN skills_data s ON d.Company_name = s.Company
+        WHERE s.Skill IN (${skillList.map(() => '?').join(',')})
+      `;
+      queryParams = [...skillList];
+    }
   }
 
   connection.query(query, queryParams, (err, results) => {
-      if (err) {
-          console.error('Error fetching company names:', err);
-          res.status(500).send('Error fetching data');
-          return;
-      }
-      res.json(results);
+    if (err) {
+      console.error('Error fetching company names:', err);
+      res.status(500).send('Error fetching data');
+      return;
+    }
+    res.json(results);
   });
 });
-
-
-
-
 
 app.get('/lpa', (req, res) => {
   const { years, companies } = req.query;
 
-  if (!years || !companies) {
-    res.status(400).send({ error: 'Years and Companies are required' });
+  if (!years) {
+    res.status(400).send({ error: 'Years parameter is required' });
     return;
   }
 
-  const yearList = years.split(',');
-  const companyList = companies.split(',');
+  // Handle 'all years' and 'all companies' properly
+  let query = 'SELECT year, Company_name, sal_lpa FROM dataset2';
+  let whereClause = [];
+  let queryParams = [];
 
-  let query = 'SELECT year, Company_name, sal_lpa FROM dataset2 WHERE year IN (?) AND Company_name IN (?)';
-  const queryParams = [yearList, companyList];
+  // Only add year condition if not 'all years'
+  if (years && years !== 'all years') {
+    const yearList = years.split(',');
+    whereClause.push('year IN (?)');
+    queryParams.push(yearList);
+  }
+
+  // Only add company condition if not 'all companies'
+  if (companies && companies !== 'all companies') {
+    const companyList = companies.split(',');
+    whereClause.push('Company_name IN (?)');
+    queryParams.push(companyList);
+  }
+
+  // Add WHERE clause if needed
+  if (whereClause.length > 0) {
+    query += ' WHERE ' + whereClause.join(' AND ');
+  }
 
   connection.query(query, queryParams, (err, results) => {
     if (err) {
@@ -95,10 +120,13 @@ app.get('/lpa', (req, res) => {
       res.status(500).send({ error: 'Error fetching LPA data' });
       return;
     }
+
+    // Sort results by year in ascending order
+    results.sort((a, b) => a.year.localeCompare(b.year));
+
     res.json(results);
   });
 });
-
 
 app.get('/skills', (req, res) => {
   const { companies } = req.query;
@@ -108,10 +136,17 @@ app.get('/skills', (req, res) => {
     return;
   }
 
-  const companyList = companies.split(',');
+  let query = 'SELECT Company, Skill FROM skills_data';
+  let queryParams = [];
 
-  let query = 'SELECT Company, Skill FROM skills_data WHERE Company IN (?)';
-  connection.query(query, [companyList], (err, results) => {
+  // Only add WHERE clause if not 'all companies'
+  if (companies !== 'all companies') {
+    const companyList = companies.split(',');
+    query += ' WHERE Company IN (?)';
+    queryParams.push(companyList);
+  }
+
+  connection.query(query, queryParams, (err, results) => {
     if (err) {
       console.error('Error fetching skills:', err);
       res.status(500).send({ error: 'Error fetching skills' });
@@ -129,22 +164,28 @@ app.get('/skills', (req, res) => {
   });
 });
 
-
-
 app.get('/filtered_data', (req, res) => {
   const { year, Company_name } = req.query;
 
   let query = 'SELECT * FROM dataset2';
-  const queryParams = [];
+  let whereClause = [];
+  let queryParams = [];
 
+  // Handle year filter
   if (year && year !== 'all years') {
-    query += ' WHERE year = ?';
+    whereClause.push('year = ?');
     queryParams.push(year);
+  }
 
-    if (Company_name && Company_name !== 'all companies') {
-      query += ' AND Company_name = ?';
-      queryParams.push(Company_name);
-    }
+  // Handle company filter
+  if (Company_name && Company_name !== 'all companies') {
+    whereClause.push('Company_name = ?');
+    queryParams.push(Company_name);
+  }
+
+  // Add WHERE clause if needed
+  if (whereClause.length > 0) {
+    query += ' WHERE ' + whereClause.join(' AND ');
   }
 
   connection.query(query, queryParams, (err, results) => {
@@ -154,36 +195,64 @@ app.get('/filtered_data', (req, res) => {
       return;
     }
 
-    // If a single company is selected, calculate Male vs Female counts
-    if (Company_name && Company_name !== 'all companies') {
-      const maleCount = results.reduce((sum, row) => sum + row.Male, 0);
-      const femaleCount = results.reduce((sum, row) => sum + row.Female, 0);
+    // Calculate Male vs Female counts for any result set
+    const maleCount = results.reduce((sum, row) => sum + row.Male, 0);
+    const femaleCount = results.reduce((sum, row) => sum + row.Female, 0);
 
-      res.json({
-        data: results,
-        chartData: {
-          maleCount,
-          femaleCount,
-        },
-      });
-    } else {
-      // If multiple companies or "all companies" are selected
-      res.json({ data: results });
-    }
+    res.json({
+      data: results,
+      chartData: {
+        maleCount,
+        femaleCount,
+      },
+    });
   });
 });
 
+app.get('/cgpa', (req, res) => {
+  const { companies } = req.query;
 
+  if (!companies) {
+    res.status(400).send({ error: 'Companies parameter is required' });
+    return;
+  }
 
+  let query = 'SELECT Company_name, cgpa_criteria FROM dataset2';
+  let queryParams = [];
 
+  // Only add WHERE clause if not 'all companies'
+  if (companies !== 'all companies') {
+    const companyList = companies.split(',');
+    query += ' WHERE Company_name IN (?)';
+    queryParams.push(companyList);
+  }
+
+  connection.query(query, queryParams, (err, results) => {
+    if (err) {
+      console.error('Error fetching cgpa_criteria data:', err);
+      res.status(500).send({ error: 'Error fetching cgpa_criteria data' });
+      return;
+    }
+
+    // Group CGPA by company
+    const groupedCGPA = results.reduce((acc, row) => {
+      if (!acc[row.Company_name]) acc[row.Company_name] = [];
+      acc[row.Company_name].push(row.cgpa_criteria);
+      return acc;
+    }, {});
+
+    res.json(groupedCGPA);
+  });
+});
 
 // Serve the HTML page
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/prototype2/proto2.html');
+  res.sendFile(__dirname + '/prototype2/dash4.html');
 });
 
 var path = require('path');
 app.use(express.static(path.join(__dirname, 'prototype2'))); 
+
 // Start the server
 const PORT = 3000;
 app.listen(PORT, () => {
