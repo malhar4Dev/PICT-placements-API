@@ -209,6 +209,8 @@ app.get('/filtered_data', (req, res) => {
   });
 });
 
+
+
 app.get('/cgpa', (req, res) => {
   const { companies } = req.query;
 
@@ -244,6 +246,112 @@ app.get('/cgpa', (req, res) => {
     res.json(groupedCGPA);
   });
 });
+
+app.get('/top-companies', (req, res) => {
+    const { years, criteria } = req.query;
+
+
+
+    if (!years || !criteria) {
+        res.status(400).send({ error: 'Years and criteria parameters are required' });
+        return;
+    }
+
+    // Convert years to the correct format (e.g., "2022-23" -> "2022 -23")
+    const formattedYears = years.split(',');
+
+
+    let query;
+    if (criteria === 'lpa') {
+        query = `
+            SELECT year, Company_name, sal_lpa 
+            FROM dataset2 
+            WHERE year IN (?) 
+            ORDER BY year, sal_lpa DESC 
+        `;
+    } else if (criteria === 'placements') {
+        query = `
+            SELECT year, Company_name, Total 
+            FROM dataset2 
+            WHERE year IN (?) 
+            ORDER BY year, Total DESC 
+        `;
+    } else {
+        res.status(400).send({ error: 'Invalid criteria' });
+        return;
+    }
+
+    connection.query(query, [formattedYears], (err, results) => {
+        if (err) {
+            console.error('Error fetching top companies:', err);
+            res.status(500).send({ error: 'Error fetching data' });
+            return;
+        }
+
+        // Group results by year and get top 10 for each year
+        const groupedData = results.reduce((acc, row) => {
+            if (!acc[row.year]) {
+                acc[row.year] = [];
+            }
+            if (acc[row.year].length < 10) {
+                acc[row.year].push(row);
+            }
+            return acc;
+        }, {});
+
+        res.json(groupedData);
+    });
+});
+
+app.get('/top-skills', (req, res) => {
+  const { years } = req.query;
+
+  if (!years) {
+      return res.status(400).json({ error: "Years parameter is required" });
+  }
+
+  const yearList = years.split(',');
+
+  const query = `
+      WITH RECURSIVE SkillSplit AS (
+          SELECT d.year, 
+                 s.Company, 
+                 SUBSTRING_INDEX(s.Skill, ',', 1) AS Skill, 
+                 SUBSTRING(s.Skill, LOCATE(',', s.Skill) + 1) AS RemainingSkills
+          FROM skills_data s
+          JOIN dataset2 d ON s.Company = d.Company_name
+          WHERE d.year IN (${yearList.map(() => '?').join(',')})
+          
+          UNION ALL
+          
+          SELECT year, 
+                 Company, 
+                 SUBSTRING_INDEX(RemainingSkills, ',', 1), 
+                 SUBSTRING(RemainingSkills, LOCATE(',', RemainingSkills) + 1)
+          FROM SkillSplit
+          WHERE RemainingSkills LIKE '%,%'
+      )
+      SELECT Skill, COUNT(*) AS skill_count
+      FROM SkillSplit
+      WHERE Skill IS NOT NULL AND Skill <> ''
+      GROUP BY Skill
+      ORDER BY skill_count DESC
+      LIMIT 7;
+  `;
+
+  connection.query(query, yearList, (err, results) => {
+      if (err) {
+          console.error('Error fetching top skills:', err);
+          return res.status(500).json({ error: 'Error fetching top skills' });
+      }
+
+      const skills = results.map(row => row.Skill);
+      const skillCounts = results.map(row => row.skill_count);
+
+      res.json({ skills, skillCounts });
+  });
+});
+
 
 // Serve the HTML page
 app.get('/', (req, res) => {
