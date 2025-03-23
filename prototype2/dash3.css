@@ -107,6 +107,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    overflow-y: auto;
     
 }
 
@@ -330,4 +331,143 @@ body {
     font-family: 'Poppins', sans-serif;
     color: #333;
     text-align: center;
+}
+
+.complist{
+    height: 150%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.comparound{
+    display: flex;
+    width: 80%;
+    height: 30%;
+}
+
+.comp-total{
+    height: 60%;
+    width: 50%;
+    background-color: whitesmoke;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.comp-names{
+    margin: 10px;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 3px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#overall-analysis-canvas{
+    height: 90%;
+    width: 70%;
+}
+
+
+.canvas-wrapper {
+    margin: 20px auto; /* Center the canvas wrapper and add spacing */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    width: 90%; /* Adjust width as needed */
+    max-width: 800px; /* Maximum width for larger screens */
+    height: auto; /* Adjust height automatically */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Chart Styling */
+canvas.top10 {
+    width: 100% !important; /* Ensure canvas takes full width of its container */
+    height: 300px !important; /* Fixed height for consistency */
+    margin: 0 auto; /* Center the canvas */
+}
+
+/* Chart Title Styling */
+.chart-container h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Chart Axis Styling */
+.chartjs-render-monitor {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Chart Tooltip Styling */
+.chartjs-tooltip {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    padding: 8px;
+    pointer-events: none;
+}
+
+/* Chart Legend Styling */
+.chartjs-legend {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .canvas-wrapper {
+        width: 95%; /* Adjust width for smaller screens */
+        padding: 10px;
+    }
+
+    canvas.top10 {
+        height: 300px !important; /* Adjust height for smaller screens */
+    }
+}
+
+
+
+#overall-analysis-container{
+    height: 70%;
+    width: 80%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.complist h2{
+    color: white;
+}
+
+.content .piechart{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    align-content: center;
+    border: 1px solid black;
 }
