@@ -352,6 +352,47 @@ app.get('/top-skills', (req, res) => {
   });
 });
 
+// Add this endpoint to prototypetwo.js
+app.get('/placement-stats', (req, res) => {
+  const { years } = req.query;
+
+  if (!years) {
+    res.status(400).json({ error: 'Years parameter is required' });
+    return;
+  }
+
+  let query = `
+    SELECT 
+      year,
+      COUNT(DISTINCT Company_name) as total_companies,
+      SUM(Total) as total_students,
+      SUM(ce) as ce_students,
+      SUM(entc) as entc_students,
+      SUM(it) as it_students
+    FROM dataset2
+  `;
+
+  let queryParams = [];
+  
+  if (years !== 'all years') {
+    const yearList = years.split(',');
+    query += ' WHERE year IN (?)';
+    queryParams.push(yearList);
+  }
+
+  query += ' GROUP BY year';
+
+  connection.query(query, queryParams, (err, results) => {
+    if (err) {
+      console.error('Error fetching placement stats:', err);
+      res.status(500).json({ error: 'Error fetching placement stats' });
+      return;
+    }
+
+    res.json(Array.isArray(results) ? results : []);
+  });
+});
+
 
 // Serve the HTML page
 app.get('/', (req, res) => {
