@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Placement's</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      function toggleNavbar() {
+        const navMenu = document.getElementById("nav-menu");
+        const heroSection = document.getElementById("hero-section");
+
+        navMenu.classList.toggle("hidden");
+
+        // Adjust hero section padding based on dropdown visibility
+        if (!navMenu.classList.contains("hidden")) {
+          heroSection.classList.add("mt-40"); // Move hero section down
+        } else {
+          heroSection.classList.remove("mt-40");
+        }
+      }
+    </script>
+  <style>
+    /* Animated Gradient Background */
+    html::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: linear-gradient(45deg, #1a1a2e, #16213e, #0f3460, #53354a, #903749);
+      background-size: 300% 300%;
+      animation: gradient-animation 15s ease infinite;
+    }
+
+    @keyframes gradient-animation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+     /* Text Float Animation */
+     @keyframes float-in {
+        0% {
+          transform: translateY(100%);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .animate-float {
+        animation: float-in 1.5s ease-out forwards;
+      }
+
+      /* Scroll Animation */
+      .hidden-section {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 1s ease, transform 1s ease;
+      }
+
+      .visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Overflow Fix */
+    html,body {
+      overflow-x: hidden;
+    }
+
+    /* Decorative Bubbles */
+    .decorative-bubble {
+      position: absolute;
+      pointer-events: none;
+      transform: translateX(-50%);
+    }
+
+    /* Smooth Scroll */
+    html {
+        scroll-behavior: smooth;
+      }
+
+    /* Card Hover Effects */
+    .feature-card {
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-10px);
+      border-color: rgba(96, 165, 250, 0.6);
+      box-shadow: 0 10px 25px -5px rgba(96, 165, 250, 0.4);
+    }
+    
+    .feature-card .icon-wrapper {
+      transition: all 0.3s ease;
+    }
+    
+    .feature-card:hover .icon-wrapper {
+      transform: scale(1.2);
+    }
+
+    /* Chart container */
+    .chart-container {
+      position: relative;
+      height: 50vh;
+      max-height: 500px;
+      margin: 0 auto;
+    }
+
+    /* Pulse animation for chart elements */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .chart-wrapper {
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .chart-wrapper:hover {
+      box-shadow: 0 12px 40px rgba(96, 165, 250, 0.3);
+      border-color: rgba(96, 165, 250, 0.3);
+    }
+
+  </style>
+
+</head>
+<body class="text-white min-h-screen flex flex-col">
+  <!-- Navbar -->
+  <header class="bg-[#0f3460]/90 border-b border-[#53354a] fixed top-0 w-full z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <!-- Logo -->
+      <h1 class="text-2xl sm:text-2xl font-bold">PICT Placement Website</h1>
+  
+      <!-- Hamburger Button for Mobile -->
+      <button 
+        class="sm:hidden text-gray-300 focus:outline-none" 
+        onclick="toggleNavbar()"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+  
+      <!-- Navigation Links -->
+      <nav 
+        id="nav-menu" 
+        class="hidden sm:flex flex-col sm:flex-row bg-[#0f3460] w-full sm:w-auto absolute sm:static top-16 left-0 sm:top-auto sm:left-auto py-6 sm:py-0 px-6 sm:px-0 z-10 space-y-6 sm:space-y-0 sm:space-x-8"
+      >
+      <a href="#" class="block text-xl sm:text-lg text-gray-300 hover:text-[#903749]">Home</a>
+      <a href="dash4.html" class="block text-xl sm:text-lg text-gray-300 hover:text-[#903749]">Visualise</a>
+      <a href="faq.html" class="block text-xl sm:text-lg text-gray-300 hover:text-[#903749]">FAQ's</a>
+      <a href="aboutus.html" class="block text-xl sm:text-lg text-gray-300 hover:text-[#903749]">About Us</a>
+      </nav>
+    </div>
+  </header>
+  <main class="flex-grow container mx-auto px-6 py-10 mt-24">
+  <!-- Hero Section -->
+  <section class="h-screen flex items-center justify-center text-center relative hidden-section">
+    <div class="container mx-auto px-6">
+      <h1 class="text-5xl sm:text-6xl font-extrabold mb-8">
+        Empowering Your Path Towards <br>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Placement Success</span>
+      </h1>
+      <p class="text-lg sm:text-2xl text-gray-300 mb-10">
+        Unlock your potential with resources, statistics, and insights tailored for your placement journey.
+      </p>
+      <a href="#why-choose-us" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-12 rounded-lg shadow-lg text-lg sm:text-xl transform hover:scale-105 transition inline-block">
+        Explore
+      </a>
+    </div>
+
+    <!-- Decorative Bubbles -->
+    <div class="decorative-bubble top-10 right-10 h-64 w-64 bg-blue-500 rounded-full filter blur-3xl opacity-50"></div>
+    <div class="decorative-bubble bottom-10 left-10 h-48 w-48 bg-pink-500 rounded-full filter blur-3xl opacity-50"></div>
+  </section>
+
+<!-- Why Choose Us Section -->
+<section id="why-choose-us" class="py-16 hidden-section scroll-mt-20">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-4xl font-bold mb-8 relative inline-block">
+      Why Choose Us?
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-slate-800 feature-card p-8 rounded-xl shadow-lg relative overflow-hidden group">
+        <div class="border-animation"></div>
+        <div class="hover-bg"></div>
+        <div class="icon-wrapper inline-block bg-blue-900/50 p-4 rounded-full mb-6">
+          <span class="text-blue-400 text-4xl">📊</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-3">Placement Statistics</h3>
+        <p class="text-gray-300">Year-wise data to help you track trends and improve your preparation.</p>
+      </div>
+      <div class="bg-slate-800 feature-card p-8 rounded-xl shadow-lg relative overflow-hidden group">
+        <div class="border-animation"></div>
+        <div class="hover-bg"></div>
+        <div class="icon-wrapper inline-block bg-blue-900/50 p-4 rounded-full mb-6">
+          <span class="text-blue-400 text-4xl">📈</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-3">Interactive Visualizations</h3>
+        <p class="text-gray-300">Graphs and charts showing success rates and growth patterns.</p>
+      </div>
+      <div class="bg-slate-800 feature-card p-8 rounded-xl shadow-lg relative overflow-hidden group">
+        <div class="border-animation"></div>
+        <div class="hover-bg"></div>
+        <div class="icon-wrapper inline-block bg-blue-900/50 p-4 rounded-full mb-6">
+          <span class="text-blue-400 text-4xl">🏢</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-3">Top Recruiters</h3>
+        <p class="text-gray-300">Profiles of top companies visiting our campus for recruitment.</p>
+      </div>
+      <div class="bg-slate-800 feature-card p-8 rounded-xl shadow-lg relative overflow-hidden group">
+        <div class="border-animation"></div>
+        <div class="hover-bg"></div>
+        <div class="icon-wrapper inline-block bg-blue-900/50 p-4 rounded-full mb-6">
+          <span class="text-blue-400 text-4xl">📚</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-3">Resource Library</h3>
+        <p class="text-gray-300">Guides, templates, and tools to help you ace your placements.</p>
+      </div>
+      <div class="bg-slate-800 feature-card p-8 rounded-xl shadow-lg relative overflow-hidden group">
+        <div class="border-animation"></div>
+        <div class="hover-bg"></div>
+        <div class="icon-wrapper inline-block bg-blue-900/50 p-4 rounded-full mb-6">
+          <span class="text-blue-400 text-4xl">🤝</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-3">Alumni Connect</h3>
+        <p class="text-gray-300">Connect with successful alumni for mentorship and guidance.</p>
+      </div>
+      <div class="bg-slate-800 feature-card p-8 rounded-xl shadow-lg relative overflow-hidden group">
+        <div class="border-animation"></div>
+        <div class="hover-bg"></div>
+        <div class="icon-wrapper inline-block bg-blue-900/50 p-4 rounded-full mb-6">
+          <span class="text-blue-400 text-4xl">⚡</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-3">Fast Processes</h3>
+        <p class="text-gray-300">Our tools and resources are designed to save your time and improve efficiency.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What is an API Section -->
+<!-- <section class="py-20 hidden-section">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-4xl font-bold mb-8 relative inline-block">
+      What is an API?
+    </h2>
+    <div class="max-w-2xl mx-auto">
+      <p class="text-gray-300 text-lg mb-12 text-center md:text-left leading-relaxed">
+        APIs (Application Programming Interfaces) are tools that enable communication between different software applications. 
+        Our Placement API bridges the gap between students, faculty, and recruiters, streamlining the placement process.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+      <div class="bg-slate-800 feature-card p-8 rounded-xl shadow-lg relative overflow-hidden group">
+        <div class="border-animation"></div>
+        <div class="hover-bg"></div>
+        <div class="icon-wrapper inline-block bg-blue-900/50 p-4 rounded-full mb-6">
+          <span class="text-blue-400 text-4xl">🎓</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-3">For Students</h3>
+        <p class="text-gray-300">Easily access placement statistics, company profiles, and prepare with tailored resources.</p>
+      </div>
+      <div class="bg-slate-800 feature-card p-8 rounded-xl shadow-lg relative overflow-hidden group">
+        <div class="border-animation"></div>
+        <div class="hover-bg"></div>
+        <div class="icon-wrapper inline-block bg-blue-900/50 p-4 rounded-full mb-6">
+          <span class="text-blue-400 text-4xl">👩‍🏫</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-3">For Faculty</h3>
+        <p class="text-gray-300">Monitor student progress, analyze placement data, and streamline coordination with recruiters.</p>
+      </div>
+      <div class="bg-slate-800 feature-card p-8 rounded-xl shadow-lg relative overflow-hidden group">
+        <div class="border-animation"></div>
+        <div class="hover-bg"></div>
+        <div class="icon-wrapper inline-block bg-blue-900/50 p-4 rounded-full mb-6">
+          <span class="text-blue-400 text-4xl">🏢</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-3">For Recruiters</h3>
+        <p class="text-gray-300">Access detailed student profiles, simplify hiring, and save time with advanced filtering tools.</p>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<style>
+  .feature-card {
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* New hover background effect */
+  .hover-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(29, 49, 83, 0.3), transparent 80%);
+    opacity: 0;
+    transition: opacity 0.6s;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  .feature-card:hover .hover-bg {
+    opacity: 1;
+  }
+  
+  /* Make content appear above the hover background */
+  .feature-card > *:not(.hover-bg):not(.border-animation) {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .border-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .border-animation::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid transparent;
+    border-radius: 0.75rem;
+  }
+  
+  .group:hover .border-animation::before {
+    border-top-color: #3b82f6;
+    animation: border-top 1s linear infinite;
+  }
+  
+  .group:hover .border-animation::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid transparent;
+    border-radius: 0.75rem;
+    border-right-color: #8b5cf6;
+    animation: border-right 1s linear infinite 0.25s;
+  }
+  
+  @keyframes border-top {
+    0% {
+      border-top-color: #3b82f6;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+    }
+    25% {
+      border-top-color: transparent;
+      border-right-color: #3b82f6;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+    }
+    50% {
+      border-top-color: transparent;
+      border-right-color: transparent;
+      border-bottom-color: #3b82f6;
+      border-left-color: transparent;
+    }
+    75% {
+      border-top-color: transparent;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      border-left-color: #3b82f6;
+    }
+    100% {
+      border-top-color: #3b82f6;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+    }
+  }
+  
+  @keyframes border-right {
+    0% {
+      border-top-color: transparent;
+      border-right-color: #8b5cf6;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+    }
+    25% {
+      border-top-color: transparent;
+      border-right-color: transparent;
+      border-bottom-color: #8b5cf6;
+      border-left-color: transparent;
+    }
+    50% {
+      border-top-color: transparent;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      border-left-color: #8b5cf6;
+    }
+    75% {
+      border-top-color: #8b5cf6;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+    }
+    100% {
+      border-top-color: transparent;
+      border-right-color: #8b5cf6;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.feature-card');
+    
+    cards.forEach(card => {
+      card.addEventListener('mousemove', function(e) {
+        const rect = card.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        
+        const hoverBg = card.querySelector('.hover-bg');
+        hoverBg.style.setProperty('--x', `${x}%`);
+        hoverBg.style.setProperty('--y', `${y}%`);
+      });
+    });
+  });
+</script>
+
+  <!-- Visualization Section -->
+  <section id="visualisation" class="py-16 hidden-section">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold mb-10 text-center relative inline-block">
+        Placement Statistics
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <!-- Primary Chart -->
+        <div class="chart-wrapper">
+          <h3 class="text-xl font-bold mb-4 text-blue-300">Annual Placement Trends</h3>
+          <div class="chart-container">
+            <canvas id="placementChart"></canvas>
+          </div>
+        </div>
+        
+        <!-- Secondary Chart -->
+        <div class="chart-wrapper">
+          <h3 class="text-xl font-bold mb-4 text-blue-300">Average Package by Branch</h3>
+          <div class="chart-container">
+            <canvas id="salaryChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Set global Chart.js options
+    Chart.defaults.color = '#FFFFFF';
+    Chart.defaults.font.family = 'Inter, system-ui, sans-serif';
+    
+    // Function to create gradient backgrounds
+    function createGradient(ctx, colorStart, colorEnd) {
+        const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+        gradient.addColorStop(0, colorStart);
+        gradient.addColorStop(1, colorEnd);
+        return gradient;
+    }
+    
+    // Students Placed Bar Chart
+    const placementCtx = document.getElementById('placementChart').getContext('2d');
+    const placementGradient = createGradient(placementCtx, 'rgba(54, 162, 235, 0.8)', 'rgba(54, 162, 235, 0.2)');
+    
+    const placementChart = new Chart(placementCtx, {
+        type: 'bar',
+        data: {
+            labels: ['2019-2020', '2020-2021', '2021-2022', '2022-2023', '2023-2024', '2024-2025'],
+            datasets: [{
+                label: 'Students Placed',
+                data: [555, 661, 671, 707, 706,301],
+                backgroundColor: placementGradient,
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1,
+                borderRadius: 6,
+                hoverBackgroundColor: 'rgba(54, 162, 235, 0.9)'
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    labels: {
+                        font: {
+                            size: 14
+                        }
+                    }
+                },
+                tooltip: {
+                    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+                    padding: 10,
+                    titleFont: {
+                        size: 14
+                    },
+                    bodyFont: {
+                        size: 14
+                    },
+                    callbacks: {
+                        label: function(context) {
+                            return `Students Placed: ${context.raw}`;
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        color: 'rgba(255, 255, 255, 0.1)'
+                    },
+                    ticks: {
+                        font: {
+                            size: 12
+                        }
+                    }
+                },
+                x: {
+                    grid: {
+                        display: false
+                    },
+                    ticks: {
+                        font: {
+                            size: 12
+                        }
+                    }
+                }
+            },
+            animation: {
+                duration: 2000,
+                easing: 'easeOutQuart'
+            }
+        }
+    });
+    
+    // Average Package by Branch Chart
+    const salaryCtx = document.getElementById('salaryChart').getContext('2d');
+    
+    const salaryChart = new Chart(salaryCtx, {
+        type: 'bar',
+        data: {
+            labels: ['Computer Eng', 'IT', 'E&TC'],
+            datasets: [{
+                label: 'Average Package (LPA)',
+                data: [10.74, 9.96, 7.82],
+                backgroundColor: createGradient(salaryCtx, 'rgba(153, 102, 255, 0.8)', 'rgba(153, 102, 255, 0.2)'),
+                borderColor: 'rgba(153, 102, 255, 1)',
+                borderWidth: 1,
+                borderRadius: 6
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    labels: {
+                        font: {
+                            size: 14
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        color: 'rgba(255, 255, 255, 0.1)'
+                    }
+                },
+                x: {
+                    grid: {
+                        display: false
+                    }
+                }
+            },
+            animation: {
+                duration: 2000,
+                easing: 'easeOutQuart'
+            }
+        }
+    });
+    
+    // Placement Distribution Chart
+    const distributionCtx = document.getElementById('distributionChart').getContext('2d');
+    
+    const distributionChart = new Chart(distributionCtx, {
+        type: 'pie',
+        data: {
+            labels: ['Service-based', 'Product-based', 'Startups', 'Core Companies', 'Research'],
+            datasets: [{
+                data: [40, 25, 20, 10, 5],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.7)',
+                    'rgba(54, 162, 235, 0.7)',
+                    'rgba(255, 206, 86, 0.7)',
+                    'rgba(75, 192, 192, 0.7)',
+                    'rgba(153, 102, 255, 0.7)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'right',
+                    labels: {
+                        padding: 20,
+                        font: {
+                            size: 12
+                        }
+                    }
+                }
+            },
+            animation: {
+                animateRotate: true,
+                animateScale: true,
+                duration: 2000,
+                easing: 'easeOutQuart'
+            }
+        }
+    });
+    
+    // Top Recruiters Chart
+    const recruitersCtx = document.getElementById('recruitersChart').getContext('2d');
+    
+    const recruitersChart = new Chart(recruitersCtx, {
+        type: 'horizontalBar',
+        data: {
+            labels: ['Microsoft', 'Amazon', 'Google', 'TCS', 'Infosys'],
+            datasets: [{
+                label: 'Students Hired',
+                data: [15, 12, 10, 25, 20],
+                backgroundColor: createGradient(recruitersCtx, 'rgba(255, 159, 64, 0.8)', 'rgba(255, 159, 64, 0.2)'),
+                borderColor: 'rgba(255, 159, 64, 1)',
+                borderWidth: 1,
+                borderRadius: 6
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    labels: {
+                        font: {
+                            size: 14
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    grid: {
+                        color: 'rgba(255, 255, 255, 0.1)'
+                    }
+                },
+                y: {
+                    grid: {
+                        display: false
+                    }
+                }
+            },
+            animation: {
+                duration: 2000,
+                easing: 'easeOutQuart'
+            }
+        }
+    });
+    
+    // Ensure charts are fully responsive
+    window.addEventListener('resize', function() {
+        placementChart.resize();
+        salaryChart.resize();
+        distributionChart.resize();
+        recruitersChart.resize();
+    });
+</script>
+
+  <!-- Get Started Button -->
+  <div class="text-center my-12 hidden-section">
+    <a href="dash4.html">
+      <button class="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-4 px-12 rounded-lg shadow-lg text-lg sm:text-xl transform hover:scale-105 transition duration-300 ease-in-out">
+      Get Started
+    </button>
+  </a>
+  </div>
+
+  <!-- Section with Images -->
+  <section class="container mx-auto px-6 py-12 text-center hidden-section">
+    <h2 class="text-2xl sm:text-3xl font-bold mb-8 text-center relative inline-block">
+      MNCs Visiting Us
+    </h2>
+    <div class="flex justify-center flex-wrap gap-8 sm:gap-12">
+      <div class="p-4 rounded-lg hover:bg-white/20 transition-all duration-300">
+        <img src="./Images/amazon-brands-solid.svg" alt="Amazon" class="h-10 w-10 sm:h-12 sm:w-12 object-contain">
+      </div>
+      <div class="p-4 rounded-lg hover:bg-white/20 transition-all duration-300">
+        <img src="./Images/cc-mastercard-brands-solid.svg" alt="MasterCard" class="h-10 w-10 sm:h-12 sm:w-12 object-contain">
+      </div>
+      <div class="p-4 rounded-lg hover:bg-white/20 transition-all duration-300">
+        <img src="./Images/google-brands-solid.svg" alt="Google" class="h-10 w-10 sm:h-12 sm:w-12 object-contain">
+      </div>
+      <div class="p-4 rounded-lg hover:bg-white/20 transition-all duration-300">
+        <img src="./Images/microsoft-brands-solid.svg" alt="Microsoft" class="h-10 w-10 sm:h-12 sm:w-12 object-contain">
+      </div>
+    </div>
+  </section>
+</main>
+
+  <!-- Footer -->
+  <footer class="bg-opacity-50 bg-black py-8 hidden-section border-t border-gray-800">
+    <div class="container mx-auto px-6 text-center">
+      <p class="text-gray-400">© 2025 Project Genesis. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const hiddenSections = document.querySelectorAll(".hidden-section");
+  
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+  
+      hiddenSections.forEach((section) => {
+        observer.observe(section);
+      });
+    });
+  </script>
+
+  </body>
+</html>

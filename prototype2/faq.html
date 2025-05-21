@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ Section</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <style>
+    /* Particle animation */
+    .particle-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+    .particle {
+      position: absolute;
+      display: block;
+      pointer-events: none;
+      width: 5px;
+      height: 5px;
+      background-color: rgba(100, 149, 237, 0.2);
+      border-radius: 50%;
+    }
+    
+    /* Card animations */
+    .faq-card {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      overflow: hidden;
+      position: relative;
+    }
+    .faq-card::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      background: linear-gradient(45deg, #3B82F6, #8B5CF6, #EC4899, #3B82F6);
+      background-size: 400% 400%;
+      z-index: -1;
+      filter: blur(10px);
+      opacity: 0;
+      border-radius: 15px;
+      transition: all 0.8s ease;
+      animation: gradientBG 10s ease infinite;
+    }
+    .faq-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    }
+    .faq-card:hover::before {
+      opacity: 0.7;
+    }
+    
+    .emoji-icon {
+      transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      display: inline-block;
+    }
+    .faq-card:hover .emoji-icon {
+      transform: rotate(20deg) scale(1.4);
+      animation: pulse 2s infinite;
+    }
+    
+    /* Glow effect for title */
+    .glow-text {
+      text-shadow: 0 0 10px rgba(59, 130, 246, 0.5),
+                   0 0 20px rgba(59, 130, 246, 0.3),
+                   0 0 30px rgba(59, 130, 246, 0.1);
+    }
+    
+    /* Animated background gradient */
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    .gradient-bg {
+      background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #1a1a2e);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+    }
+    
+    /* Custom animations */
+    @keyframes floatUp {
+      0% { transform: translateY(20px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    
+    @keyframes pulse {
+      0% { transform: rotate(20deg) scale(1.4); }
+      50% { transform: rotate(20deg) scale(1.5); }
+      100% { transform: rotate(20deg) scale(1.4); }
+    }
+    
+    @keyframes shimmer {
+      0% { background-position: -100% 0; }
+      100% { background-position: 200% 0; }
+    }
+    
+    .nav-link {
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    .nav-link:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 50%;
+      background-color: #903749;
+      transition: all 0.4s ease;
+      transform: translateX(-50%);
+    }
+    .nav-link:hover:after {
+      width: 100%;
+    }
+    .nav-link:hover {
+      text-shadow: 0 0 10px rgba(144, 55, 73, 0.7);
+    }
+    
+    /* Navbar animation */
+    .navbar-fixed {
+      backdrop-filter: blur(8px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.5s ease;
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.5s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    /* Card text fade in */
+    .card-content {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.5s ease;
+    }
+    .faq-card:hover .card-content {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Ripple effect */
+    .ripple {
+      position: absolute;
+      border-radius: 50%;
+      transform: scale(0);
+      animation: ripple 0.8s linear;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    @keyframes ripple {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+    
+    /* Floating animation for icons */
+    .float {
+      animation: floating 3s ease-in-out infinite;
+    }
+    
+    @keyframes floating {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+  </style>
+</head>
+<body class="text-white min-h-screen flex flex-col gradient-bg">
+  <!-- Particle background -->
+  <div class="particle-container" id="particles"></div>
+
+  <!-- Navbar -->
+  <header class="bg-[#0f3460]/80 border-b border-[#53354a] fixed top-0 w-full z-50 navbar-fixed">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <!-- Logo with animation -->
+      <h1 class="text-2xl sm:text-2xl font-bold relative group animate__animated animate__fadeInLeft">
+        <span class="bg-clip-text text-transparent bg-white">PICT Placement Website</span>
+        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 transition-all duration-300 group-hover:w-full"></span>
+      </h1>
+  
+      <!-- Hamburger Button for Mobile -->
+      <button 
+        class="sm:hidden text-gray-300 focus:outline-none transition-transform duration-300 hover:rotate-90" 
+        onclick="toggleNavbar(); createRipple(event);"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+  
+      <!-- Navigation Links -->
+      <nav 
+        id="nav-menu" 
+        class="hidden sm:flex flex-col sm:flex-row bg-[#0f3460]/95 backdrop-blur-sm w-full sm:w-auto absolute sm:static top-16 left-0 sm:top-auto sm:left-auto py-6 sm:py-0 px-6 sm:px-0 z-10 space-y-6 sm:space-y-0 sm:space-x-8 animate__animated animate__fadeInRight"
+      >
+        <a href="other.html" class="nav-link block text-xl sm:text-lg text-gray-300 hover:text-[#903749]">Home</a>
+        <a href="dash4.html" class="nav-link block text-xl sm:text-lg text-gray-300 hover:text-[#903749]">Visualise</a>
+        <a href="#" class="nav-link block text-xl sm:text-lg text-gray-300 hover:text-[#903749] font-bold">FAQ's</a>
+        <a href="aboutus.html" class="nav-link block text-xl sm:text-lg text-gray-300 hover:text-[#903749]">About Us</a>
+      </nav>
+    </div>
+  </header>
+        
+  <!-- FAQ Section -->     
+  <main class="flex-grow container mx-auto px-6 py-12 mt-20">
+    <div class="container mx-auto px-6 py-0">
+      <h1 
+        class="text-5xl sm:text-5xl font-bold text-center mb-6 glow-text animate__animated animate__fadeInDown"
+        data-aos="fade-down"
+        data-aos-duration="1200"
+      >
+        <span class="bg-clip-text text-transparent bg-white">Frequently Asked Questions</span>
+      </h1>
+      <p 
+        class="text-center text-lg text-gray-300 mb-12"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-delay="400"
+      >
+        Here are some of the common questions about our placement platform
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- FAQ Item 1 -->
+        <div 
+          class="faq-card flex items-start gap-4 bg-[#0f3460]/40 p-6 rounded-lg border border-[#53354a]/50 backdrop-blur-sm"
+          data-aos="fade-right"
+          data-aos-duration="800"
+          data-aos-delay="100"
+          data-aos-offset="200"
+          onclick="createRipple(event)"
+        >
+          <div class="emoji-icon text-blue-400 text-3xl float">🎯</div>
+          <div>
+            <h3 class="text-2xl font-semibold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-purple-400">How Does the Placement API Integration Work?</h3>
+            <p class="text-gray-300 card-content opacity-100 transform-none">
+              Our platform integrates with PICT's Placement API to provide real-time updates on drives, student applications, and recruiter interactions. This ensures students have access to the most current information.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div 
+          class="faq-card flex items-start gap-4 bg-[#0f3460]/40 p-6 rounded-lg border border-[#53354a]/50 backdrop-blur-sm"
+          data-aos="fade-left"
+          data-aos-duration="800"
+          data-aos-delay="200"
+          data-aos-offset="200"
+          onclick="createRipple(event)"
+        >
+          <div class="emoji-icon text-blue-400 text-3xl float">💼</div>
+          <div>
+            <h3 class="text-2xl font-semibold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-purple-400">What Information is Available About Companies?</h3>
+            <p class="text-gray-300 card-content opacity-100 transform-none">
+              Our platform provides comprehensive data on companies visiting the college, including the year of the visit, skills required, selection process details, and LPA offered.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div 
+          class="faq-card flex items-start gap-4 bg-[#0f3460]/40 p-6 rounded-lg border border-[#53354a]/50 backdrop-blur-sm"
+          data-aos="fade-right"
+          data-aos-duration="800"
+          data-aos-delay="300"
+          data-aos-offset="150"
+          onclick="createRipple(event)"
+        >
+          <div class="emoji-icon text-blue-400 text-3xl float">📊</div>
+          <div>
+            <h3 class="text-2xl font-semibold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-purple-400">How is Student Selection Data Displayed?</h3>
+            <p class="text-gray-300 card-content opacity-100 transform-none">
+              Data on the number of male and female students selected, as well as branch-wise selection, is presented in interactive graphical form with filters for better analysis and clarity.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div 
+          class="faq-card flex items-start gap-4 bg-[#0f3460]/40 p-6 rounded-lg border border-[#53354a]/50 backdrop-blur-sm"
+          data-aos="fade-left"
+          data-aos-duration="800"
+          data-aos-delay="400"
+          data-aos-offset="150"
+          onclick="createRipple(event)"
+        >
+          <div class="emoji-icon text-blue-400 text-3xl float">📈</div>
+          <div>
+            <h3 class="text-2xl font-semibold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-purple-400">Can I View Year-Wise Placement Trends?</h3>
+            <p class="text-gray-300 card-content opacity-100 transform-none">
+              Yes, you can explore company visit and placement trends year by year through our interactive visualizations. This helps identify patterns and growth in recruitment over time.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div 
+          class="faq-card flex items-start gap-4 bg-[#0f3460]/40 p-6 rounded-lg border border-[#53354a]/50 backdrop-blur-sm"
+          data-aos="fade-right"
+          data-aos-duration="800"
+          data-aos-delay="500"
+          data-aos-offset="100"
+          onclick="createRipple(event)"
+        >
+          <div class="emoji-icon text-blue-400 text-3xl float">🎓</div>
+          <div>
+            <h3 class="text-2xl font-semibold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-purple-400">How Can This Data Help Students?</h3>
+            <p class="text-gray-300 card-content opacity-100 transform-none">
+              Students can identify trends in company requirements, popular skills, and branch-wise placement patterns to better prepare for future drives and make informed career decisions.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 6 -->
+        <div 
+          class="faq-card flex items-start gap-4 bg-[#0f3460]/40 p-6 rounded-lg border border-[#53354a]/50 backdrop-blur-sm"
+          data-aos="fade-left"
+          data-aos-duration="800"
+          data-aos-delay="600"
+          data-aos-offset="100"
+          onclick="createRipple(event)"
+        >
+          <div class="emoji-icon text-blue-400 text-3xl float">🔐</div>
+          <div>
+            <h3 class="text-2xl font-semibold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-purple-400">Who Can Access This Data?</h3>
+            <p class="text-gray-300 card-content opacity-100 transform-none">
+              The platform is accessible to students, faculty, and recruiters seeking detailed insights into campus placements. Different access levels ensure appropriate information sharing.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <footer class="bg-[#0f3460]/80 text-center py-6 text-sm sm:text-base text-gray-300 border-t border-[#53354a]/50">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p>&copy; 2025 Project Genesis. All rights reserved.</p>
+        <div class="flex space-x-4 mt-4 md:mt-0">
+          <a href="#" class="hover:text-blue-400 transition-colors duration-300">Privacy Policy</a>
+          <a href="#" class="hover:text-blue-400 transition-colors duration-300">Terms of Service</a>
+          <a href="#" class="hover:text-blue-400 transition-colors duration-300">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Create particles
+    document.addEventListener('DOMContentLoaded', function() {
+      createParticles();
+      AOS.init({
+        once: false,
+        offset: 100,
+        duration: 1200,
+        easing: 'ease-in-out-cubic',
+        mirror: true
+      });
+      
+      // Add scroll event for navbar
+      window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 10) {
+          header.classList.add('shadow-lg');
+        } else {
+          header.classList.remove('shadow-lg');
+        }
+      });
+    });
+    
+    function createParticles() {
+      const particleContainer = document.getElementById('particles');
+      const particleCount = 30;
+      
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        
+        // Random position
+        const posX = Math.random() * 100;
+        const posY = Math.random() * 100;
+        
+        // Random size
+        const size = Math.random() * 5 + 1;
+        
+        // Random animation duration
+        const duration = Math.random() * 20 + 10;
+        
+        particle.style.left = `${posX}%`;
+        particle.style.top = `${posY}%`;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.opacity = Math.random() * 0.5 + 0.1;
+        
+        // Add animation
+        particle.style.animation = `floating ${duration}s infinite ease-in-out`;
+        particle.style.animationDelay = `${Math.random() * 5}s`;
+        
+        particleContainer.appendChild(particle);
+      }
+    }
+    
+    function toggleNavbar() {
+      const navMenu = document.getElementById("nav-menu");
+      navMenu.classList.toggle("hidden");
+      navMenu.classList.toggle("animate__animated");
+      navMenu.classList.toggle("animate__fadeInDown");
+    }
+    
+    function createRipple(event) {
+      const button = event.currentTarget;
+      
+      const circle = document.createElement("span");
+      const diameter = Math.max(button.clientWidth, button.clientHeight);
+      const radius = diameter / 2;
+      
+      circle.style.width = circle.style.height = `${diameter}px`;
+      circle.style.left = `${event.clientX - button.getBoundingClientRect().left - radius}px`;
+      circle.style.top = `${event.clientY - button.getBoundingClientRect().top - radius}px`;
+      circle.classList.add("ripple");
+      
+      const ripple = button.getElementsByClassName("ripple")[0];
+      if (ripple) {
+        ripple.remove();
+      }
+      
+      button.appendChild(circle);
+    }
+  </script>
+</body>
+</html>
