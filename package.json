@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.3",
+    "express": "^4.21.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.12.0",
+    "tailwindcss": "^4.1.3"
+  },
+  "name": "api_trial",
+  "version": "1.0.0",
+  "description": "trying out with the actual data",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "test",
+    "run"
+  ],
+  "author": "Malhar Kulkarni",
+  "license": "MIT"
+}
